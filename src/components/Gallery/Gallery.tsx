@@ -1,12 +1,12 @@
 import * as React from "react";
 import type { GalleryItemProps } from "./GalleryItem";
-import GalleryItem from "./GalleryItem";
+import { GalleryItem } from "./GalleryItem";
 
 interface GalleryProps {
   items: GalleryItemProps[];
 }
 
-const Gallery: React.FC<GalleryProps> = ({ items }) => {
+export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   return (
     <div className="grid grid-cols-4 gap-[31px]">
       {items.map((item) => (
@@ -16,5 +16,3 @@ const Gallery: React.FC<GalleryProps> = ({ items }) => {
     </div>
   );
 };
-
-export default Gallery;
