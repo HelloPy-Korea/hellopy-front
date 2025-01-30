@@ -5,7 +5,7 @@ interface BreadcrumbProps extends React.ComponentProps<"nav"> {
   separator?: React.ReactNode;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   children,
   separator = ">",
   ...props
@@ -26,5 +26,3 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
     </nav>
   );
 };
-
-export default Breadcrumb;
