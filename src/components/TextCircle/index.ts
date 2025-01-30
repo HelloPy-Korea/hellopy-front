@@ -1,1 +1,2 @@
-export { default, default as TextCircle } from "./TextCircle";
+export { TextCircle } from "./TextCircle";
+export { TextCircleGroup } from "./TextCircleGroup";

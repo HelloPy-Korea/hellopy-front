@@ -1,5 +1,5 @@
 import * as React from "react";
-import TextCircle from "../TextCircle";
+import { TextCircle } from "../TextCircle";
 
 const overlapClasses = {
   /** 0px */
@@ -48,7 +48,7 @@ interface TextCircleGroupProps {
   overlap?: keyof typeof overlapClasses;
 }
 
-const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
+export const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
   textList,
   size,
   overlap = 0,
@@ -63,5 +63,3 @@ const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
     </div>
   );
 };
-
-export default TextCircleGroup;

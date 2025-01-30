@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import TextCircle from "./TextCircle";
+import { TextCircle } from "./TextCircle";
 
 const meta = {
   title: "Components/TextCircle",
