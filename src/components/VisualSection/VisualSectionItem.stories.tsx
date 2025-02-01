@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import VisualSectionItem from "./VisualSectionItem.tsx";
-import { FaMicrophone } from "react-icons/fa";
+import { FaMicrophone, FaChartLine, FaLightbulb } from "react-icons/fa";
 
 const meta: Meta<typeof VisualSectionItem> = {
     title: "Components/VisualSectionItem",
@@ -8,26 +8,26 @@ const meta: Meta<typeof VisualSectionItem> = {
     args: {
         icon: <FaMicrophone />,
         title: "발표와 나눔",
-        description: "파이썬 사용자들이 평가 없이 발표하고 지식을 나눌 수 있습니다.",
+        description: "파이썬 사용자들이 발표하고 지식을 나눌 수 있습니다.",
     },
 };
 
 export default meta;
 
 
-export const Primary: StoryObj<typeof VisualSectionItem> = {
+export const ChartLine: StoryObj<typeof VisualSectionItem> = {
     args: {
-        icon: <FaMicrophone />,
-        title: "발표 모드",
-        description: "이 모드에서는 발표자가 화면을 공유합니다.",
+        icon: <FaChartLine />,
+        title: "학습과 성장",
+        description: "파이썬에 관심 있는 사람들에게 학습과 성장을 촉진합니다.",
     },
 };
 
-export const Warning: StoryObj<typeof VisualSectionItem> = {
+export const Lightbulb: StoryObj<typeof VisualSectionItem> = {
     args: {
-        icon: <FaMicrophone />,
-        title: "마이크 문제",
-        description: "마이크 연결이 감지되지 않았습니다.",
+        icon: <FaLightbulb />,
+        title: "공유와 협력",
+        description: "다양한 파이썬 프로젝트와 아이디어를 공유하고 협력합니다.",
     },
 };
 
