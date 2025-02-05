@@ -34,7 +34,7 @@ export const HomeCard = ({
             className="relative w-full h-full bg-cover bg-center bg-[#fbf6ff]"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-            <div className="absolute inset-0 bg-black/10"></div>
+           {/* <div className="absolute inset-0 bg-black/10"></div>*/}
 
             <div
                 className={`absolute top-[121px] flex flex-col gap-40 text-[#2c003c]
