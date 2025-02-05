@@ -1,0 +1,1 @@
+export { AboutTable } from "./AboutTable";
