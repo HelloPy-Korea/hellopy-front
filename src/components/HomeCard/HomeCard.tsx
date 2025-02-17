@@ -31,7 +31,7 @@ export const HomeCard = ({
 
     return (
         <div
-            className="relative w-full h-full bg-cover bg-center bg-[#fbf6ff]"
+            className="relative w-full h-[626px] bg-cover bg-center bg-[#fbf6ff]"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
            {/* <div className="absolute inset-0 bg-black/10"></div>*/}

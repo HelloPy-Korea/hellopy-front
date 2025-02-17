@@ -7,10 +7,10 @@ interface HeaderBannerProps {
     children?: ReactNode;
 }
 
-export const HeaderBanner: React.FC<HeaderBannerProps> = ({ backgroundImage, title, description, children }) => {
+export const HeaderBanner: React.FC<HeaderBannerProps> = ({ backgroundImage, title, description, children}) => {
     return (
         <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat relative"
+            className="w-full h-[794px] bg-cover bg-center bg-no-repeat relative"
             style={{backgroundImage: `url(${backgroundImage})`}}
         >
             <div className="absolute inset-0 bg-black/30"></div>
