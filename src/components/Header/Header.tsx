@@ -2,6 +2,7 @@ import * as React from "react";
 import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
+import HellopyImg from "@/assets/img/logo/img_hellopy.png"
 
 const Header: React.FC = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -25,10 +26,9 @@ const Header: React.FC = () => {
     return (
         <div className="w-full h-[78px] bg-[#891FBD] flex items-center justify-center">
             <div className="w-[1280px] h-[78px] flex items-center justify-between ">
-                {/* 로고 */}
                 <img
                     className="w-[145px] h-[78px] object-contain"
-                    src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6324be2c-a8b1-4af8-b50e-19249d994d67%2Ffa28ddd3-ea28-4898-990c-2f1934ae80cf%2FKakaoTalk_Photo_2024-09-23-02-35-01_004.png&blockId=1091cd0c-2cb8-80dd-9743-e68459de2ac4&width=256"
+                    src={HellopyImg}
                     alt="Logo"
                 />
 
