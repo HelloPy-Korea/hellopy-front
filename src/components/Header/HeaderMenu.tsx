@@ -5,7 +5,7 @@ interface NavItemProps {
 }
 
 const HeaderMenu: React.FC<NavItemProps> = ({ label }) => {
-    return <div className="text-center text-black text-lg px-4">{label}</div>;
+    return <div className="text-center text-white text-lg px-4">{label}</div>;
 };
 
   export default HeaderMenu;
