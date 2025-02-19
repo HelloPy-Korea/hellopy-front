@@ -1,30 +1,62 @@
 import Header from "@/components/Header/Header.tsx";
-import MainBanner from "@/components/MainBanner/MainBanner.tsx";
 import {HomeCard} from "@/components/HomeCard";
+import Footer from "@/components/Footer/Footer";
 
-import HomeImg from "@/assets/img/home/img_home.png";
+import AboutImg from "@/assets/img/about/img_about.png";
 import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";
-import { TextCircleGroup } from "@/components/TextCircle";
-import Footer from "@/components/Footer/Footer";
 
-export function Home() {
+import { TextCircleGroup } from "@/components/TextCircle";
+
+import { HeaderBanner } from "@/components/HeaderBanner";
+
+import { ProgramInfo } from "@/components/ProgramInfo";
+import ProgramImg from '@/assets/img/about/img_program.png'; // 이미지 경로는 실제 경로로 변경
+
+
+export function About() {
     return (
         <div>
             <Header 
-                backgroundColor="bg-[#891FBD]"
-                textColor="text-white"
+                backgroundColor="bg-[#FFEEA4]"
+                textColor="text-black"
             />
             <div className="flex flex-col align-center">
-                <MainBanner
-                    backgroundImage={HomeImg}
-                    title="HelloPY"
+                <HeaderBanner
+                    backgroundImage={AboutImg}
+                    title="파이썬을 사랑하는 모든 이들을 위한"
+                    subTitle="따뜻하고 포용적인 커뮤니티"
                     description={`
-                        파이썬을 사용하는 모든 이들을 위한 <br/>
-                        따뜻하고 포용적인 커뮤니티, 헬로파이입니다
+                        명함이 없어도 좋습니다!! <br/>
+                        취업 준비생부터 3년차 이하 개발자까지, 파이썬에 관심 있는 주니어라면 누구나 환영합니다. <br/>
+                        자유롭게 의견을 나누고, 평가받지 않는 발표의 장을 지향합니다. 같이 공부하고, 함께 성장해요!
                     `}
                 />
+                <ProgramInfo
+                    backgroundImage={ProgramImg}
+                    programDetails={[
+                        {
+                            title: "세미나",
+                            description:
+                                "상반기 & 하반기로 총 2번 진행합니다. <br/> 발표, 나눔, 네트워킹, 멘토링, 커리어빌gv딩, 핸즈온 등 여러 세션을 준비 중입니다.",
+                        },
+                        {
+                            title: "스터디",
+                            description:
+                                "HelloPY는 개발자의 성장을 응원합니다. 필요에 따라 스터디를 자유롭게 <br/> 오픈, 참여할 수 있습니다. 모각코, 줌각코 등 다양한 형태로 모여 공부합니다.",
+                        },
+                        {
+                            title: "멘토링",
+                            description:
+                                "HelloPY는 시니어 파이써니스타와 주니어 파이써니스타의 활발한 멘토링을 <br/> 지향합니다. HelloPY는 3년차 이하 파이썬 주니어 유저들을 위한 모임이에요. <br/> 경력 3년 이상이시라면, 멘토로 함께해주세요! ",
+                            buttonText: "멘토로 참여하기 ->",
+                            redirectUrl: ""
+                        }
+                    ]}
+                    textPosition="left"
+                />
+
 
                 <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
                     <div className="self-stretch text-center text-[#aa3efd] text-[20px] font-bold">
