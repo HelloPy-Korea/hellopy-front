@@ -4,7 +4,15 @@ import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import HellopyImg from "@/assets/img/logo/img_hellopy.png"
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    backgroundColor?: string;
+    textColor?: string;
+  }
+
+const Header: React.FC<HeaderProps> = ({ 
+    backgroundColor = 'bg-[#891FBD]',
+    textColor= 'text-white'
+}) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const menuItems = [
@@ -24,7 +32,7 @@ const Header: React.FC = () => {
     ];
 
     return (
-        <div className="w-full h-[78px] bg-[#891FBD] flex items-center justify-center">
+        <div className={`w-full h-[78px] ${backgroundColor} flex items-center justify-center`}>
             <div className="w-[1280px] h-[78px] flex items-center justify-between ">
                 <img
                     className="w-[145px] h-[78px] object-contain"
@@ -32,7 +40,6 @@ const Header: React.FC = () => {
                     alt="Logo"
                 />
 
-                {/* 네비게이션 메뉴 */}
                 <nav className="flex gap-10 relative z-[999]">
                     {menuItems.map(({ label, hasDropdown, subItems }) => (
                         <div
@@ -42,10 +49,11 @@ const Header: React.FC = () => {
                                 setOpenDropdown(openDropdown === label ? null : label)
                             }
                         >
-                            <HeaderMenu label={label} />
-                            {hasDropdown && <FaChevronDown className="text-gray-600 text-white" />}
-
-                            {/* 드롭다운 메뉴 렌더링 */}
+                            <HeaderMenu 
+                                label={label} 
+                                textColor={textColor}
+                            />
+                            {hasDropdown && <FaChevronDown className={`text-gray-600 ${textColor}`} />}
                             {hasDropdown && openDropdown === label && (
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 flex flex-col rounded-[8px] bg-white border border-[#ECECEC]">
                                     {subItems?.map(({ label: subLabel }, index) => (
@@ -54,7 +62,7 @@ const Header: React.FC = () => {
                                             className={`w-[143px] h-[53px] flex justify-center items-center hover:bg-[#908F8F1A] border-b border-[#ECECEC] 
                                             ${index === subItems.length - 1 ? "border-b-0" : ""}`}
                                         >
-                                            <div className="text-black text-base font-medium">{subLabel}</div>
+                                            <div className="{text-black text-base font-medium">{subLabel}</div>
                                         </div>
                                     ))}
                                 </div>
