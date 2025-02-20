@@ -43,14 +43,15 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <ErrorBoundary>
-      <JotaiProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-          <ReactQueryDevtools />
-        </QueryClientProvider>
-      </JotaiProvider>
-    </ErrorBoundary>
-  </StrictMode>
+    <Home />
+  // <StrictMode>
+  //   <ErrorBoundary>
+  //     <JotaiProvider>
+  //       <QueryClientProvider client={queryClient}>
+  //         <RouterProvider router={router} />
+  //         <ReactQueryDevtools />
+  //       </QueryClientProvider>
+  //     </JotaiProvider>
+  //   </ErrorBoundary>
+  // </StrictMode>
 );
