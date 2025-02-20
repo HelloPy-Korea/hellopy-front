@@ -12,7 +12,10 @@ import Footer from "@/components/Footer/Footer";
 export function Home() {
     return (
         <div>
-            <Header/>
+            <Header 
+                backgroundColor="bg-[#891FBD]"
+                textColor="text-white"
+            />
             <div className="flex flex-col align-center">
                 <MainBanner
                     backgroundImage={HomeImg}
