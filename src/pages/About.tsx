@@ -1,18 +1,20 @@
 import Header from "@/components/Header/Header.tsx";
-import {HomeCard} from "@/components/HomeCard";
 import Footer from "@/components/Footer/Footer";
 
 import AboutImg from "@/assets/img/about/img_about.png";
-import CalendarImg from "@/assets/img/home/img_this_calendar.png";
-import ActiveImg from "@/assets/img/home/img_active.png";
-import DiscordImg from "@/assets/img/home/img_discord.png";
-
-import { TextCircleGroup } from "@/components/TextCircle";
 
 import { HeaderBanner } from "@/components/HeaderBanner";
 
 import { ProgramInfo } from "@/components/ProgramInfo";
-import ProgramImg from '@/assets/img/about/img_program.png'; // 이미지 경로는 실제 경로로 변경
+import ProgramImg from '@/assets/img/about/img_program.png';
+import VisualSection from "@/components/VisualSection/VisualSection";
+
+import DiscordBtn from "@/assets/img/about/btn_discord.png";
+import InstagramBtn from "@/assets/img/about/btn_instagram.png";
+import LinkedinBtn from "@/assets/img/about/btn_linkedin.png";
+import YoutubeBtn from "@/assets/img/about/btn_youtube.png";
+import PymonMacImg from "@/assets/img/about/img_pymon_mac.png";
+import { ProfileCard } from "@/components/ProfileCard";
 
 
 export function About() {
@@ -57,72 +59,91 @@ export function About() {
                     textPosition="left"
                 />
 
+                <VisualSection />
 
-                <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
-                    <div className="self-stretch text-center text-[#aa3efd] text-[20px] font-bold">
-                        HelloPY COC(Code of Conduct)
+                <div
+                    className="w-full h-[794px] flex items-center bg-cover bg-center bg-[#FCF7FF]"
+                    style={{ backgroundImage: `url(${PymonMacImg})` }}
+                >
+                    <div className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between max-w-[1280px] mx-auto p-6 gap-10">
+                        {/* 왼쪽 텍스트 & 이미지 */}
+                        <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
+                            <p className="text-[#bc1df2] text-[20px] font-medium">SNS channel</p>
+                            <h2 className="text-[#2D003D] text-[32px] font-semibold">SNS 채널</h2>
+                            <p className="text-[#2D003D] text-[18px] font-light">
+                                HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을 <br/>
+                                쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고, <br/>
+                                커뮤니티와 함께 소통하세요!
+                            </p>
                         </div>
-                    <div className="self-stretch text-center text-black text-[28px] font-bold">
-                        어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우, <br/> COC 원칙 본문을 보고하실 것을 권장합니다.
+
+                        {/* 오른쪽 SNS 아이콘 박스 */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-1/2">
+                            <img src={DiscordBtn} alt="Discord" className="w-full h-auto rounded-xl" />
+                            <img src={YoutubeBtn} alt="YouTube" className="w-full h-auto rounded-xl" />
+                            <img src={InstagramBtn} alt="Instagram" className="w-full h-auto rounded-xl" />
+                            <img src={LinkedinBtn} alt="LinkedIn" className="w-full h-auto rounded-xl" />
+                        </div>
                     </div>
                 </div>
+                <div className="w-full h-[794px] flex items-center bg-cover bg-center bg-[#FCF7FF]">
+                    <div className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between max-w-[1280px] mx-auto p-6 gap-10">
+                        {/* 왼쪽 텍스트 & 이미지 */}
+                        <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
+                            <p className="text-[#bc1df2] text-[20px] font-medium">Organizing Committee</p>
+                            <h2 className="text-[#2D003D] text-[32px] font-semibold">HelloPY 운영진</h2>
+                            <p className="text-[#2D003D] text-[18px] font-light">
+                                print.hello.py@gmail.com
+                            </p>
+                        </div>
 
-                <div className="w-full mb-[180px] flex align-center justify-center">
-                    <TextCircleGroup
-                        textList={[
-                            "누구나 편안하게 참여할 수 있는\n커뮤니티를 지향합니다", 
-                            "서로 다름을 인정하고 존중하는\n분위기를 지향합니다.", 
-                            "서로 환영하는 분위기를\n독려합니다"
-                        ]}
-                        size={355}  
-                        overlap={6}
-                    />
+                        {/* 오른쪽 SNS 아이콘 박스 */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 w-full mt-[150px]">
+                            <ProfileCard
+                                name="홍길동"
+                                position="Frontend"
+                                links={{
+                                    email: "hong@example.com",
+                                    linkedin: "https://www.linkedin.com/in/hong",
+                                    github: "https://github.com/hong",
+                                }}
+                                image="https://example.com/path/to/profile-image.jpg"/>
+
+                            <ProfileCard
+                                name="홍길동"
+                                position="Frontend"
+                                links={{
+                                    email: "hong@example.com",
+                                    linkedin: "https://www.linkedin.com/in/hong",
+                                    github: "https://github.com/hong",
+                                }}
+                                image="https://example.com/path/to/profile-image.jpg"/>
+
+                            <ProfileCard
+                                name="홍길동"
+                                position="Frontend"
+                                links={{
+                                    email: "hong@example.com",
+                                    linkedin: "https://www.linkedin.com/in/hong",
+                                    github: "https://github.com/hong",
+                                }}
+                                image="https://example.com/path/to/profile-image.jpg"/>
+
+                            <ProfileCard
+                                name="홍길동"
+                                position="Frontend"
+                                links={{
+                                    email: "hong@example.com",
+                                    linkedin: "https://www.linkedin.com/in/hong",
+                                    github: "https://github.com/hong",
+                                }}
+                                image="https://example.com/path/to/profile-image.jpg"/>
+                            
+                        </div>
+                    </div>
                 </div>
-                
-
-                <HomeCard
-                    backgroundImage={CalendarImg}
-                    title="이달의 달력"
-                    subtitle="Wallpaper"
-                    description={`
-                        HelloPY는 매달 새로운 달력을 제작하여 무료로 배포합니다.<br/>
-                        지금 바로 최신 파이몬 달력을 다운로드해보세요!
-                    `}
-                    buttonText="전체 이미지 보기 →"
-                    textPosition="left"
-                    buttonUrl=""
-                />
-
-                <HomeCard
-                    backgroundImage={ActiveImg}
-                    title="활동 갤러리"
-                    subtitle="Activity"
-                    description={`
-                        HelloPY는 세미나, 스터디, 모각작 등 다양한 활동을 운영하고 있습니다.<br/>
-                        활동 갤러리에서 지난 활동의 생생한 모습을 확인해보세요!
-                    `}
-                    buttonText="전체 활동 보기 →"
-                    textPosition="right"
-                    buttonUrl=""
-                />
-
-                <HomeCard
-                    backgroundImage={DiscordImg}
-                    title="HelloPY Discord"
-                    subtitle="Community"
-                    description={`
-                        HelloPY는 디스코드 채널을 기반으로 커뮤니티가 형성되어 있습니다. <br/>
-                        지금 바로 디스코드에 참여하여 주니어들과 함께 성장해보세요!
-                    `}
-                    buttonText="Discord 바로가기 →"
-                    textPosition="left"
-                    buttonUrl=""
-                />
             </div>
-
-            <Footer>
-                
-            </Footer>
+            <Footer />
         </div>
     );
 }
