@@ -8,20 +8,35 @@ interface HeaderBannerProps {
     children?: ReactNode;
 }
 
-export const HeaderBanner: React.FC<HeaderBannerProps> = ({ backgroundImage, title, subTitle, description, children}) => {
+export const HeaderBanner: React.FC<HeaderBannerProps> = ({
+                                                              backgroundImage,
+                                                              title,
+                                                              subTitle,
+                                                              description,
+                                                              children,
+                                                          }) => {
     return (
-        <div
-            className="w-full h-[794px] bg-cover bg-center bg-no-repeat relative"
-            style={{backgroundImage: `url(${backgroundImage})`}}
-        >
-            <div className="absolute inset-0"></div>
+        <div className="relative w-full h-[484px] flex flex-col justify-center px-8 py-16">
+            {/* 배경 이미지 */}
+            <img
+                src={backgroundImage}
+                className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+                alt="Banner Background"
+            />
 
-            {children && <div className="absolute top-[64px] left-[318px] z-10">{children}</div>}
+            <div className="flex flex-col gap-40 max-w-[1000px] p-20 text-black">
 
-            <div className="absolute left-[318px] top-[277px] flex flex-col #2D003D z-10">
-                <h1 className="text-[38px] font-semibold">{title}</h1>
-                <h1 className="text-[38px] font-semibold text-[#BC1DF2]">{subTitle}</h1>
-                <p className="text-lg leading-[27px] mt-[30px]" dangerouslySetInnerHTML={{__html: description}}/>
+                {children && <div>{children}</div>}
+
+                {/* 제목 및 설명 */}
+                <div className="flex flex-col gap-4">
+                    <h1 className="text-[38px] font-semibold">{title}</h1>
+                    {subTitle && <h1 className="text-[38px] font-semibold text-[#BC1DF2]">{subTitle}</h1>}
+                    <p
+                        className="text-lg leading-[27px]"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    />
+                </div>
             </div>
         </div>
     );

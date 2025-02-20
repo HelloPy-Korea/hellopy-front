@@ -1,34 +1,64 @@
 import React from 'react';
-import { GithubIcon } from 'lucide-react';
+import { ActionFunction, createBrowserRouter, LoaderFunction, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Layout from "@/components/Layout/Layout.tsx";
+import {IRoute, Pages} from "@/types/route.ts";
+const pages: Pages = import.meta.glob("./pages/**/*.tsx", { eager: true });
+const routes: IRoute[] = [];
 
-function App() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full">
-        <div className="flex items-center justify-center mb-6">
-          <GithubIcon className="w-12 h-12 text-gray-800" />
-        </div>
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
-          React + TypeScript + Vite
-        </h1>
-        <p className="text-gray-600 text-center mb-6">
-          Your project is set up with absolute imports! Try using <code className="bg-gray-100 px-2 py-1 rounded">@/components</code> in your imports.
-        </p>
-        <div className="space-y-4">
-          <div className="bg-gray-50 rounded-lg p-4">
-            <h2 className="font-semibold text-gray-700 mb-2">Features:</h2>
-            <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li>Absolute imports configured</li>
-              <li>TypeScript support</li>
-              <li>Tailwind CSS styling</li>
-              <li>ESLint configuration</li>
-              <li>Lucide React icons</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+for (const path of Object.keys(pages)) {
+  const fileName = path.match(/\.\/pages\/(.*)\.tsx$/)?.[1];
+  if (!fileName) continue;
+
+  const normalizedPathName = fileName.includes("$")
+      ? fileName.replace("$", ":")
+      : fileName.replace(/\/index/, "");
+
+  const pageComponent = pages[path]?.default;
+  if (!pageComponent) {
+    console.error(
+        `Component for path ${path} is not found or not exported correctly.`
+    );
+    continue;
+  }
+
+  routes.push({
+    path: fileName === "index" ? "/" : `/${normalizedPathName.toLowerCase()}`,
+    Element: pages[path].default,
+    loader: pages[path]?.loader as LoaderFunction | undefined,
+    action: pages[path]?.action as ActionFunction | undefined,
+    ErrorBoundary: pages[path]?.ErrorBoundary,
+  });
 }
+
+// Layout을 최상위 라우트로 추가
+const router = createBrowserRouter([
+  {
+    path: "/", // Layout의 루트 경로
+    element: <Layout />,
+    children: routes.map(({ Element, ErrorBoundary, ...rest }) => ({
+      ...rest,
+      element: <Element />,
+      ...(ErrorBoundary && { errorElement: React.createElement(ErrorBoundary) }),
+    })),
+  },
+]);
+
+const App = () => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false
+      }
+    }
+  });
+
+  return (
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+  );
+};
 
 export default App;
