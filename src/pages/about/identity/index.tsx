@@ -14,6 +14,9 @@ import {TextCircleGroup} from "@/components/TextCircle";
 import * as React from "react";
 import {LogoBanner, LogoBannerImage, LogoBannerLink, LogoBannerTitle} from "@/components/LogoBanner";
 import {SelectBox} from "@/components/SelectBox";
+import {PymonCalendar} from "@/components/PymonCalendar/PymonCalendar.tsx";
+import {useEffect, useState} from "react";
+import {SelectValue} from "@/types/common.ts";
 
 const keywordList =[
     ["Neat", "깔끔"],
@@ -28,12 +31,69 @@ const keywordList =[
     </React.Fragment>
 ))
 
+const calendarData = [
+    {
+        year: 2025,
+        month: 1,
+        description: "2025년 1월 달력입니다",
+        link: 'https://picsum.photos/301/201?random=1'
+    },
+    {
+        year: 2025,
+        month: 2,
+        description: "2025년 2월 달력입니다",
+        link: 'https://picsum.photos/302/202?random=2'
+    },
+    {
+        year: 2025,
+        month: 1,
+        description: "2025년 1월 달력입니다",
+        link: 'https://picsum.photos/301/201?random=1'
+    },
+    {
+        year: 2025,
+        month: 2,
+        description: "2025년 2월 달력입니다",
+        link: 'https://picsum.photos/302/202?random=2'
+    },
+    {
+        year: 2025,
+        month: 1,
+        description: "2025년 1월 달력입니다",
+        link: 'https://picsum.photos/301/201?random=1'
+    },
+    {
+        year: 2025,
+        month: 2,
+        description: "2025년 2월 달력입니다",
+        link: 'https://picsum.photos/302/202?random=2'
+    },
+]
+
 const hellopyUiList = [
     {name: "HelloPY Purple", img: PurpleImg},
     {name: "HelloPY Yellow", img: YellowImg}
 ]
 
+const selectedOptions = [
+    {label: "2023년", value: "2023"},
+    {label: "2024년", value: "2024"},
+    {label: "2025년", value: "2025"},
+]
+
 const AboutIdentity = () => {
+    const [yearList, setYearList] = useState<SelectValue[]>([])
+    const [selectedYear, setSelectedYear] = useState<number>(2025)
+
+    useEffect(() => {
+        setYearList(selectedOptions.map(option => ({...option, checked: option.value === String(selectedYear)} as SelectValue)));
+    }, []);
+
+    const onSelectYear = (value:string) => {
+        setSelectedYear(Number(value));
+        setYearList(selectedOptions.map(option => ({...option, checked: option.value === value} as SelectValue)));
+    }
+
     return (
         <div className="flex flex-col align-center">
             <HeaderBanner
@@ -152,13 +212,9 @@ const AboutIdentity = () => {
                     "이미지를 꾸욱 누르면 열리는 팝업에서 “내 폰에 저장” 혹은 “사진 다운로드”를 선택해주세요!",
                     "헬로파이에서는 매달 새로운 달력을 디자인해서 공유하고 있어요. 다음 달의 달력도 기대해 주세요! ☘️",
                 ]}/>
-                <SelectBox options={[
-                    {label: "2023년", value: "2023"},
-                    {label: "2024년", value: "2024"},
-                    {label: "2025년", value: "2025"},
-                ]}
-                           defaultValue={"년도"}
-                           onSelect={(value) => console.log("선택됨:", value)}/>
+                <SelectBox options={yearList}
+                           onSelect={onSelectYear}/>
+                <PymonCalendar calendar={calendarData} selectedYear={selectedYear}/>
             </AboutSection>
         </div>
 

@@ -1,23 +1,17 @@
-import { useState } from "react";
-
-interface Option {
-    label: string;
-    value: string;
-}
+import {useState} from "react";
+import {SelectValue} from "@/types/common.ts";
 
 interface SelectBoxProps {
-    options: Option[];
-    defaultValue?: string;
+    options: SelectValue[];
     onSelect?: (value: string) => void;
 }
 
-export const SelectBox = ({ options, defaultValue, onSelect }: SelectBoxProps) => {
+export const SelectBox = ({ options, onSelect }: SelectBoxProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selected, setSelected] = useState(defaultValue || options[0]?.value);
+
 
     // 옵션 클릭 핸들러
     const handleSelect = (value: string) => {
-        setSelected(value);
         setIsOpen(false);
         onSelect?.(value);
     };
@@ -29,7 +23,7 @@ export const SelectBox = ({ options, defaultValue, onSelect }: SelectBoxProps) =
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex justify-between items-center pl-[18px] pr-3 py-3 bg-white rounded-t-[10px] border border-[#ebc6ff] text-[#bc1df2] text-base font-medium"
             >
-                {options.find(opt => opt.value === selected)?.label || "선택"}
+                {options.find(opt => opt.checked)?.label || "선택"}
                 <span className="w-6 h-6 flex items-center justify-center">▼</span>
             </button>
 
