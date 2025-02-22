@@ -76,13 +76,10 @@ export const Notice: React.FC = () => {
                 </HeaderBanner>
             </div>
             <div className="flex w-full flex-col items-center justify-center py-32">
-                <div className="mb-8">
-                    {/* BUG: 탭 정렬 스타일 문제 */}
-                    <Tab
-                        tabs={tabMockData.tabs}
-                        activeTab={tabMockData.activeTab}
-                        onTabChange={tabMockData.onTabChange}/>
-                </div>
+                <Tab
+                    tabs={tabMockData.tabs}
+                    activeTab={tabMockData.activeTab}
+                    onTabChange={tabMockData.onTabChange}/>
                 {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
                 <AboutTable
                     columns={aboutTableMockData.columns}

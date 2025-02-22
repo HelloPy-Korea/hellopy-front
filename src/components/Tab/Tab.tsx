@@ -12,7 +12,7 @@ interface TabProps {
 
 export const Tab = ({ tabs, activeTab, onTabChange }: TabProps) => {
     return (
-        <div className="w-full flex justify-center items-center">
+        <div className="w-[1251px] flex m-8">
             <div className="flex w-auto gap-10">
                 {tabs.map((tab) => (
                     <button
