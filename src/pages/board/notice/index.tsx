@@ -5,6 +5,7 @@ import { HeaderBanner } from "@/components/HeaderBanner";
 import { Pagination } from "@/components/Pagination";
 import { Tab } from "@/components/Tab";
 import * as React from "react";
+import {useNavigate} from "react-router-dom";
 
 const aboutTableMockData = {
     columns: [
@@ -35,15 +36,6 @@ const aboutTableMockData = {
     ],
 };
 
-const tabMockData = {
-    tabs: [
-        { label: "공지사항", value: "notice" },
-        { label: "FAQ", value: "faq" },
-    ],
-    activeTab: "notice",
-    onTabChange: (value: string) => console.log("선택된 탭:", value),
-};
-
 const paginationMockData = {
     totalPages: 10,
     currentPage: 1,
@@ -51,6 +43,18 @@ const paginationMockData = {
 };
 
 export const Notice: React.FC = () => {
+    const nav = useNavigate();
+
+    const tabMockData = {
+        tabs: [
+            { label: "공지사항", value: "notice" },
+            { label: "FAQ", value: "faq" },
+        ],
+        activeTab: "notice",
+        onTabChange: (value: string) => {
+            nav(`/board/${value}`)
+        },
+    };
     return (
         <>
             <div className="dark flex h-[484px] flex-col items-center justify-center bg-[#fdfafe]">

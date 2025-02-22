@@ -3,6 +3,7 @@ import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import HellopyImg from "@/assets/img/logo/img_hellopy.png"
+import {useNavigate} from "react-router-dom";
 
 interface HeaderProps {
     backgroundColor?: string;
@@ -19,17 +20,26 @@ const Header: React.FC<HeaderProps> = ({
         {
             label: "HOME",
             hasDropdown: true,
-            subItems: [{ label: "HOME" }, { label: "공지사항" }],
+            path:"/",
+            subItems: [{ label: "HOME", path:"/" }, { label: "공지사항", path:"/board/notice" }],
         },
         {
             label: "ABOUT",
             hasDropdown: true,
-            subItems: [{ label: "ABOUT" }, { label: "IDENTITY" }, { label: "MD" }],
+            path:"/about",
+            subItems: [{ label: "ABOUT", path:"/about" }, { label: "IDENTITY", path:"/about/identity" }, { label: "MD", path:"/about/md" }],
         },
         { label: "NEWS", hasDropdown: false },
         { label: "SUPPORT", hasDropdown: false },
         { label: "COC", hasDropdown: false },
     ];
+
+    const nav = useNavigate();
+    const goToMenu = (path:string) => {
+        if(path){
+            nav(path);
+        }
+    }
 
     return (
         <div className={`w-full h-[78px] ${backgroundColor} flex items-center justify-center`}>
@@ -56,11 +66,12 @@ const Header: React.FC<HeaderProps> = ({
                             {hasDropdown && <FaChevronDown className={`text-gray-600 ${textColor}`} />}
                             {hasDropdown && openDropdown === label && (
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 flex flex-col rounded-[8px] bg-white border border-[#ECECEC]">
-                                    {subItems?.map(({ label: subLabel }, index) => (
+                                    {subItems?.map(({ label: subLabel, path: path }, index) => (
                                         <div
                                             key={subLabel}
                                             className={`w-[143px] h-[53px] flex justify-center items-center hover:bg-[#908F8F1A] border-b border-[#ECECEC] 
                                             ${index === subItems.length - 1 ? "border-b-0" : ""}`}
+                                            onClick={()=>goToMenu(path)}
                                         >
                                             <div className="{text-black text-base font-medium">{subLabel}</div>
                                         </div>
