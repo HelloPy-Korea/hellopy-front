@@ -65,7 +65,7 @@ export const Faq: React.FC = () => {
                     />
                 </HeaderBanner>
             </div>
-            <div className="flex w-full flex-col items-center justify-center py-32">
+            <div className="flex w-[1920px] flex-col items-center justify-center py-32">
                 <div className="mb-8">
                     {/* BUG: 탭 정렬 스타일 문제 */}
                     <Tab
