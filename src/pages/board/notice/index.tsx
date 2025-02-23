@@ -57,12 +57,12 @@ export const Notice: React.FC = () => {
     };
     return (
         <>
-            <div className="dark flex h-[484px] flex-col items-center justify-center bg-[#fdfafe]">
+            <div className="dark flex flex-col align-center">
                 {/* BUG: HeaderBanner 내 Breadcrumb과 title 및 description 간격 이상 */}
                 {/* XXX: 폰트 사이즈도 안 맞는 걸로 추측 */}
                 <HeaderBanner
                     backgroundImage={faqBannerImg}
-                    title="자주 묻는 질문"
+                    title={"자주 묻는 질문"}
                     description={`
             <div class="flex flex-col">
               <p>HelloPY의 최신 소식과 중요한 안내 사항을 확인할 수 있는 공간입니다.</p>
@@ -75,14 +75,11 @@ export const Notice: React.FC = () => {
                         children={[<a href="#">Home</a>, <a href="#">ABOUT</a>, "Identity"]}/>
                 </HeaderBanner>
             </div>
-            <div className="flex w-full flex-col items-center justify-center py-32">
-                <div className="mb-8">
-                    {/* BUG: 탭 정렬 스타일 문제 */}
-                    <Tab
-                        tabs={tabMockData.tabs}
-                        activeTab={tabMockData.activeTab}
-                        onTabChange={tabMockData.onTabChange}/>
-                </div>
+            <div className="flex w-[1920px] flex-col items-center justify-center py-32">
+                <Tab
+                    tabs={tabMockData.tabs}
+                    activeTab={tabMockData.activeTab}
+                    onTabChange={tabMockData.onTabChange}/>
                 {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
                 <AboutTable
                     columns={aboutTableMockData.columns}

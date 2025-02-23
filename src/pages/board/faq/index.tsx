@@ -46,7 +46,7 @@ export const Faq: React.FC = () => {
     };
     return (
         <>
-            <div className="dark flex h-[484px] flex-col items-center justify-center bg-[#fdfafe]">
+            <div className="dark flex flex-col align-center">
                 {/* BUG: HeaderBanner 내 Breadcrumb과 title 및 description 간격 이상 */}
                 {/* XXX: 폰트 사이즈도 안 맞는 걸로 추측 */}
                 <HeaderBanner
@@ -65,7 +65,7 @@ export const Faq: React.FC = () => {
                     />
                 </HeaderBanner>
             </div>
-            <div className="flex w-full flex-col items-center justify-center py-32">
+            <div className="flex w-[1920px] flex-col items-center justify-center py-32">
                 <div className="mb-8">
                     {/* BUG: 탭 정렬 스타일 문제 */}
                     <Tab

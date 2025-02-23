@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 
-interface HeaderBannerProps {
+interface HeaderBannerProps extends React.ComponentProps<"div">{
     backgroundImage: string;
-    title: string;
+    title: string
     subTitle?: string;
     description: string;
     children?: ReactNode;
@@ -14,27 +14,33 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
                                                               subTitle,
                                                               description,
                                                               children,
+                                                              ...props
                                                           }) => {
     return (
-        <div className="relative w-full h-[484px] flex flex-col justify-center px-8 py-16">
-            {/* 배경 이미지 */}
-            <img
-                src={backgroundImage}
-                className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-                alt="Banner Background"
-            />
+        <div {...props}>
+            {/*px-[156px]*/}
+            <div className="relative w-[1920px] flex flex-col justify-center">
+                {/* 배경 이미지 */}
+                <img
+                    src={backgroundImage}
+                    className="w-full h-auto object-contain"
+                    alt="Banner Background"
+                />
 
-            <div className="flex flex-col gap-40 max-w-[1000px] p-20 text-black">
-
-                {children && <div>{children}</div>}
+                {children && <div className={"absolute left-[16.56%] top-[8%]"}>{children}</div>}
 
                 {/* 제목 및 설명 */}
-                <div className="flex flex-col gap-4">
-                    <h1 className="text-[38px] font-semibold">{title}</h1>
-                    {subTitle && <h1 className="text-[38px] font-semibold text-[#BC1DF2]">{subTitle}</h1>}
+                <div className="absolute flex flex-col gap-[18px] left-[16.56%] top-3/4 transform -translate-y-3/4">
+                    <div>
+                        <h1
+                            className="text-[64px] font-semibold leading-normal tracking-[-1.28px] dark:text-white font-pretendard">
+                            {title}
+                        </h1>
+                        {subTitle && <h1 className="text-[64px] font-semibold text-[#BC1DF2]">{subTitle}</h1>}
+                    </div>
                     <p
-                        className="text-lg leading-[27px]"
-                        dangerouslySetInnerHTML={{ __html: description }}
+                        className={`text-lg leading-[27px] dark:text-white`}
+                        dangerouslySetInnerHTML={{__html: description}}
                     />
                 </div>
             </div>
