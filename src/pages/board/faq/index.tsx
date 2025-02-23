@@ -46,7 +46,7 @@ export const Faq: React.FC = () => {
     };
     return (
         <>
-            <div className="dark flex h-[484px] flex-col items-center justify-center bg-[#fdfafe]">
+            <div className="dark flex flex-col align-center">
                 {/* BUG: HeaderBanner 내 Breadcrumb과 title 및 description 간격 이상 */}
                 {/* XXX: 폰트 사이즈도 안 맞는 걸로 추측 */}
                 <HeaderBanner

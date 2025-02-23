@@ -98,10 +98,11 @@ const AboutIdentity = () => {
         <div className="flex flex-col align-center">
             <HeaderBanner
                 backgroundImage={BackImg}
-                title="HelloPY IDENTITY"
+                title={"HelloPY IDENTITY"}
+                className={"dark"}
                 description={`HelloPY는 주니어 개발자들에게 더욱 따뜻한 공간이 되기 위해 성장하고 있습니다.<br/>우리는 발표와 나눔, 공유와 협력을 통해 함께 성장하는 커뮤니티를 만들어가고자 합니다.<br/>이제, HelloPY의 아이덴티티를 구성하는 요소들을 만나보세요!`}
             >
-                <Breadcrumb children={[<a href="/">Home</a>, <a href="/about">ABOUT</a>, "Identity"]}/>
+                <Breadcrumb className={"dark"} children={[<a href="/">Home</a>, <a href="/about">ABOUT</a>, "Identity"]}/>
             </HeaderBanner>
             <AboutSection>
                 <AboutSectionTitle title={"HelloPY 키워드"} subtitle={"Identity Keywords"} description={[]}/>

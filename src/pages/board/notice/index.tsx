@@ -57,12 +57,12 @@ export const Notice: React.FC = () => {
     };
     return (
         <>
-            <div className="dark flex h-[484px] flex-col items-center justify-center bg-[#fdfafe]">
+            <div className="dark flex flex-col align-center">
                 {/* BUG: HeaderBanner 내 Breadcrumb과 title 및 description 간격 이상 */}
                 {/* XXX: 폰트 사이즈도 안 맞는 걸로 추측 */}
                 <HeaderBanner
                     backgroundImage={faqBannerImg}
-                    title="자주 묻는 질문"
+                    title={"자주 묻는 질문"}
                     description={`
             <div class="flex flex-col">
               <p>HelloPY의 최신 소식과 중요한 안내 사항을 확인할 수 있는 공간입니다.</p>
