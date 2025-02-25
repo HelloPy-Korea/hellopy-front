@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({
     }
 
     return (
-        <div className={`relative w-[1920px] h-[78px] ${backgroundColor} flex items-center justify-center`}>
+        <div className={`relative w-[1600px] h-[78px] ${backgroundColor} flex items-center justify-center`}>
             <div className="w-[1280px] h-[78px] flex items-center justify-between ">
                 <img
                     className={`w-[145px] h-[78px] object-contain`}

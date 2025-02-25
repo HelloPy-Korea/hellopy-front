@@ -19,7 +19,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
     return (
         <div {...props}>
             {/*px-[156px]*/}
-            <div className="relative w-[1920px] flex flex-col justify-center">
+            <div className="relative w-[1600px] flex flex-col justify-center">
                 {/* 배경 이미지 */}
                 <img
                     src={backgroundImage}

@@ -9,7 +9,7 @@ interface MainBannerProps {
 
 export const MainBanner: React.FC<MainBannerProps> = ({ backgroundImage, title, description }) => {
     return (
-        <div className="relative w-[1920px] flex flex-col justify-center">
+        <div className="relative w-[1600px] flex flex-col justify-center">
             {/* 배경 이미지 */}
             <img
                 src={backgroundImage}

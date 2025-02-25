@@ -2,7 +2,7 @@ import * as React from "react";
 
 export const NoticeDetail: React.FC = () => {
     return (
-        <div className="mx-auto my-24 w-[1920px] py-[108px] px-[336px]">
+        <div className="mx-auto my-24 w-[1600px] py-[108px] px-[336px]">
             <p className="px-4 py-2 text-lg font-medium text-[#2d003d]">공지사항</p>
             <section className="mb-8 border-y border-black px-4 py-8">
                 <article>

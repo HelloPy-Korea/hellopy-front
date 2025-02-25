@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <div
         className="bg-[#fdfafe] flex flex-col justify-center items-center"
-        style={{ width: "1920px", height: "794px" }} // ✅ 고정 크기 설정
+        style={{ width: "1600px", height: "794px" }} // ✅ 고정 크기 설정
     >
       {children}
     </div>

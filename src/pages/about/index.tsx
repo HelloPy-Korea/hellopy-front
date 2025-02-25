@@ -27,7 +27,7 @@ const About = () => {
                         자유롭게 의견을 나누고, 평가받지 않는 발표의 장을 지향합니다. 같이 공부하고, 함께 성장해요!
                     `}
             />
-            <div className="w-[1920px] relative">
+            <div className="w-[1600px] relative">
                 <ProgramInfo
                     backgroundImage={ProgramImg}
                     programDetails={[
@@ -53,11 +53,11 @@ const About = () => {
                 />
             </div>
 
-            <div className="w-[1920px] relative">
+            <div className="w-[1600px] relative">
                 <VisualSection/>
             </div>
 
-            <div className="w-[1920px] px-[156px] flex items-center py-16 bg-cover bg-center bg-[#FCF7FF]" style={{backgroundImage: `url(${PymonMacImg})`}}>
+            <div className="w-[1600px] px-[156px] flex items-center py-16 bg-cover bg-center bg-[#FCF7FF]" style={{backgroundImage: `url(${PymonMacImg})`}}>
                 <div className="w-full flex flex-row gap-10 px-[160px] justify-between ">
                     <div className="inline-flex flex-col gap-5">
                         {/* 타이틀 */}
@@ -82,7 +82,7 @@ const About = () => {
                 </div>
             </div>
 
-            {/*<div className="w-[1920px] relative">
+            {/*<div className="w-[1600px] relative">
 
                 <div
                     className="w-full flex items-center bg-cover bg-center bg-[#FCF7FF]"
@@ -158,7 +158,7 @@ const About = () => {
 
                 </div>
             </AboutSection>
-            {/*<div className="w-[1920px] relative">
+            {/*<div className="w-[1600px] relative">
                 <div className="w-full flex items-center bg-cover bg-center bg-[#FCF7FF]">
                     <div
                         className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mx-auto p-6 gap-10">

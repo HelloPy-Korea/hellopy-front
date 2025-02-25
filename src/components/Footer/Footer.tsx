@@ -6,7 +6,7 @@ import InstagramImg from "@/assets/img/logo/img_instagram.png"
 
 const Footer: React.FC = () => {
     return (
-        <div className="relative bg-[#2D003D] w-[1920px] h-[356px] flex justify-center items-center">
+        <div className="relative bg-[#2D003D] w-[1600px] h-[356px] flex justify-center items-center">
             <div className="w-[1280px] h-[78px] flex items-center justify-between ">
             <div className="flex flex-col items-start">
                 <img
