@@ -38,7 +38,7 @@ const AboutMd = () => {
                 <Gallery items={photos}/>
             </AboutSection>
 
-            <div className="w-[1600px] relative">
+            <div className="w-[1920px] relative">
                 <img src={BanngerImg} className="w-full h-auto object-cover" alt="Intro Shape"/>
             </div>
         </div>

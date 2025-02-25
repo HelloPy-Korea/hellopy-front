@@ -109,7 +109,7 @@ const AboutIdentity = () => {
                 <TextCircleGroup textList={keywordList} size={238} overlap={5}/>
             </AboutSection>
 
-            <div className="w-[1600px] relative">
+            <div className="w-[1920px] relative">
                 <img src={introShape} className="w-full h-auto object-cover" alt="Intro Shape"/>
             </div>
 

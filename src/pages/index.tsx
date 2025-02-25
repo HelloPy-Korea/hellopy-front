@@ -31,7 +31,7 @@ export const Home=()=> {
             </div>
             </AboutSection>
 
-            <div className="w-[1600px] mb-[180px] flex align-center justify-center">
+            <div className="w-[1920px] mb-[180px] flex align-center justify-center">
                 <TextCircleGroup
                     textList={[
                         "누구나 편안하게 참여할 수 있는\n커뮤니티를 지향합니다",

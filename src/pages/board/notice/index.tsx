@@ -75,7 +75,7 @@ export const Notice: React.FC = () => {
                         children={[<a href="#">Home</a>, <a href="#">ABOUT</a>, "Identity"]}/>
                 </HeaderBanner>
             </div>
-            <div className="flex w-[1600px] flex-col items-center justify-center py-32">
+            <div className="flex w-[1920px] flex-col items-center justify-center py-32">
                 <Tab
                     tabs={tabMockData.tabs}
                     activeTab={tabMockData.activeTab}
