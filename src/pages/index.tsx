@@ -6,6 +6,7 @@ import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";
 import { TextCircleGroup } from "@/components/TextCircle";
+import {AboutSection} from "@/components/AboutSection";
 
 export const Home=()=> {
     return (
@@ -19,6 +20,7 @@ export const Home=()=> {
                     `}
             />
 
+            <AboutSection>
             <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
                 <div className="self-stretch text-center text-[#aa3efd] text-[20px] font-bold">
                     HelloPY COC(Code of Conduct)
@@ -27,8 +29,9 @@ export const Home=()=> {
                     어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우, <br/> COC 원칙 본문을 보고하실 것을 권장합니다.
                 </div>
             </div>
+            </AboutSection>
 
-            <div className="w-full mb-[180px] flex align-center justify-center">
+            <div className="w-[1920px] mb-[180px] flex align-center justify-center">
                 <TextCircleGroup
                     textList={[
                         "누구나 편안하게 참여할 수 있는\n커뮤니티를 지향합니다",

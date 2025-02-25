@@ -15,7 +15,7 @@ export const AboutSectionTitle = ({ title, subtitle, description }: AboutSection
             </div>
 
             {/* 설명 */}
-            <div className="flex flex-col gap-4 text-[#2c003c] text-lg font-light leading-[27px]">
+            <div className="flex flex-col gap-1 text-[#2c003c] text-lg font-light leading-[27px]">
                 {description.map((text, index) => (
                     <p key={index}>{text}</p>
                 ))}

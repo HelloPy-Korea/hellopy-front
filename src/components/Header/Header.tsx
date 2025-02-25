@@ -3,6 +3,7 @@ import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import HellopyImg from "@/assets/img/logo/img_hellopy.png"
+import HellopyImgPurple from "@/assets/img/logo/img_hellopy_purple.png"
 import {useNavigate} from "react-router-dom";
 
 interface HeaderProps {
@@ -42,11 +43,11 @@ const Header: React.FC<HeaderProps> = ({
     }
 
     return (
-        <div className={`w-full h-[78px] ${backgroundColor} flex items-center justify-center`}>
+        <div className={`relative w-[1920px] h-[78px] ${backgroundColor} flex items-center justify-center`}>
             <div className="w-[1280px] h-[78px] flex items-center justify-between ">
                 <img
-                    className="w-[145px] h-[78px] object-contain"
-                    src={HellopyImg}
+                    className={`w-[145px] h-[78px] object-contain`}
+                    src={textColor==="text-white" ? HellopyImg : HellopyImgPurple}
                     alt="Logo"
                 />
 
