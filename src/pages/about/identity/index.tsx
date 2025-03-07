@@ -143,7 +143,7 @@ const AboutIdentity = () => {
                                 className="flex flex-col gap-[9px] items-start justify-start shrink-0 w-[550px] relative"
                             >
                                 <div
-                                    className="text-black-1 text-left font-['Pretendard-SemiBold',_sans-serif] text-xl leading-normal font-semibold relative self-stretch"
+                                    className="text-black-1 text-left text-xl leading-normal font-semibold relative self-stretch"
                                 >
                                     Typography
                                 </div>
@@ -172,7 +172,7 @@ const AboutIdentity = () => {
                                     className="flex flex-col gap-[9px] items-start justify-start shrink-0 w-[550px] relative"
                                 >
                                     <div
-                                        className="text-black-1 text-left font-['Pretendard-Regular',_sans-serif] text-xl leading-normal font-normal relative self-stretch"
+                                        className="text-black-1 text-left font-normal text-xl leading-normal relative self-stretch"
                                     >
                                         {item.name}
                                     </div>

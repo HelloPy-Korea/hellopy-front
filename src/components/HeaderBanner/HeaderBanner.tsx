@@ -33,7 +33,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
                 <div className="absolute flex flex-col gap-[18px] left-[16.56%] top-3/4 transform -translate-y-3/4">
                     <div>
                         <h1
-                            className="text-[64px] font-semibold leading-normal tracking-[-1.28px] dark:text-white font-pretendard">
+                            className="text-[64px] font-semibold leading-normal tracking-[-1.28px] dark:text-white">
                             {title}
                         </h1>
                         {subTitle && <h1 className="text-[64px] font-semibold text-[#BC1DF2]">{subTitle}</h1>}

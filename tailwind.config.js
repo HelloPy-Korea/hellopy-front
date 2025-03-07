@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        pretendard: ["Pretendard", "sans-serif"],
+      },
       colors: {
         "hellopy-purple": {
           100: "#960cc4",
