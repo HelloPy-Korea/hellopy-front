@@ -54,7 +54,7 @@ export const Home=()=> {
                     `}
                 buttonText="전체 이미지 보기 →"
                 textPosition="left"
-                buttonUrl=""
+                buttonUrl="/about/identity"
             />
 
             <HomeCard
@@ -67,7 +67,7 @@ export const Home=()=> {
                     `}
                 buttonText="전체 활동 보기 →"
                 textPosition="right"
-                buttonUrl=""
+                buttonUrl="/news"
             />
 
             <HomeCard
