@@ -10,10 +10,6 @@
 }
 
 @layer base {
-    .font-pretendard {
-        font-family: 'Pretendard', sans-serif;
-    }
-
     * {
         @apply font-pretendard;
     }
