@@ -13,8 +13,14 @@ import YoutubeBtn from "@/assets/img/about/btn_youtube.png";
 import PymonMacImg from "@/assets/img/about/img_pymon_mac.png";
 import { ProfileCard } from "@/components/ProfileCard";
 import {AboutSection, AboutSectionTitle} from "@/components/AboutSection";
+import {useGetManagers} from "@/quries/useGetMangers.ts";
+import {Manager} from "@/types/common.ts";
 
 const About = () => {
+
+    const {data: managerData} = useGetManagers();
+    const managers: Manager[] = managerData?.data ?? []
+
     return (
         <div className="flex flex-col align-center">
             <HeaderBanner
@@ -115,46 +121,21 @@ const About = () => {
                 <AboutSectionTitle title={"HelloPY 운영진"} subtitle={"Organizing Committee"}
                                    description={["print.hello.py@gmail.com"]}/>
                 <div className="grid grid-cols-4 gap-3 ml-[15%]">
-
-                    <ProfileCard
-                        name="홍길동"
-                        position="Frontend"
-                        links={{
-                            email: "hong@example.com",
-                            linkedin: "https://www.linkedin.com/in/hong",
-                            github: "https://github.com/hong",
-                        }}
-                        image="https://example.com/path/to/profile-image.jpg"/>
-
-                    <ProfileCard
-                        name="홍길동"
-                        position="Frontend"
-                        links={{
-                            email: "hong@example.com",
-                            linkedin: "https://www.linkedin.com/in/hong",
-                            github: "https://github.com/hong",
-                        }}
-                        image="https://example.com/path/to/profile-image.jpg"/>
-
-                    <ProfileCard
-                        name="홍길동"
-                        position="Frontend"
-                        links={{
-                            email: "hong@example.com",
-                            linkedin: "https://www.linkedin.com/in/hong",
-                            github: "https://github.com/hong",
-                        }}
-                        image="https://example.com/path/to/profile-image.jpg"/>
-
-                    <ProfileCard
-                        name="홍길동"
-                        position="Frontend"
-                        links={{
-                            email: "hong@example.com",
-                            linkedin: "https://www.linkedin.com/in/hong",
-                            github: "https://github.com/hong",
-                        }}
-                        image="https://example.com/path/to/profile-image.jpg"/>
+                    {
+                        managers.map((manager, index) => (
+                            <ProfileCard
+                                key={manager.id + "_" + index}
+                                name={manager.name}
+                                position={manager.role}
+                                links={{
+                                    email: manager.email,
+                                    linkedin: manager.linkedin,
+                                    github: manager.github,
+                                }}
+                                image={manager.photo}/>
+                            )
+                        )
+                    }
 
                 </div>
             </AboutSection>

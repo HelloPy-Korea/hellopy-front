@@ -6,45 +6,17 @@ import { Pagination } from "@/components/Pagination";
 import { Tab } from "@/components/Tab";
 import * as React from "react";
 import {useNavigate} from "react-router-dom";
+import {useGetNotices} from "@/quries/useGetNotices.ts";
 
-const aboutTableMockData = {
-    columns: [
-        { label: "번호", value: "no" },
-        { label: "태그", value: "tag" },
-        { label: "제목", value: "title" },
-        { label: "작성일", value: "date" },
-    ],
-    data: [
-        {
-            no: 10,
-            tag: "활동",
-            title: "제10회 HelloPY 컨퍼런스 공지",
-            date: "2024. 10. 19.",
-        },
-        {
-            no: 9,
-            tag: "활동",
-            title: "제9회 HelloPY 컨퍼런스 공지",
-            date: "2024. 09. 19.",
-        },
-        {
-            no: 8,
-            tag: "활동",
-            title: "제8회 HelloPY 컨퍼런스 공지",
-            date: "2024. 08. 19.",
-        },
-    ],
-};
-
-const paginationMockData = {
-    totalPages: 10,
-    currentPage: 1,
-    onPageChange: (value: number) => console.log("선택된 페이지:", value),
-};
+const tableColumns = [
+    { label: "번호", value: "id" },
+    { label: "태그", value: "tag" },
+    { label: "제목", value: "title" },
+    { label: "작성일", value: "date" },
+]
 
 export const Notice: React.FC = () => {
     const nav = useNavigate();
-
     const tabMockData = {
         tabs: [
             { label: "공지사항", value: "notice" },
@@ -55,6 +27,16 @@ export const Notice: React.FC = () => {
             nav(`/board/${value}`)
         },
     };
+
+    const {data: notices} = useGetNotices();
+
+    const noticeList = notices?.data ?? []
+    const pagination = notices?.pagination;
+
+    const onPageChange = (val:number) => {
+        console.log("page: "+val)
+    }
+
     return (
         <>
             <div className="dark flex flex-col align-center">
@@ -82,13 +64,13 @@ export const Notice: React.FC = () => {
                     onTabChange={tabMockData.onTabChange}/>
                 {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
                 <AboutTable
-                    columns={aboutTableMockData.columns}
-                    data={aboutTableMockData.data}/>
+                    columns={tableColumns}
+                    data={noticeList}/>
                 {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
                 <Pagination
-                    totalPages={paginationMockData.totalPages}
-                    currentPage={paginationMockData.currentPage}
-                    onPageChange={paginationMockData.onPageChange}/>
+                    totalCount={pagination?.count ?? 0}
+                    currentPage={1}
+                    onPageChange={onPageChange}/>
             </div>
         </>
     );

@@ -29,7 +29,7 @@ export const AboutTable = <T,>({ columns, data }: AboutTableProps<T>) => {
                     <tr key={rowIndex} className="border-b border-black/20">
                         {columns.map((column, index) => (
                             <td key={index} className="p-[9px] text-left text-[#343434] text-lg font-normal">
-                                {String(row[column.value as keyof T])}
+                                {String(row[column.value as keyof T] ?? "-")}
                             </td>
                         ))}
                     </tr>
