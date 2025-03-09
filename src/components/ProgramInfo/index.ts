@@ -1,1 +1,1 @@
-export {ProgramInfo} from './ProgramInfo'
+export { ProgramInfo } from "./ProgramInfo";
