@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import { Container } from "@/components/Container";
+
 interface HomeCardProps {
   backgroundImage?: string;
   title?: string;
@@ -30,13 +32,13 @@ export const HomeCard = ({
 
   return (
     <div
-      className="relative h-[626px] w-[1920px] bg-[#fbf6ff] bg-cover bg-center"
+      className="flex h-[626px] bg-[#fbf6ff] bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* <div className="absolute inset-0 bg-black/10"></div>*/}
 
-      <div
-        className={`absolute top-[121px] flex flex-col gap-40 text-black ${textPosition === "left" ? "left-[322px]" : "right-[322px] text-right"}`}
+      <Container
+        className={`top-[121px] my-auto flex flex-col gap-40 px-4 text-black ${textPosition === "left" ? "" : "text-right"}`}
       >
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-1">
@@ -63,7 +65,7 @@ export const HomeCard = ({
             {buttonText}
           </button>
         )}
-      </div>
+      </Container>
     </div>
   );
 };

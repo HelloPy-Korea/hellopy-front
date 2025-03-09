@@ -13,7 +13,7 @@ export const MainBanner: React.FC<MainBannerProps> = ({
   description,
 }) => {
   return (
-    <div className="relative flex w-[1920px] flex-col justify-center">
+    <div className="relative flex flex-col justify-center">
       {/* 배경 이미지 */}
       <img
         src={backgroundImage}
