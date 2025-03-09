@@ -22,9 +22,24 @@ export const Example: Story = {
       { label: "작성일", value: "date" },
     ],
     data: [
-      { no: 10, tag: "활동", title: "제10회 HelloPY 컨퍼런스 공지", date: "2024. 10. 19." },
-      { no: 9, tag: "활동", title: "제9회 HelloPY 컨퍼런스 공지", date: "2024. 09. 19." },
-      { no: 8, tag: "활동", title: "제8회 HelloPY 컨퍼런스 공지", date: "2024. 08. 19." },
-    ]
+      {
+        no: 10,
+        tag: "활동",
+        title: "제10회 HelloPY 컨퍼런스 공지",
+        date: "2024. 10. 19.",
+      },
+      {
+        no: 9,
+        tag: "활동",
+        title: "제9회 HelloPY 컨퍼런스 공지",
+        date: "2024. 09. 19.",
+      },
+      {
+        no: 8,
+        tag: "활동",
+        title: "제8회 HelloPY 컨퍼런스 공지",
+        date: "2024. 08. 19.",
+      },
+    ],
   },
 };

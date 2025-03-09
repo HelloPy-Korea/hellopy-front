@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   render: () => (
-    <div className="w-full flex justify-between gap-10">
+    <div className="flex w-full justify-between gap-10">
       <LogoBanner>
         <LogoBannerTitle>HelloPY Main Logo</LogoBannerTitle>
         <LogoBannerImage src="https://placehold.co/480x250" />

@@ -36,7 +36,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <div
-      className="w-[255px] h-[386px] flex flex-col border rounded-[28px] p-7 bg-[#d9d9d9] relative"
+      className="relative flex h-[386px] w-[255px] flex-col rounded-[28px] border bg-[#d9d9d9] p-7"
       style={
         image
           ? {
@@ -47,17 +47,17 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
           : undefined
       }
     >
-      <p className="text-sm text-[#696969] font-medium">{position}</p>
-      <p className="text-base text-black font-semibold">{name}</p>
-      <div className="flex gap-2 mt-2.5 fill-[#343434]">
+      <p className="text-sm font-medium text-[#696969]">{position}</p>
+      <p className="text-base font-semibold text-black">{name}</p>
+      <div className="mt-2.5 flex gap-2 fill-[#343434]">
         <ProfileLink href={email} target="_blank" rel="noopener noreferrer">
-          <EmailIcon className="w-6 h-6" fill="currentColor" />
+          <EmailIcon className="h-6 w-6" fill="currentColor" />
         </ProfileLink>
         <ProfileLink href={linkedin} target="_blank" rel="noopener noreferrer">
-          <LinkedinIcon className="w-6 h-6" fill="currentColor" />
+          <LinkedinIcon className="h-6 w-6" fill="currentColor" />
         </ProfileLink>
         <ProfileLink href={github} target="_blank" rel="noopener noreferrer">
-          <GithubIcon className="w-6 h-6" fill="currentColor" />
+          <GithubIcon className="h-6 w-6" fill="currentColor" />
         </ProfileLink>
       </div>
     </div>

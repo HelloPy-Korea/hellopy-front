@@ -19,7 +19,7 @@ export const Example: Story = {
       image: {
         url: `https://picsum.photos/${getRandomInt(200, 800)}/${getRandomInt(
           200,
-          800
+          800,
         )}?random=${index}`,
         alt: `Image ${index}`,
       },

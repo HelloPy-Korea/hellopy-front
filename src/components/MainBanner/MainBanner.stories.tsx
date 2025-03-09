@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {Breadcrumb} from "@/components/Breadcrumb";
-import HomeImg from '@/assets/img/home/img_home.png';
+import { Breadcrumb } from "@/components/Breadcrumb";
+import HomeImg from "@/assets/img/home/img_home.png";
 import MainBanner from "./MainBanner";
 
 const meta = {
@@ -16,19 +16,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-    <div
-        className="bg-[#fdfafe] flex flex-col justify-center items-center"
-        style={{ width: "1920px", height: "794px" }} // ✅ 고정 크기 설정
-    >
-      {children}
-    </div>
+  <div
+    className="flex flex-col items-center justify-center bg-[#fdfafe]"
+    style={{ width: "1920px", height: "794px" }} // ✅ 고정 크기 설정
+  >
+    {children}
+  </div>
 );
 
 export const Default: Story = {
   render: (args) => (
-      <Wrapper>
-        <MainBanner {...args} />
-      </Wrapper>
+    <Wrapper>
+      <MainBanner {...args} />
+    </Wrapper>
   ),
   args: {
     backgroundImage: HomeImg, // ✅ 배경 이미지 추가
@@ -41,11 +41,13 @@ export const Default: Story = {
 
 export const WithBreadcrumb: Story = {
   render: (args) => (
-      <Wrapper>
-        <MainBanner {...args}>
-          <Breadcrumb children={[<a href="#">Home</a>, <a href="#">ABOUT</a>, "Identity"]} />
-        </MainBanner>
-      </Wrapper>
+    <Wrapper>
+      <MainBanner {...args}>
+        <Breadcrumb
+          children={[<a href="#">Home</a>, <a href="#">ABOUT</a>, "Identity"]}
+        />
+      </MainBanner>
+    </Wrapper>
   ),
   args: {
     backgroundImage: HomeImg,
