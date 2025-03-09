@@ -21,7 +21,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({
         src={image.url}
         alt={image.alt}
       />
-      <div className="flex flex-col mt-2">
+      <div className="mt-2 flex flex-col">
         <h3 className="text-[20px] font-semibold">{title}</h3>
         <p className="text-[16px] font-light">{description}</p>
       </div>
