@@ -3,11 +3,12 @@ import HellopyImg from "@/assets/img/logo/img_hellopy.png";
 import DiscordImg from "@/assets/img/logo/img_discord.png";
 import YoutubeImg from "@/assets/img/logo/img_youtube.png";
 import InstagramImg from "@/assets/img/logo/img_instagram.png";
+import { Container } from "@/components/Container";
 
 const Footer: React.FC = () => {
   return (
-    <div className="relative flex h-[356px] w-[1920px] items-center justify-center bg-footer">
-      <div className="flex h-[78px] w-[1280px] items-center justify-between">
+    <div className="bg-footer relative flex items-center justify-center">
+      <Container className="flex w-[1280px] items-center justify-between py-12">
         <div className="flex flex-col items-start">
           <img className="h-[80px] w-[145px]" src={HellopyImg} alt="logo" />
           <div className="mt-4 flex gap-4">
@@ -41,7 +42,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import * as React from "react";
+import { useState } from "react";
 import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaChevronDown } from "react-icons/fa";
-import { useState } from "react";
 import HellopyImg from "@/assets/img/logo/img_hellopy.png";
 import HellopyImgPurple from "@/assets/img/logo/img_hellopy_purple.png";
 import { useNavigate } from "react-router-dom";
+import { Container } from "@/components/Container";
 
 interface HeaderProps {
   backgroundColor?: string;
@@ -51,16 +52,16 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div
-      className={`relative h-[78px] w-[1920px] ${backgroundColor} flex items-center justify-center`}
+      className={`relative ${backgroundColor} flex items-center justify-center`}
     >
-      <div className="flex h-[78px] w-[1280px] items-center justify-between">
+      <Container className="flex h-[78px] items-center justify-between">
         <img
           className={`h-[78px] w-[145px] object-contain`}
           src={textColor === "text-white" ? HellopyImg : HellopyImgPurple}
           alt="Logo"
         />
 
-        <nav className="relative z-[999] flex gap-10">
+        <nav className="relative z-[999] flex gap-2 md:gap-10">
           {menuItems.map(({ label, hasDropdown, subItems }) => (
             <div
               key={label}
@@ -91,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({
             </div>
           ))}
         </nav>
-      </div>
+      </Container>
     </div>
   );
 };
