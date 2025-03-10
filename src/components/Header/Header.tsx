@@ -12,8 +12,8 @@ interface HeaderProps {
   }
 
 const Header: React.FC<HeaderProps> = ({ 
-    backgroundColor = 'bg-[#891FBD]',
-    textColor= 'text-white'
+    backgroundColor,
+    textColor
 }) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 

@@ -22,7 +22,7 @@ export const Home=()=> {
 
             <AboutSection>
             <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
-                <div className="self-stretch text-center text-[#aa3efd] text-[20px] font-bold">
+                <div className="self-stretch text-center text-hellopy-purple-200 text-[20px] font-bold">
                     HelloPY COC(Code of Conduct)
                 </div>
                 <div className="self-stretch text-center text-black text-[28px] font-bold">

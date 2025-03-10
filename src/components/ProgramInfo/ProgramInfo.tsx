@@ -28,12 +28,12 @@ export const ProgramInfo = ({
                 <div className="w-[50%] flex flex-col gap-6">
                     {programDetails?.map((program, index) => (
                         <div className="flex flex-col gap-3" key={`program_${index}`}>
-                            <div className="text-[#2c003c] text-[22px] font-semibold">{program.title}</div>
-                            <div className="text-[#2c003c] text-lg font-light leading-[27px]" dangerouslySetInnerHTML={{ __html: program.description }} />
+                            <div className="text-black text-[22px] font-semibold">{program.title}</div>
+                            <div className="text-black text-lg font-light leading-[27px]" dangerouslySetInnerHTML={{ __html: program.description }} />
                             {/* 버튼 */}
                             {program.buttonText && (
                                 <a href={program.redirectUrl}
-                                   className="inline-block w-fit border-b border-[#2c003c] text-base font-medium leading-tight">
+                                   className="inline-block w-fit border-b border-black text-base font-medium leading-tight">
                                     {program.buttonText ?? ""}
                                 </a>
                             )}

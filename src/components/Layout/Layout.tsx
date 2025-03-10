@@ -6,15 +6,13 @@ const Layout = () => {
     const location = useLocation();
 
     const isYellow = () : boolean => {
-        if (location.pathname === "/about" || location.pathname === "/about/md"){
-            return true
-        }
-        return false
+        return location.pathname === "/about" || location.pathname === "/about/md";
+
     }
   return (
       <div>
           <Header
-              backgroundColor={isYellow() ? 'bg-[#FFEEA4]' : 'bg-[#891FBD]'}
+              backgroundColor={isYellow() ? 'bg-header-yellow' : 'bg-header-purple'}
               textColor={isYellow() ? 'text-black' : 'text-white'}
           />
           <Outlet />
