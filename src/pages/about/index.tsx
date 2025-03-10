@@ -62,12 +62,12 @@ const About = () => {
                     <div className="inline-flex flex-col gap-5">
                         {/* 타이틀 */}
                         <div className="flex flex-col gap-0.5">
-                            <div className="text-[#bc1df2] text-xl font-semibold">SNS channel</div>
-                            <div className="text-[#2c003c] text-[32px] font-semibold">SNS 채널</div>
+                            <div className="text-hellopy-purple-200 text-xl font-semibold">SNS channel</div>
+                            <div className="text-black text-[32px] font-semibold">SNS 채널</div>
                         </div>
 
                         {/* 설명 */}
-                        <div className="flex flex-col gap-1 text-[#2c003c] text-lg font-light">
+                        <div className="flex flex-col gap-1 text-black text-lg font-light">
                             {[" HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을", "쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고,", "커뮤니티와 함께 소통하세요!"].map((text, index) => (
                                 <span key={index}>{text}</span>
                             ))}
@@ -92,7 +92,7 @@ const About = () => {
                         className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mx-auto p-6 gap-10">
                          왼쪽 텍스트 & 이미지
                         <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
-                        <p className="text-[#bc1df2] text-[20px] font-medium">SNS channel</p>
+                        <p className="text-hellopy-purple-200 text-[20px] font-medium">SNS channel</p>
                             <h2 className="text-[#2D003D] text-[32px] font-semibold">SNS 채널</h2>
                             <p className="text-[#2D003D] text-[18px] font-light">
                                 HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을 <br/>
@@ -164,7 +164,7 @@ const About = () => {
                         className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mx-auto p-6 gap-10">
                          왼쪽 텍스트 & 이미지
                         <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
-                            <p className="text-[#bc1df2] text-[20px] font-medium">Organizing Committee</p>
+                            <p className="text-hellopy-purple-200 text-[20px] font-medium">Organizing Committee</p>
                             <h2 className="text-[#2D003D] text-[32px] font-semibold">HelloPY 운영진</h2>
                             <p className="text-[#2D003D] text-[18px] font-light">
                                 print.hello.py@gmail.com
