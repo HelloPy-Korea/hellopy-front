@@ -1,11 +1,11 @@
 interface Column {
-    label: string;
-    value: string;
+  label: string;
+  value: string;
 }
 
 interface AboutTableProps<T> {
-    columns: Column[];
-    data: T[];
+  columns: Column[];
+  data: T[];
 }
 
 export const AboutTable = <T,>({ columns, data }: AboutTableProps<T>) => {

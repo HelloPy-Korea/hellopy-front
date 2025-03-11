@@ -7,7 +7,7 @@ interface TextCircleProps extends React.PropsWithChildren {
 export const TextCircle: React.FC<TextCircleProps> = ({ children, size }) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center border border-black rounded-full`}
+      className={`flex flex-col items-center justify-center rounded-full border border-black`}
       style={{
         width: size,
         height: size,

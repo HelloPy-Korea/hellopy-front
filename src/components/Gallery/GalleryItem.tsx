@@ -14,7 +14,7 @@ export const GalleryItem: React.FC<MD> = ({
         src={image}
         alt={`hellopy-md-${id}`}
       />
-      <div className="flex flex-col mt-2">
+      <div className="mt-2 flex flex-col">
         <h3 className="text-[20px] font-semibold">{name}</h3>
         <p className="text-[16px] font-light">{description}</p>
       </div>

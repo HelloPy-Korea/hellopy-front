@@ -1,5 +1,11 @@
-import React, {useEffect, useState} from "react";
-import { FaAngleLeft, FaAngleRight, FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
+
+import React from "react";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+
 
 const PAGE_SIZE = 10;
 
@@ -23,56 +29,55 @@ export const Pagination: React.FC<PaginationProps> = ({ totalCount, currentPage,
             start = Math.max(1, end - 4);
         }
 
-        return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-    };
 
-    return (
-        <div className="flex justify-center items-center gap-4">
-            <button
-                className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
-                onClick={() => onPageChange(1)}
-                disabled={currentPage === 1}
-            >
-                <FaAngleDoubleLeft size={20} />
-            </button>
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  };
 
-            <button
-                className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
-                onClick={() => onPageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-            >
-                <FaAngleLeft size={20} />
-            </button>
+  return (
+    <div className="flex items-center justify-center gap-4">
+      <button
+        className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
+        onClick={() => onPageChange(1)}
+        disabled={currentPage === 1}
+      >
+        <FaAngleDoubleLeft size={20} />
+      </button>
 
-            <div className="flex gap-2">
-                {getPageNumbers().map((page) => (
-                    <button
-                        key={page}
-                        className={`w-8 h-8 flex items-center justify-center text-xl font-medium rounded-full transition-all
-              ${page === currentPage ? "text-purple-500 font-bold" : "text-gray-500 hover:text-black"}
-            `}
-                        onClick={() => onPageChange(page)}
-                    >
-                        {page}
-                    </button>
-                ))}
-            </div>
+      <button
+        className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        <FaAngleLeft size={20} />
+      </button>
 
-            <button
-                className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
-                onClick={() => onPageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-            >
-                <FaAngleRight size={20} />
-            </button>
+      <div className="flex gap-2">
+        {getPageNumbers().map((page) => (
+          <button
+            key={page}
+            className={`flex h-8 w-8 items-center justify-center rounded-full text-xl font-medium transition-all ${page === currentPage ? "font-bold text-purple-500" : "text-gray-500 hover:text-black"} `}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
 
-            <button
-                className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
-                onClick={() => onPageChange(totalPages)}
-                disabled={currentPage === totalPages}
-            >
-                <FaAngleDoubleRight size={20} />
-            </button>
-        </div>
-    );
+      <button
+        className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+        <FaAngleRight size={20} />
+      </button>
+
+      <button
+        className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
+        onClick={() => onPageChange(totalPages)}
+        disabled={currentPage === totalPages}
+      >
+        <FaAngleDoubleRight size={20} />
+      </button>
+    </div>
+  );
 };

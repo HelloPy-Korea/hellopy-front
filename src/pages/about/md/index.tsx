@@ -28,11 +28,15 @@ const AboutMd = () => {
                 <Gallery items={mdList}/>
             </AboutSection>
 
-            <div className="w-[1920px] relative">
-                <img src={BanngerImg} className="w-full h-auto object-cover" alt="Intro Shape"/>
-            </div>
-        </div>
-    );
-}
+      <div className="relative w-[1920px]">
+        <img
+          src={BanngerImg}
+          className="h-auto w-full object-cover"
+          alt="Intro Shape"
+        />
+      </div>
+    </div>
+  );
+};
 
 export default AboutMd;

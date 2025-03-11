@@ -5,6 +5,7 @@ import { HeaderBanner } from "@/components/HeaderBanner";
 import { Pagination } from "@/components/Pagination";
 import { Tab } from "@/components/Tab";
 import * as React from "react";
+
 import {useNavigate} from "react-router-dom";
 import {useGetNotices} from "@/quries/useGetNotices.ts";
 
@@ -52,6 +53,7 @@ export const Notice: React.FC = () => {
               <p>궁금한 점이 있다면 먼저 FAQ를 참고하시고, 추가 문의 사항이 있을 경우</p>
               <p>print.hello.py@gmail.com로 연락해주세요!</p>
             </div>`}
+
                 >
                     <Breadcrumb
                         children={[<a href="#">Home</a>, <a href="#">ABOUT</a>, "Identity"]}/>

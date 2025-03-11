@@ -5,6 +5,7 @@ import { HeaderBanner } from "@/components/HeaderBanner";
 import { Pagination } from "@/components/Pagination";
 import { Tab } from "@/components/Tab";
 import * as React from "react";
+
 import {useNavigate} from "react-router-dom";
 import {useGetFaqs} from "@/quries/useGetFaqs.ts";
 
