@@ -18,19 +18,18 @@ export const Home = () => {
                         파이썬을 사용하는 모든 이들을 위한 <br/>
                         따뜻하고 포용적인 커뮤니티, 헬로파이입니다
                     `}
-      />
+            />
 
-      <AboutSection>
-        <div className="mb-[106px] mt-[180px] flex flex-col items-center justify-start gap-2">
-          <div className="self-stretch text-center text-[20px] font-bold text-[#aa3efd]">
-            HelloPY COC(Code of Conduct)
-          </div>
-          <div className="self-stretch text-center text-[28px] font-bold text-black">
-            어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우,{" "}
-            <br /> COC 원칙 본문을 보고하실 것을 권장합니다.
-          </div>
-        </div>
-      </AboutSection>
+            <AboutSection>
+            <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
+                <div className="self-stretch text-center text-hellopy-purple-200 text-[20px] font-bold">
+                    HelloPY COC(Code of Conduct)
+                </div>
+                <div className="self-stretch text-center text-black text-[28px] font-bold">
+                    어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우, <br/> COC 원칙 본문을 보고하실 것을 권장합니다.
+                </div>
+            </div>
+            </AboutSection>
 
       <div className="align-center mb-[180px] flex w-[1920px] justify-center">
         <TextCircleGroup

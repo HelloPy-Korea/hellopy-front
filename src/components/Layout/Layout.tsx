@@ -4,22 +4,20 @@ import Footer from "@/components/Footer/Footer.tsx";
 
 const Layout = () => {
   const location = useLocation();
-
-  const isYellow = (): boolean => {
-    if (location.pathname === "/about" || location.pathname === "/about/md") {
-      return true;
+    const isYellow = () : boolean => {
+        return location.pathname === "/about" || location.pathname === "/about/md";
     }
     return false;
   };
   return (
-    <div>
-      <Header
-        backgroundColor={isYellow() ? "bg-[#FFEEA4]" : "bg-[#891FBD]"}
-        textColor={isYellow() ? "text-black" : "text-white"}
-      />
-      <Outlet />
-      <Footer />
-    </div>
+      <div>
+          <Header
+              backgroundColor={isYellow() ? 'bg-header-yellow' : 'bg-header-purple'}
+              textColor={isYellow() ? 'text-black' : 'text-white'}
+          />
+          <Outlet />
+          <Footer/>
+      </div>
   );
 };
 
