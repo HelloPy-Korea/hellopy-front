@@ -1,8 +1,8 @@
 import * as React from "react";
-import HellopyImg from "@/assets/img/logo/img_hellopy.png"
-import DiscordImg from "@/assets/img/logo/img_discord.png"
-import YoutubeImg from "@/assets/img/logo/img_youtube.png"
-import InstagramImg from "@/assets/img/logo/img_instagram.png"
+import HellopyImg from "@/assets/img/logo/img_hellopy.png";
+import DiscordImg from "@/assets/img/logo/img_discord.png";
+import YoutubeImg from "@/assets/img/logo/img_youtube.png";
+import InstagramImg from "@/assets/img/logo/img_instagram.png";
 
 const Footer: React.FC = () => {
     return (
@@ -55,9 +55,11 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             </div>
-            
+           
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

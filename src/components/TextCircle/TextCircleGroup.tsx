@@ -54,7 +54,9 @@ export const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
   overlap = 0,
 }) => {
   return (
-    <div className={`flex ${overlapClasses[overlap]} justify-center whitespace-pre text-center text-[20px] font-medium`}>
+    <div
+      className={`flex ${overlapClasses[overlap]} justify-center whitespace-pre text-center text-[20px] font-medium`}
+    >
       {textList.map((text, index) => (
         <TextCircle key={index} size={size}>
           {text}

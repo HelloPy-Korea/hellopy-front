@@ -1,10 +1,10 @@
-import { atom } from 'jotai';
+import { atom } from "jotai";
 
 export const userAtom = atom({
-  id: '',
-  name: '',
+  id: "",
+  name: "",
   isAuthenticated: false,
 });
 
-export const themeAtom = atom<'light' | 'dark'>('light');
+export const themeAtom = atom<"light" | "dark">("light");
 export const mobileMenuAtom = atom(false);

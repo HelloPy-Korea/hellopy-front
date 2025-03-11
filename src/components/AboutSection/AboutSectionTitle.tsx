@@ -1,8 +1,7 @@
-
 interface AboutSectionTitleProps {
-    title: string;
-    subtitle: string;
-    description: string[];
+  title: string;
+  subtitle: string;
+  description: string[];
 }
 
 export const AboutSectionTitle = ({ title, subtitle, description }: AboutSectionTitleProps) => {
@@ -20,6 +19,6 @@ export const AboutSectionTitle = ({ title, subtitle, description }: AboutSection
                     <p key={index}>{text}</p>
                 ))}
             </div>
-        </div>
-    );
+    </div>
+  );
 };

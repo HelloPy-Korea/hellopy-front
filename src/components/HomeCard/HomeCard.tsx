@@ -1,13 +1,13 @@
-//import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 interface HomeCardProps {
-    backgroundImage?: string;
-    title?: string;
-    subtitle?: string;
-    description?: string;
-    buttonText?: string;
-    textPosition?: "left" | "right";
-    buttonUrl?: string;
+  backgroundImage?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  buttonText?: string;
+  textPosition?: "left" | "right";
+  buttonUrl?: string;
 }
 
 export const HomeCard = ({
@@ -20,21 +20,24 @@ export const HomeCard = ({
     buttonUrl,
 }: HomeCardProps) => {
 
-   // const navigate = useNavigate();
+
+    const navigate = useNavigate();
 
     const redirectToUrl = () => {
         if(!buttonUrl || buttonUrl.trim().length===0) {
             return;
         }
-        //navigate(buttonUrl)
+        navigate(buttonUrl)
     }
+    //navigate(buttonUrl)
+  };
 
-    return (
-        <div
-            className="relative w-[1920px] h-[626px] bg-cover bg-center bg-[#fbf6ff]"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
-           {/* <div className="absolute inset-0 bg-black/10"></div>*/}
+  return (
+    <div
+      className="relative h-[626px] w-[1920px] bg-[#fbf6ff] bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      {/* <div className="absolute inset-0 bg-black/10"></div>*/}
 
             <div
                 className={`absolute top-[121px] flex flex-col gap-40 text-black
@@ -60,5 +63,7 @@ export const HomeCard = ({
 				        </button>}
             </div>
         </div>
-    );
+
+        
+  );
 };

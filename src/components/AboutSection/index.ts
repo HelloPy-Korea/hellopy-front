@@ -1,2 +1,2 @@
-export {AboutSection} from "./AboutSection";
-export {AboutSectionTitle} from "./AboutSectionTitle"
+export { AboutSection } from "./AboutSection";
+export { AboutSectionTitle } from "./AboutSectionTitle";

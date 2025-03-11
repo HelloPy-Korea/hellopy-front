@@ -9,7 +9,7 @@ export const LogoBannerTitle: React.FC<LogoBannerTitleProps> = ({
   as: Tag = "p",
 }) => {
   return (
-    <Tag className="text-xl text-[#343434] font-semibold pb-2 border-b border-black">
+    <Tag className="border-b border-black pb-2 text-xl font-semibold text-[#343434]">
       {children}
     </Tag>
   );

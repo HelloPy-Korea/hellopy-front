@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
 interface FAQTableProps<T> {
-    columns: string[];
-    data: T[];
+  columns: string[];
+  data: T[];
 }
 
-export const FAQTable = <T extends object, >({ columns, data }: FAQTableProps<T>) => {
-    const [openFAQ, setOpenFAQ] = useState<number|null>(null);
+export const FAQTable = <T extends object>({
+  columns,
+  data,
+}: FAQTableProps<T>) => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
     return (
         <div className="w-[1251px] h-[610px] overflow-x-auto">
@@ -24,13 +27,13 @@ export const FAQTable = <T extends object, >({ columns, data }: FAQTableProps<T>
                             {columns.map((column) => (
                                 <td key={String(column)}
                                     className="p-[9px] text-left text-[#343434] text-lg font-normal">
-                                    {String(faq[column as keyof T])}
+                                    {column === "created_at" ? new Date(faq[column as keyof T]).toLocaleString() : String(faq[column as keyof T])}
                                 </td>
                             ))}
                             <td className="p-3">{openFAQ === index ? "▲" : "▼"}</td>
                         </tr>
 
-                        {"contents" in faq && openFAQ === index && (
+                        {"answer" in faq && openFAQ === index && (
                             <tr className="bg-gray-50">
                                 <td className="p-[9px] text-left text-[#343434] text-lg font-normal">
                                     <strong>A:</strong>
@@ -39,14 +42,33 @@ export const FAQTable = <T extends object, >({ columns, data }: FAQTableProps<T>
 
                                 </td>
                                 <td colSpan={columns.length + 1} className="p-3  border-gray-300">
-                                    {String(faq["contents"])}
+                                    {String(faq["answer"])}
                                 </td>
                             </tr>
                         )}
                     </React.Fragment>
                 ))}
-                </tbody>
-            </table>
-        </div>
-    );
+                <td className="p-3">{openFAQ === index ? "▲" : "▼"}</td>
+              </tr>
+
+              {"contents" in faq && openFAQ === index && (
+                <tr className="bg-gray-50">
+                  <td className="p-[9px] text-left text-lg font-normal text-[#343434]">
+                    <strong>A:</strong>
+                  </td>
+                  <td className="p-[9px] text-left text-lg font-normal text-[#343434]"></td>
+                  <td
+                    colSpan={columns.length + 1}
+                    className="border-gray-300 p-3"
+                  >
+                    {String(faq["contents"])}
+                  </td>
+                </tr>
+              )}
+            </React.Fragment>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };

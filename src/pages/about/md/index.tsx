@@ -5,24 +5,14 @@ import { HeaderBanner } from "@/components/HeaderBanner";
 import {Breadcrumb} from "@/components/Breadcrumb";
 import {AboutSection, AboutSectionTitle} from "@/components/AboutSection";
 import {Gallery} from "@/components/Gallery";
-
-function getRandomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-const photos = Array.from({ length: 7 }, (_, index) => ({
-    image: {
-        url: `https://picsum.photos/${getRandomInt(200, 800)}/${getRandomInt(
-            200,
-            800
-        )}?random=${index}`,
-        alt: `Image ${index}`,
-    },
-    title: `Title ${index}`,
-    description: `Description ${index}`,
-}))
+import {useGetMds} from "@/quries/useGetMds.ts";
+import {MD} from "@/types/common.ts";
 
 const AboutMd = () => {
+
+    const {data: mdData} = useGetMds();
+    const mdList: MD[] = mdData?.data ?? []
+
     return (
         <div className="flex flex-col align-center ">
             <HeaderBanner
@@ -35,14 +25,18 @@ const AboutMd = () => {
 
             <AboutSection>
                 <AboutSectionTitle title={"MD 한눈에 보기"} subtitle={"MD Overview"} description={[]}/>
-                <Gallery items={photos}/>
+                <Gallery items={mdList}/>
             </AboutSection>
 
-            <div className="w-[1920px] relative">
-                <img src={BanngerImg} className="w-full h-auto object-cover" alt="Intro Shape"/>
-            </div>
-        </div>
-    );
-}
+      <div className="relative w-[1920px]">
+        <img
+          src={BanngerImg}
+          className="h-auto w-full object-cover"
+          alt="Intro Shape"
+        />
+      </div>
+    </div>
+  );
+};
 
 export default AboutMd;

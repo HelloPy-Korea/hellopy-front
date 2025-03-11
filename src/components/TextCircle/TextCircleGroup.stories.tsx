@@ -21,7 +21,7 @@ export const CodeOfConduct: Story = {
         <span key={text} className="text-2xl">
           {text}
         </span>
-      ))
+      )),
     ),
     size: 372,
     overlap: 10,

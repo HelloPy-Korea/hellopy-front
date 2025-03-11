@@ -1,13 +1,12 @@
-
 interface ProgramInfoProps {
-    backgroundImage: string;
-    programDetails: {
-        title: string;
-        description: string;
-        buttonText?: string;
-        redirectUrl?: string;
-    }[];
-    textPosition?: 'left' | 'right'; // 텍스트 위치 조정 (기본: 'left')
+  backgroundImage: string;
+  programDetails: {
+    title: string;
+    description: string;
+    buttonText?: string;
+    redirectUrl?: string;
+  }[];
+  textPosition?: "left" | "right"; // 텍스트 위치 조정 (기본: 'left')
 }
 
 export const ProgramInfo = ({
@@ -41,7 +40,7 @@ export const ProgramInfo = ({
                     ))}
                 </div>
 
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
