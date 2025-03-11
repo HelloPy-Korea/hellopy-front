@@ -1,34 +1,36 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaAngleLeft,
   FaAngleRight,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
-
+} from "react-icons/fa";
 
 const PAGE_SIZE = 10;
 
 interface PaginationProps {
-    totalCount: number; // 전체 페이지 수
-    currentPage: number; // 현재 페이지
-    onPageChange: (page: number) => void;
+  totalCount: number; // 전체 페이지 수
+  currentPage: number; // 현재 페이지
+  onPageChange: (page: number) => void;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ totalCount, currentPage, onPageChange }) => {
-    const [totalPages, setTotalPage] = useState<number>(0)
+export const Pagination: React.FC<PaginationProps> = ({
+  totalCount,
+  currentPage,
+  onPageChange,
+}) => {
+  const [totalPages, setTotalPage] = useState<number>(0);
 
-    useEffect(() => {
-        setTotalPage(Math.ceil(totalCount/PAGE_SIZE))
-    }, [totalCount]);
+  useEffect(() => {
+    setTotalPage(Math.ceil(totalCount / PAGE_SIZE));
+  }, [totalCount]);
 
-    const getPageNumbers = () => {
-        let start = Math.max(1, currentPage - 2);
-        const end = Math.min(totalPages, start + 4);
-        if (end - start < 4) {
-            start = Math.max(1, end - 4);
-        }
-
+  const getPageNumbers = () => {
+    let start = Math.max(1, currentPage - 2);
+    const end = Math.min(totalPages, start + 4);
+    if (end - start < 4) {
+      start = Math.max(1, end - 4);
+    }
 
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   };
