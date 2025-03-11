@@ -52,10 +52,11 @@ export const Home = () => {
                         HelloPY는 매달 새로운 달력을 제작하여 무료로 배포합니다.<br/>
                         지금 바로 최신 파이몬 달력을 다운로드해보세요!
                     `}
-        buttonText="전체 이미지 보기 →"
-        textPosition="left"
-        buttonUrl=""
-      />
+
+                buttonText="전체 이미지 보기 →"
+                textPosition="left"
+                buttonUrl="/about/identity"
+            />
 
       <HomeCard
         backgroundImage={ActiveImg}
@@ -65,10 +66,11 @@ export const Home = () => {
                         HelloPY는 세미나, 스터디, 모각작 등 다양한 활동을 운영하고 있습니다.<br/>
                         활동 갤러리에서 지난 활동의 생생한 모습을 확인해보세요!
                     `}
-        buttonText="전체 활동 보기 →"
-        textPosition="right"
-        buttonUrl=""
-      />
+
+                buttonText="전체 활동 보기 →"
+                textPosition="right"
+                buttonUrl="/news"
+            />
 
       <HomeCard
         backgroundImage={DiscordImg}

@@ -1,4 +1,4 @@
-//import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 interface HomeCardProps {
   backgroundImage?: string;
@@ -21,9 +21,13 @@ export const HomeCard = ({
 }: HomeCardProps) => {
   // const navigate = useNavigate();
 
-  const redirectToUrl = () => {
-    if (!buttonUrl || buttonUrl.trim().length === 0) {
-      return;
+    const navigate = useNavigate();
+
+    const redirectToUrl = () => {
+        if(!buttonUrl || buttonUrl.trim().length===0) {
+            return;
+        }
+        navigate(buttonUrl)
     }
     //navigate(buttonUrl)
   };
