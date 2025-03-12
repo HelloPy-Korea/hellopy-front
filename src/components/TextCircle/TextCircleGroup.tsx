@@ -53,9 +53,24 @@ export const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
   size,
   overlap = 0,
 }) => {
+  const [isVertical, setIsVertical] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkWidth = () => {
+      const overlapPx = overlap * 4;
+      const totalWidth = (size - overlapPx) * textList.length + overlapPx;
+      setIsVertical(totalWidth > window.innerWidth);
+    };
+
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+
+    return () => window.removeEventListener("resize", checkWidth);
+  }, [size, textList.length, overlap]);
+
   return (
     <div
-      className={`flex ${overlapClasses[overlap]} justify-center whitespace-pre text-center text-[20px] font-medium`}
+      className={`flex ${isVertical ? "flex-col" : overlapClasses[overlap]} justify-center whitespace-pre text-center text-[20px] font-medium`}
     >
       {textList.map((text, index) => (
         <TextCircle key={index} size={size}>
