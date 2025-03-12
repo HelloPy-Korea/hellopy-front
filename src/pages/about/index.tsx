@@ -13,13 +13,13 @@ import YoutubeBtn from "@/assets/img/about/btn_youtube.png";
 import PymonMacImg from "@/assets/img/about/img_pymon_mac.png";
 import { ProfileCard } from "@/components/ProfileCard";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
-import {useGetManagers} from "@/quries/useGetMangers.ts";
-import {Manager} from "@/types/common.ts";
-        
+import { useGetManagers } from "@/quries/useGetMangers.ts";
+import { Manager } from "@/types/common.ts";
+
 const About = () => {
-  const {data: managerData} = useGetManagers();
-  const managers: Manager[] = managerData?.data ?? []
-  
+  const { data: managerData } = useGetManagers();
+  const managers: Manager[] = managerData?.data ?? [];
+
   return (
     <div className="align-center flex flex-col">
       <HeaderBanner
@@ -61,31 +61,57 @@ const About = () => {
       <div className="relative w-[1920px]">
         <VisualSection />
       </div>
-            <div className="w-[1920px] px-[156px] flex items-center py-16 bg-cover bg-center bg-[#FCF7FF]" style={{backgroundImage: `url(${PymonMacImg})`}}>
-                <div className="w-full flex flex-row gap-10 px-[160px] justify-between ">
-                    <div className="inline-flex flex-col gap-5">
-                        {/* 타이틀 */}
-                        <div className="flex flex-col gap-0.5">
-                            <div className="text-hellopy-purple-200 text-xl font-semibold">SNS channel</div>
-                            <div className="text-black text-[32px] font-semibold">SNS 채널</div>
-                        </div>
-
-                        {/* 설명 */}
-                        <div className="flex flex-col gap-1 text-black text-lg font-light">
-                            {[" HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을", "쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고,", "커뮤니티와 함께 소통하세요!"].map((text, index) => (
-                                <span key={index}>{text}</span>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-8 w-1/2">
-                        <img src={DiscordBtn} alt="Discord" className="w-full h-auto rounded-xl"/>
-                        <img src={YoutubeBtn} alt="YouTube" className="w-full h-auto rounded-xl"/>
-                        <img src={InstagramBtn} alt="Instagram" className="w-full h-auto rounded-xl"/>
-                        <img src={LinkedinBtn} alt="LinkedIn" className="w-full h-auto rounded-xl"/>
-                    </div>
-                </div>
-
+      <div
+        className="flex w-[1920px] items-center bg-[#FCF7FF] bg-cover bg-center px-[156px] py-16"
+        style={{ backgroundImage: `url(${PymonMacImg})` }}
+      >
+        <div className="flex w-full flex-row justify-between gap-10 px-[160px]">
+          <div className="inline-flex flex-col gap-5">
+            {/* 타이틀 */}
+            <div className="flex flex-col gap-0.5">
+              <div className="text-xl font-semibold text-hellopy-purple-200">
+                SNS channel
+              </div>
+              <div className="text-[32px] font-semibold text-black">
+                SNS 채널
+              </div>
             </div>
+
+            {/* 설명 */}
+            <div className="flex flex-col gap-1 text-lg font-light text-black">
+              {[
+                " HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을",
+                "쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고,",
+                "커뮤니티와 함께 소통하세요!",
+              ].map((text, index) => (
+                <span key={index}>{text}</span>
+              ))}
+            </div>
+          </div>
+          <div className="grid w-1/2 grid-cols-2 gap-8">
+            <img
+              src={DiscordBtn}
+              alt="Discord"
+              className="h-auto w-full rounded-xl"
+            />
+            <img
+              src={YoutubeBtn}
+              alt="YouTube"
+              className="h-auto w-full rounded-xl"
+            />
+            <img
+              src={InstagramBtn}
+              alt="Instagram"
+              className="h-auto w-full rounded-xl"
+            />
+            <img
+              src={LinkedinBtn}
+              alt="LinkedIn"
+              className="h-auto w-full rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
 
       {/*<div className="w-[1920px] relative">
 
@@ -116,25 +142,26 @@ const About = () => {
                     </div>
                 </div>
             </div>*/}
-            <AboutSection>
-                <AboutSectionTitle title={"HelloPY 운영진"} subtitle={"Organizing Committee"}
-                                   description={["print.hello.py@gmail.com"]}/>
-                <div className="grid grid-cols-4 gap-3 ml-[15%]">
-                    {
-                        managers.map((manager, index) => (
-                            <ProfileCard
-                                key={manager.id + "_" + index}
-                                name={manager.name}
-                                position={manager.role}
-                                links={{
-                                    email: manager.email,
-                                    linkedin: manager.linkedin,
-                                    github: manager.github,
-                                }}
-                                image={manager.photo}/>
-                            )
-                        )
-                    }
+      <AboutSection>
+        <AboutSectionTitle
+          title={"HelloPY 운영진"}
+          subtitle={"Organizing Committee"}
+          description={["print.hello.py@gmail.com"]}
+        />
+        <div className="ml-[15%] grid grid-cols-4 gap-3">
+          {managers.map((manager, index) => (
+            <ProfileCard
+              key={manager.id + "_" + index}
+              name={manager.name}
+              position={manager.role}
+              links={{
+                email: manager.email,
+                linkedin: manager.linkedin,
+                github: manager.github,
+              }}
+              image={manager.photo}
+            />
+          ))}
 
           <ProfileCard
             name="홍길동"
