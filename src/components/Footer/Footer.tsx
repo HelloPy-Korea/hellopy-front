@@ -7,7 +7,7 @@ import { Container } from "@/components/Container";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-footer relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center bg-footer">
       <Container className="flex w-[1280px] items-center justify-between py-12">
         <div className="flex flex-col items-start">
           <img className="h-[80px] w-[145px]" src={HellopyImg} alt="logo" />

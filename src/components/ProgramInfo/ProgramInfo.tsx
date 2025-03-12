@@ -10,36 +10,47 @@ interface ProgramInfoProps {
 }
 
 export const ProgramInfo = ({
-                                backgroundImage,
-                                programDetails,
-                                textPosition = 'right',
-                            }: ProgramInfoProps) => {
-    return (
-        <div className="relative w-full h-[796px] bg-[#FDFAFE] flex items-center justify-center px-[10%] py-[80px]">
-            <div className={`relative w-full max-w-[1440px] flex items-center justify-between gap-10 ${textPosition === 'left' ? '' : 'flex-row-reverse'}`}>
+  backgroundImage,
+  programDetails,
+  textPosition = "right",
+}: ProgramInfoProps) => {
+  return (
+    <div className="relative flex h-[796px] w-full items-center justify-center bg-[#FDFAFE] px-[10%] py-[80px]">
+      <div
+        className={`relative flex w-full max-w-[1440px] items-center justify-between gap-10 ${textPosition === "left" ? "" : "flex-row-reverse"}`}
+      >
+        {/* 이미지 영역 */}
+        <div className="flex w-[50%] items-center justify-center">
+          <img
+            src={backgroundImage}
+            alt="Program"
+            className="h-auto w-full rounded-lg object-cover"
+          />
+        </div>
 
-                {/* 이미지 영역 */}
-                <div className="w-[50%] flex items-center justify-center">
-                    <img src={backgroundImage} alt="Program" className="w-full h-auto object-cover rounded-lg" />
-                </div>
-
-                {/* 텍스트 영역 */}
-                <div className="w-[50%] flex flex-col gap-6">
-                    {programDetails?.map((program, index) => (
-                        <div className="flex flex-col gap-3" key={`program_${index}`}>
-                            <div className="text-black text-[22px] font-semibold">{program.title}</div>
-                            <div className="text-black text-lg font-light leading-[27px]" dangerouslySetInnerHTML={{ __html: program.description }} />
-                            {/* 버튼 */}
-                            {program.buttonText && (
-                                <a href={program.redirectUrl}
-                                   className="inline-block w-fit border-b border-black text-base font-medium leading-tight">
-                                    {program.buttonText ?? ""}
-                                </a>
-                            )}
-                        </div>
-                    ))}
-                </div>
-
+        {/* 텍스트 영역 */}
+        <div className="flex w-[50%] flex-col gap-6">
+          {programDetails?.map((program, index) => (
+            <div className="flex flex-col gap-3" key={`program_${index}`}>
+              <div className="text-[22px] font-semibold text-black">
+                {program.title}
+              </div>
+              <div
+                className="text-lg font-light leading-[27px] text-black"
+                dangerouslySetInnerHTML={{ __html: program.description }}
+              />
+              {/* 버튼 */}
+              {program.buttonText && (
+                <a
+                  href={program.redirectUrl}
+                  className="inline-block w-fit border-b border-black text-base font-medium leading-tight"
+                >
+                  {program.buttonText ?? ""}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
