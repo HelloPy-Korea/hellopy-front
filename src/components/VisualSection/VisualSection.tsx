@@ -28,8 +28,8 @@ const visualItems = [
 
 const VisualSection: React.FC = () => {
   return (
-    <section className="flex h-[708px] w-full items-center justify-center">
-      <div className="grid grid-cols-3 gap-[270px] text-center">
+    <section className="flex h-auto min-h-[500px] w-full items-center justify-center py-12">
+      <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3 md:gap-8 lg:gap-[270px]">
         {visualItems.map((item, index) => (
           <VisualSectionItem
             key={index}

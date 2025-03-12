@@ -32,7 +32,7 @@ const About = () => {
                         자유롭게 의견을 나누고, 평가받지 않는 발표의 장을 지향합니다. 같이 공부하고, 함께 성장해요!
                     `}
       />
-      <div className="relative w-[1920px]">
+      <div className="relative">
         <ProgramInfo
           backgroundImage={ProgramImg}
           programDetails={[
@@ -58,14 +58,14 @@ const About = () => {
         />
       </div>
 
-      <div className="relative w-[1920px]">
+      <div className="relative">
         <VisualSection />
       </div>
       <div
-        className="flex w-[1920px] items-center bg-[#FCF7FF] bg-cover bg-center px-[156px] py-16"
+        className="flex items-center bg-[#FCF7FF] bg-cover bg-center px-16 py-16"
         style={{ backgroundImage: `url(${PymonMacImg})` }}
       >
-        <div className="flex w-full flex-row justify-between gap-10 px-[160px]">
+        <div className="flex w-full flex-col justify-between gap-10 md:flex-row">
           <div className="inline-flex flex-col gap-5">
             {/* 타이틀 */}
             <div className="flex flex-col gap-0.5">
@@ -88,7 +88,7 @@ const About = () => {
               ))}
             </div>
           </div>
-          <div className="grid w-1/2 grid-cols-2 gap-8">
+          <div className="grid w-full grid-cols-2 gap-8 md:w-1/2">
             <img
               src={DiscordBtn}
               alt="Discord"
@@ -113,42 +113,13 @@ const About = () => {
         </div>
       </div>
 
-      {/*<div className="w-[1920px] relative">
-
-                <div
-                    className="w-full flex items-center bg-cover bg-center bg-[#FCF7FF]"
-                    style={{backgroundImage: `url(${PymonMacImg})`}}
-                >
-                    <div
-                        className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mx-auto p-6 gap-10">
-                         왼쪽 텍스트 & 이미지
-                        <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
-                        <p className="text-hellopy-purple-200 text-[20px] font-medium">SNS channel</p>
-                            <h2 className="text-[#2D003D] text-[32px] font-semibold">SNS 채널</h2>
-                            <p className="text-[#2D003D] text-[18px] font-light">
-                                HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을 <br/>
-                                쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고, <br/>
-                                커뮤니티와 함께 소통하세요!
-                            </p>
-                        </div>
-
-                         오른쪽 SNS 아이콘 박스
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-1/2">
-                            <img src={DiscordBtn} alt="Discord" className="w-full h-auto rounded-xl"/>
-                            <img src={YoutubeBtn} alt="YouTube" className="w-full h-auto rounded-xl"/>
-                            <img src={InstagramBtn} alt="Instagram" className="w-full h-auto rounded-xl"/>
-                            <img src={LinkedinBtn} alt="LinkedIn" className="w-full h-auto rounded-xl"/>
-                        </div>
-                    </div>
-                </div>
-            </div>*/}
       <AboutSection>
         <AboutSectionTitle
           title={"HelloPY 운영진"}
           subtitle={"Organizing Committee"}
           description={["print.hello.py@gmail.com"]}
         />
-        <div className="ml-[15%] grid grid-cols-4 gap-3">
+        <div className="flex flex-wrap justify-end gap-3">
           {managers.map((manager, index) => (
             <ProfileCard
               key={manager.id + "_" + index}
@@ -197,66 +168,6 @@ const About = () => {
           />
         </div>
       </AboutSection>
-      {/*<div className="w-[1920px] relative">
-                <div className="w-full flex items-center bg-cover bg-center bg-[#FCF7FF]">
-                    <div
-                        className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mx-auto p-6 gap-10">
-                         왼쪽 텍스트 & 이미지
-                        <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-4">
-                            <p className="text-hellopy-purple-200 text-[20px] font-medium">Organizing Committee</p>
-                            <h2 className="text-[#2D003D] text-[32px] font-semibold">HelloPY 운영진</h2>
-                            <p className="text-[#2D003D] text-[18px] font-light">
-                                print.hello.py@gmail.com
-                            </p>
-                        </div>
-
-                         오른쪽 SNS 아이콘 박스
-                        <div className="grid grid-cols-3 gap-6 w-full mt-[15%]">
-
-                            <ProfileCard
-                                name="홍길동"
-                                position="Frontend"
-                                links={{
-                                    email: "hong@example.com",
-                                    linkedin: "https://www.linkedin.com/in/hong",
-                                    github: "https://github.com/hong",
-                                }}
-                                image="https://example.com/path/to/profile-image.jpg"/>
-
-                            <ProfileCard
-                                name="홍길동"
-                                position="Frontend"
-                                links={{
-                                    email: "hong@example.com",
-                                    linkedin: "https://www.linkedin.com/in/hong",
-                                    github: "https://github.com/hong",
-                                }}
-                                image="https://example.com/path/to/profile-image.jpg"/>
-
-                            <ProfileCard
-                                name="홍길동"
-                                position="Frontend"
-                                links={{
-                                    email: "hong@example.com",
-                                    linkedin: "https://www.linkedin.com/in/hong",
-                                    github: "https://github.com/hong",
-                                }}
-                                image="https://example.com/path/to/profile-image.jpg"/>
-
-                            <ProfileCard
-                                name="홍길동"
-                                position="Frontend"
-                                links={{
-                                    email: "hong@example.com",
-                                    linkedin: "https://www.linkedin.com/in/hong",
-                                    github: "https://github.com/hong",
-                                }}
-                                image="https://example.com/path/to/profile-image.jpg"/>
-
-                        </div>
-                    </div>
-                </div>
-            </div>*/}
     </div>
   );
 };
