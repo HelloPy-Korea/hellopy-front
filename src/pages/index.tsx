@@ -6,7 +6,7 @@ import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";
 import { TextCircleGroup } from "@/components/TextCircle";
-import { AboutSection } from "@/components/AboutSection";
+import { Container } from "@/components/Container";
 
 export const Home = () => {
   return (
@@ -18,20 +18,20 @@ export const Home = () => {
                         파이썬을 사용하는 모든 이들을 위한 <br/>
                         따뜻하고 포용적인 커뮤니티, 헬로파이입니다
                     `}
-            />
+      />
+      <Container>
+        <div className="mb-[106px] mt-[180px] flex flex-col items-center justify-start gap-2">
+          <div className="self-stretch text-center text-[20px] font-bold text-hellopy-purple-200">
+            HelloPY COC(Code of Conduct)
+          </div>
+          <div className="self-stretch text-center text-[28px] font-bold text-black">
+            어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우,{" "}
+            <br /> COC 원칙 본문을 보고하실 것을 권장합니다.
+          </div>
+        </div>
+      </Container>
 
-            <AboutSection>
-            <div className="flex mt-[180px] mb-[106px] flex-col justify-start items-center gap-2">
-                <div className="self-stretch text-center text-hellopy-purple-200 text-[20px] font-bold">
-                    HelloPY COC(Code of Conduct)
-                </div>
-                <div className="self-stretch text-center text-black text-[28px] font-bold">
-                    어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우, <br/> COC 원칙 본문을 보고하실 것을 권장합니다.
-                </div>
-            </div>
-            </AboutSection>
-
-      <div className="align-center mb-[180px] flex w-[1920px] justify-center">
+      <Container className="align-center mb-[180px] flex justify-center">
         <TextCircleGroup
           textList={[
             "누구나 편안하게 참여할 수 있는\n커뮤니티를 지향합니다",
@@ -41,7 +41,7 @@ export const Home = () => {
           size={355}
           overlap={6}
         />
-      </div>
+      </Container>
 
       <HomeCard
         backgroundImage={CalendarImg}
@@ -51,11 +51,10 @@ export const Home = () => {
                         HelloPY는 매달 새로운 달력을 제작하여 무료로 배포합니다.<br/>
                         지금 바로 최신 파이몬 달력을 다운로드해보세요!
                     `}
-
-                buttonText="전체 이미지 보기 →"
-                textPosition="left"
-                buttonUrl="/about/identity"
-            />
+        buttonText="전체 이미지 보기 →"
+        textPosition="left"
+        buttonUrl="/about/identity"
+      />
 
       <HomeCard
         backgroundImage={ActiveImg}
@@ -65,11 +64,10 @@ export const Home = () => {
                         HelloPY는 세미나, 스터디, 모각작 등 다양한 활동을 운영하고 있습니다.<br/>
                         활동 갤러리에서 지난 활동의 생생한 모습을 확인해보세요!
                     `}
-
-                buttonText="전체 활동 보기 →"
-                textPosition="right"
-                buttonUrl="/news"
-            />
+        buttonText="전체 활동 보기 →"
+        textPosition="right"
+        buttonUrl="/news"
+      />
 
       <HomeCard
         backgroundImage={DiscordImg}
