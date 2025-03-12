@@ -1,5 +1,5 @@
-import {useQuery} from "react-query";
-import {BoardService} from "@/service/boardService.ts";
+import { useQuery } from "react-query";
+import { BoardService } from "@/service/boardService.ts";
 
 export const useGetFaqs = () => {
   return useQuery({

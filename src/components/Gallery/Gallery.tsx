@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GalleryItem } from "./GalleryItem";
-import {MD} from "@/types/common.ts";
+import { MD } from "@/types/common.ts";
 
 interface GalleryProps {
   items: MD[];

@@ -1,21 +1,20 @@
 import instance from "@/hooks/useAxios.ts";
 
 export const AboutService = {
-    QueryKey: {
-        getManagers: 'getManagers',
-        getMerchandises: 'getMerchandises',
-    },
+  QueryKey: {
+    getManagers: "getManagers",
+    getMerchandises: "getMerchandises",
+  },
 
-    getManagers: async() => {
-        const { data } = await instance.get(`/manager`);
+  getManagers: async () => {
+    const { data } = await instance.get(`/manager`);
 
-        return data;
-    },
+    return data;
+  },
 
-    getMerchandises: async() => {
-        const { data } = await instance.get(`/merchandise`);
+  getMerchandises: async () => {
+    const { data } = await instance.get(`/merchandise`);
 
-        return data;
-    },
-
-}
+    return data;
+  },
+};

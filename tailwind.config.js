@@ -26,7 +26,7 @@ export default {
         },
         "header-yellow": "#ffeea4",
         "header-purple": "#891fbd",
-        "footer": "#2d003d",
+        footer: "#2d003d",
       },
     },
   },

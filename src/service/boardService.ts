@@ -1,29 +1,29 @@
 import instance from "@/hooks/useAxios.ts";
 
-const NOTICE_API_URL = '/notice'
-const FAQ_API_URL = '/faqs'
+const NOTICE_API_URL = "/notice";
+const FAQ_API_URL = "/faqs";
 export const BoardService = {
   QueryKey: {
-    getNotices: 'getNotices',
-    getFaqs: 'getFaqs',
-    getNotice: 'getNotice',
+    getNotices: "getNotices",
+    getFaqs: "getFaqs",
+    getNotice: "getNotice",
   },
 
-  getNotices: async() => {
+  getNotices: async () => {
     const { data } = await instance.get(`${NOTICE_API_URL}/`);
 
     return data;
   },
 
-  getFaqs: async() => {
+  getFaqs: async () => {
     const { data } = await instance.get(`${FAQ_API_URL}/`);
 
     return data;
   },
 
-  getNotice: async(id:string) => {
+  getNotice: async (id: string) => {
     const { data } = await instance.get(`${NOTICE_API_URL}/${id}`);
 
     return data;
   },
-}
+};
