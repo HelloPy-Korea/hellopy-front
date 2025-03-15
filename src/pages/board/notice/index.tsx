@@ -64,7 +64,7 @@ export const Notice: React.FC = () => {
         </HeaderBanner>
       </div>
       <Container className={"min-h-[600px]"}>
-        <div className="flex w-full flex-col items-center justify-center px-40 py-10">
+        <div className="flex w-full flex-col items-center justify-center px-5 py-10 md:px-40">
           <Tab
             tabs={tabMockData.tabs}
             activeTab={tabMockData.activeTab}

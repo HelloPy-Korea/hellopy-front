@@ -16,7 +16,7 @@ export const NoticeDetail: React.FC = () => {
 
   return (
     notice && (
-      <Container className={"px-40 py-10"}>
+      <Container className={"px-5 py-10 md:px-40"}>
         <p className="px-4 py-2 text-lg font-medium text-[#2d003d]">공지사항</p>
         <section className="mb-8 border-y border-black px-4 py-8">
           <article>
