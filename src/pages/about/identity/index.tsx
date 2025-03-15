@@ -22,6 +22,7 @@ import { SelectBox } from "@/components/SelectBox";
 import { PymonCalendar } from "@/components/PymonCalendar/PymonCalendar.tsx";
 import { useEffect, useState } from "react";
 import { SelectValue } from "@/types/common.ts";
+import { Container } from "@/components/Container";
 
 const keywordList = [
   ["Neat", "깔끔"],
@@ -138,12 +139,14 @@ const AboutIdentity = () => {
         <TextCircleGroup textList={keywordList} size={238} overlap={5} />
       </AboutSection>
 
-      <div className="relative w-[1920px]">
-        <img
-          src={introShape}
-          className="h-auto w-full object-cover"
-          alt="Intro Shape"
-        />
+      <div className={"bg-[#FCF7FF]"}>
+        <Container>
+          <img
+            src={introShape}
+            className="h-auto w-full object-cover"
+            alt="Intro Shape"
+          />
+        </Container>
       </div>
 
       <AboutSection>
@@ -169,52 +172,54 @@ const AboutIdentity = () => {
         </div>
       </AboutSection>
 
-      <AboutSection>
-        <AboutSectionTitle
-          title={"HelloPY UI"}
-          subtitle={"UI Elements"}
-          description={[]}
-        />
-        <div className="flex w-full flex-col gap-10">
-          <LogoBanner>
-            <div className="relative flex shrink-0 flex-col items-start justify-start gap-[59px] self-stretch">
-              <div className="relative flex w-[550px] shrink-0 flex-col items-start justify-start gap-[9px]">
-                <div className="text-black-1 relative self-stretch text-left text-xl font-semibold leading-normal">
-                  Typography
-                </div>
-                <div
-                  className="border-gray-2 relative h-0 shrink-0 self-stretch border-b-[0] border-l-[0] border-r-[0] border-t border-solid"
-                  style={{ marginTop: "-1px" }}
-                ></div>
-              </div>
-              <img
-                className="relative h-[410px] shrink-0 self-stretch"
-                style={{ objectFit: "cover" }}
-                src={TypoImg}
-              />
-            </div>
-          </LogoBanner>
-          <LogoBanner>
-            <LogoBannerTitle>Color</LogoBannerTitle>
-            <div className="relative flex shrink-0 flex-row items-center justify-start gap-24 self-stretch">
-              {hellopyUiList.map((item: { name: string; img: string }) => (
-                <div className="relative flex w-[600px] shrink-0 flex-col items-start justify-start gap-7">
-                  <div className="relative flex w-[550px] shrink-0 flex-col items-start justify-start gap-[9px]">
-                    <div className="text-black-1 relative self-stretch text-left text-xl font-normal leading-normal">
-                      {item.name}
-                    </div>
+      <div className={"bg-[#FCF7FF]"}>
+        <AboutSection>
+          <AboutSectionTitle
+            title={"HelloPY UI"}
+            subtitle={"UI Elements"}
+            description={[]}
+          />
+          <div className="flex w-full flex-col gap-10">
+            <LogoBanner>
+              <div className="relative flex shrink-0 flex-col items-start justify-start gap-[59px] self-stretch">
+                <div className="relative flex w-full shrink-0 flex-col items-start justify-start gap-2">
+                  <div className="text-black-1 relative self-stretch text-left text-xl font-semibold leading-normal">
+                    Typography
                   </div>
-                  <img
-                    className="relative h-[100px] shrink-0 self-stretch"
-                    style={{ objectFit: "cover" }}
-                    src={item.img}
-                  />
+                  <div
+                    className="border-gray-2 relative h-0 shrink-0 self-stretch border-b-[0] border-l-[0] border-r-[0] border-t border-solid"
+                    style={{ marginTop: "-1px" }}
+                  ></div>
                 </div>
-              ))}
-            </div>
-          </LogoBanner>
-        </div>
-      </AboutSection>
+                <img
+                  className="relative w-full shrink-0 self-stretch"
+                  style={{ objectFit: "cover" }}
+                  src={TypoImg}
+                />
+              </div>
+            </LogoBanner>
+            <LogoBanner>
+              <LogoBannerTitle>Color</LogoBannerTitle>
+              <div className="relative flex items-center justify-start gap-24 self-stretch md:flex-row">
+                {hellopyUiList.map((item: { name: string; img: string }) => (
+                  <div className="relative flex w-full flex-col items-start justify-start gap-7">
+                    <div className="relative flex w-full flex-col items-start justify-start gap-[9px]">
+                      <div className="text-black-1 relative self-stretch text-left text-xl font-normal leading-normal">
+                        {item.name}
+                      </div>
+                    </div>
+                    <img
+                      className="w-full self-stretch overflow-scroll"
+                      style={{ objectFit: "cover" }}
+                      src={item.img}
+                    />
+                  </div>
+                ))}
+              </div>
+            </LogoBanner>
+          </div>
+        </AboutSection>
+      </div>
 
       <AboutSection>
         <AboutSectionTitle
@@ -225,10 +230,11 @@ const AboutIdentity = () => {
             "사람과 커뮤니티를 좋아하고, 블루베리 파이를 좋아한다고 합니다. 🫐🥧",
           ]}
         />
-        <div className="relative flex shrink-0 flex-row items-center justify-center gap-[52px]">
-          {[PymonImg1, PymonImg2, PymonImg3].map((pymon) => (
+        <div className="relative flex flex-wrap items-center justify-center gap-6 md:gap-[52px]">
+          {[PymonImg1, PymonImg2, PymonImg3].map((pymon, index) => (
             <img
-              className="relative h-[386px] w-[254px] shrink-0"
+              key={index}
+              className="relative h-[386px] max-h-full w-[254px] max-w-full sm:h-[300px] sm:w-[200px] md:h-[330px] md:w-[220px] lg:h-[386px] lg:w-[254px]"
               style={{ objectFit: "cover" }}
               src={pymon}
             />
@@ -236,19 +242,21 @@ const AboutIdentity = () => {
         </div>
       </AboutSection>
 
-      <AboutSection>
-        <AboutSectionTitle
-          title={"월간 PYMON"}
-          subtitle={"Wallpaper"}
-          description={[
-            "PYMON👾 달력 배경화면을 준비했습니다! 💜 누구나 이미지 다운로드 후 사용하실 수 있습니다😆",
-            "이미지를 꾸욱 누르면 열리는 팝업에서 “내 폰에 저장” 혹은 “사진 다운로드”를 선택해주세요!",
-            "헬로파이에서는 매달 새로운 달력을 디자인해서 공유하고 있어요. 다음 달의 달력도 기대해 주세요! ☘️",
-          ]}
-        />
-        <SelectBox options={yearList} onSelect={onSelectYear} />
-        <PymonCalendar calendar={calendarData} selectedYear={selectedYear} />
-      </AboutSection>
+      <div className={"bg-[#FCF7FF]"}>
+        <AboutSection>
+          <AboutSectionTitle
+            title={"월간 PYMON"}
+            subtitle={"Wallpaper"}
+            description={[
+              "PYMON👾 달력 배경화면을 준비했습니다! 💜 누구나 이미지 다운로드 후 사용하실 수 있습니다😆",
+              "이미지를 꾸욱 누르면 열리는 팝업에서 “내 폰에 저장” 혹은 “사진 다운로드”를 선택해주세요!",
+              "헬로파이에서는 매달 새로운 달력을 디자인해서 공유하고 있어요. 다음 달의 달력도 기대해 주세요! ☘️",
+            ]}
+          />
+          <SelectBox options={yearList} onSelect={onSelectYear} />
+          <PymonCalendar calendar={calendarData} selectedYear={selectedYear} />
+        </AboutSection>
+      </div>
     </div>
   );
 };

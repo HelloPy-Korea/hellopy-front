@@ -32,7 +32,7 @@ export const HomeCard = ({
 
   return (
     <div
-      className="flex h-[626px] bg-[#fbf6ff] bg-cover bg-center"
+      className="flex h-[626px] bg-[#fbf6ff] md:bg-cover md:bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* <div className="absolute inset-0 bg-black/10"></div>*/}
