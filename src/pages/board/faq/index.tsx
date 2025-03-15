@@ -9,11 +9,14 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetFaqs } from "@/quries/useGetFaqs.ts";
 import { Container } from "@/components/Container";
+import { useState } from "react";
 
 const tableColumns = ["id", "question", "created_at"];
 
 export const Faq: React.FC = () => {
   const nav = useNavigate();
+  const [page, setPage] = useState<number>(1);
+
   const tabMockData = {
     tabs: [
       { label: "공지사항", value: "notice" },
@@ -25,12 +28,12 @@ export const Faq: React.FC = () => {
     },
   };
 
-  const { data: faqs } = useGetFaqs();
+  const { data: faqs } = useGetFaqs(page);
   const faqList = faqs?.data ?? [];
   const pagination = faqs?.pagination;
 
   const onPageChange = (val: number) => {
-    console.log("page: " + val);
+    setPage(val);
   };
 
   return (
@@ -68,7 +71,7 @@ export const Faq: React.FC = () => {
           {faqList && faqList.length > 0 && (
             <Pagination
               totalCount={pagination?.count ?? 0}
-              currentPage={1}
+              currentPage={page}
               onPageChange={onPageChange}
             />
           )}

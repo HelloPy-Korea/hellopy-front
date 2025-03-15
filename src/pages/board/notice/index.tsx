@@ -9,6 +9,7 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetNotices } from "@/quries/useGetNotices.ts";
 import { Container } from "@/components/Container";
+import { useState } from "react";
 
 const tableColumns = [
   { label: "번호", value: "id" },
@@ -30,13 +31,15 @@ export const Notice: React.FC = () => {
     },
   };
 
-  const { data: notices } = useGetNotices();
+  const [page, setPage] = useState<number>(1);
+
+  const { data: notices } = useGetNotices(page);
 
   const noticeList = notices?.data ?? [];
   const pagination = notices?.pagination;
 
   const onPageChange = (val: number) => {
-    console.log("page: " + val);
+    setPage(val);
   };
 
   return (
@@ -73,7 +76,7 @@ export const Notice: React.FC = () => {
           {noticeList && noticeList.length > 0 && (
             <Pagination
               totalCount={pagination?.count ?? 0}
-              currentPage={1}
+              currentPage={page}
               onPageChange={onPageChange}
             />
           )}
