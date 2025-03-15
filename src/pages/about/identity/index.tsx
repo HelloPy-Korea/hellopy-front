@@ -238,7 +238,7 @@ const AboutIdentity = () => {
           {[PymonImg1, PymonImg2, PymonImg3].map((pymon, index) => (
             <img
               key={index}
-              className="relative h-[386px] max-h-full w-[254px] max-w-full sm:h-[300px] sm:w-[200px] md:h-[330px] md:w-[220px] lg:h-[386px] lg:w-[254px]"
+              className="relative sm:h-[300px] sm:w-[200px] md:h-[330px] md:w-[220px] lg:h-[386px] lg:w-[254px]"
               style={{ objectFit: "cover" }}
               src={pymon}
             />
