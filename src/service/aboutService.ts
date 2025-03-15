@@ -4,6 +4,7 @@ export const AboutService = {
   QueryKey: {
     getManagers: "getManagers",
     getMerchandises: "getMerchandises",
+    getCalendars: "getCalendars",
   },
 
   getManagers: async () => {
@@ -14,6 +15,12 @@ export const AboutService = {
 
   getMerchandises: async () => {
     const { data } = await instance.get(`/merchandise`);
+
+    return data;
+  },
+
+  getCalendars: async () => {
+    const { data } = await instance.get(`/pymoncalendar/`);
 
     return data;
   },

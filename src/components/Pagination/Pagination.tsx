@@ -36,7 +36,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="mt-10 flex items-center justify-center gap-4">
       <button
         className="p-2 text-gray-500 hover:text-black disabled:text-gray-300"
         onClick={() => onPageChange(1)}

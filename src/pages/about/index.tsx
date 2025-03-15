@@ -23,6 +23,7 @@ const About = () => {
   return (
     <div className="align-center flex flex-col">
       <HeaderBanner
+        mobileTitle={"따뜻하고 포용적인 커뮤니티"}
         backgroundImage={AboutImg}
         title="파이썬을 사랑하는 모든 이들을 위한"
         subTitle="따뜻하고 포용적인 커뮤니티"
@@ -61,59 +62,76 @@ const About = () => {
       <div className="relative">
         <VisualSection />
       </div>
-      <div
-        className="flex items-center bg-[#FCF7FF] bg-cover bg-center px-16 py-16"
-        style={{ backgroundImage: `url(${PymonMacImg})` }}
-      >
-        <div className="flex w-full flex-col justify-between gap-10 md:flex-row">
-          <div className="inline-flex flex-col gap-5">
-            {/* 타이틀 */}
-            <div className="flex flex-col gap-0.5">
-              <div className="text-xl font-semibold text-hellopy-purple-200">
-                SNS channel
-              </div>
-              <div className="text-[32px] font-semibold text-black">
-                SNS 채널
-              </div>
-            </div>
 
-            {/* 설명 */}
-            <div className="flex flex-col gap-1 text-lg font-light text-black">
-              {[
-                " HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을",
-                "쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고,",
-                "커뮤니티와 함께 소통하세요!",
-              ].map((text, index) => (
-                <span key={index}>{text}</span>
-              ))}
+      <div className={"bg-[#FCF7FF]"}>
+        <AboutSection
+          style={{ backgroundImage: `url(${PymonMacImg})` }}
+          type={2}
+        >
+          <div className="flex w-full flex-col justify-between gap-10 md:flex-row">
+            <div className="inline-flex flex-col gap-5">
+              {/* 타이틀 */}
+              <div className="flex flex-col gap-0.5">
+                <div className="text-xl font-semibold text-hellopy-purple-200">
+                  SNS channel
+                </div>
+                <div className="text-[32px] font-semibold text-black">
+                  SNS 채널
+                </div>
+              </div>
+
+              {/* 설명 */}
+              <div className="flex flex-col gap-1 text-lg font-light text-black">
+                {[
+                  " HelloPY는 공식 홈페이지 외에도 다양한 SNS 채널을 통해 소식을",
+                  "쉽게 접할 수 있습니다. 원하는 플랫폼에서 편하게 소식을 받아보고,",
+                  "커뮤니티와 함께 소통하세요!",
+                ].map((text, index) => (
+                  <span key={index}>{text}</span>
+                ))}
+              </div>
+            </div>
+            <div className="grid w-full grid-cols-2 gap-8 md:w-1/2">
+              <img
+                src={DiscordBtn}
+                alt="Discord"
+                className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://discord.gg/EV62Xyyw");
+                }}
+              />
+              <img
+                src={YoutubeBtn}
+                alt="YouTube"
+                className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://www.youtube.com/@HelloPY-2024");
+                }}
+              />
+              <img
+                src={InstagramBtn}
+                alt="Instagram"
+                className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://www.instagram.com/hello_py_/");
+                }}
+              />
+              <img
+                src={LinkedinBtn}
+                alt="LinkedIn"
+                className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open(
+                    "https://kr.linkedin.com/in/hellopy-community-5420b8342",
+                  );
+                }}
+              />
             </div>
           </div>
-          <div className="grid w-full grid-cols-2 gap-8 md:w-1/2">
-            <img
-              src={DiscordBtn}
-              alt="Discord"
-              className="h-auto w-full rounded-xl"
-            />
-            <img
-              src={YoutubeBtn}
-              alt="YouTube"
-              className="h-auto w-full rounded-xl"
-            />
-            <img
-              src={InstagramBtn}
-              alt="Instagram"
-              className="h-auto w-full rounded-xl"
-            />
-            <img
-              src={LinkedinBtn}
-              alt="LinkedIn"
-              className="h-auto w-full rounded-xl"
-            />
-          </div>
-        </div>
+        </AboutSection>
       </div>
 
-      <AboutSection>
+      <AboutSection type={2}>
         <AboutSectionTitle
           title={"HelloPY 운영진"}
           subtitle={"Organizing Committee"}
