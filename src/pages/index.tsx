@@ -66,7 +66,7 @@ export const Home = () => {
                     `}
         buttonText="전체 활동 보기 →"
         textPosition="right"
-        buttonUrl="/news"
+        buttonUrl="none"
       />
 
       <HomeCard
@@ -79,7 +79,7 @@ export const Home = () => {
                     `}
         buttonText="Discord 바로가기 →"
         textPosition="left"
-        buttonUrl=""
+        buttonUrl="https://discord.gg/EV62Xyyw"
       />
     </div>
   );

@@ -27,7 +27,15 @@ export const HomeCard = ({
     if (!buttonUrl || buttonUrl.trim().length === 0) {
       return;
     }
-    navigate(buttonUrl);
+    if (buttonUrl === "none") {
+      alert("추후 제공될 예정입니다!");
+      return;
+    }
+    if (buttonUrl.includes("http")) {
+      window.open(buttonUrl);
+    } else {
+      navigate(buttonUrl);
+    }
   };
 
   return (

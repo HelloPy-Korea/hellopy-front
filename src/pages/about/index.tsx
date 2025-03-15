@@ -96,21 +96,35 @@ const About = () => {
                 src={DiscordBtn}
                 alt="Discord"
                 className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://discord.gg/EV62Xyyw");
+                }}
               />
               <img
                 src={YoutubeBtn}
                 alt="YouTube"
                 className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://www.youtube.com/@HelloPY-2024");
+                }}
               />
               <img
                 src={InstagramBtn}
                 alt="Instagram"
                 className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open("https://www.instagram.com/hello_py_/");
+                }}
               />
               <img
                 src={LinkedinBtn}
                 alt="LinkedIn"
                 className="h-auto w-full rounded-xl"
+                onClick={() => {
+                  window.open(
+                    "https://kr.linkedin.com/in/hellopy-community-5420b8342",
+                  );
+                }}
               />
             </div>
           </div>
