@@ -10,8 +10,8 @@ export const GalleryItem: React.FC<MD> = ({ id, name, image, description }) => {
         alt={`hellopy-md-${id}`}
       />
       <div className="mt-2 flex flex-col">
-        <h3 className="text-[20px] font-semibold">{name}</h3>
-        <p className="text-[16px] font-light">{description}</p>
+        <h3 className="truncate text-[20px] font-semibold">{name}</h3>
+        <p className="truncate text-[16px] font-light">{description}</p>
       </div>
     </div>
   );

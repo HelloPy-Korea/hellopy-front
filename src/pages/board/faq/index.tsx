@@ -8,11 +8,15 @@ import * as React from "react";
 
 import { useNavigate } from "react-router-dom";
 import { useGetFaqs } from "@/quries/useGetFaqs.ts";
+import { Container } from "@/components/Container";
+import { useState } from "react";
 
 const tableColumns = ["id", "question", "created_at"];
 
 export const Faq: React.FC = () => {
   const nav = useNavigate();
+  const [page, setPage] = useState<number>(1);
+
   const tabMockData = {
     tabs: [
       { label: "공지사항", value: "notice" },
@@ -24,12 +28,12 @@ export const Faq: React.FC = () => {
     },
   };
 
-  const { data: faqs } = useGetFaqs();
+  const { data: faqs } = useGetFaqs(page);
   const faqList = faqs?.data ?? [];
   const pagination = faqs?.pagination;
 
   const onPageChange = (val: number) => {
-    console.log("page: " + val);
+    setPage(val);
   };
 
   return (
@@ -53,24 +57,26 @@ export const Faq: React.FC = () => {
           />
         </HeaderBanner>
       </div>
-      <div className="flex w-[1920px] flex-col items-center justify-center py-32">
-        <div className="mb-8">
+      <Container className={"min-h-[600px]"}>
+        <div className="flex w-full flex-col items-center justify-center px-40 py-10">
           {/* BUG: 탭 정렬 스타일 문제 */}
           <Tab
             tabs={tabMockData.tabs}
             activeTab={tabMockData.activeTab}
             onTabChange={tabMockData.onTabChange}
           />
+          {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
+          <FAQTable columns={tableColumns} data={faqList} />
+          {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
+          {faqList && faqList.length > 0 && (
+            <Pagination
+              totalCount={pagination?.count ?? 0}
+              currentPage={page}
+              onPageChange={onPageChange}
+            />
+          )}
         </div>
-        {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
-        <FAQTable columns={tableColumns} data={faqList} />
-        {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
-        <Pagination
-          totalCount={pagination?.count ?? 0}
-          currentPage={1}
-          onPageChange={onPageChange}
-        />
-      </div>
+      </Container>
     </>
   );
 };

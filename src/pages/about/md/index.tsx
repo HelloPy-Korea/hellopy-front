@@ -7,6 +7,7 @@ import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 import { Gallery } from "@/components/Gallery";
 import { useGetMds } from "@/quries/useGetMds.ts";
 import { MD } from "@/types/common.ts";
+import { Container } from "@/components/Container";
 
 const AboutMd = () => {
   const { data: mdData } = useGetMds();
@@ -25,15 +26,16 @@ const AboutMd = () => {
       </HeaderBanner>
 
       <AboutSection>
-        <AboutSectionTitle
-          title={"MD 한눈에 보기"}
-          subtitle={"MD Overview"}
-          description={[]}
-        />
-        <Gallery items={mdList} />
+        <Container>
+          <AboutSectionTitle
+            title={"MD 한눈에 보기"}
+            subtitle={"MD Overview"}
+            description={[]}
+          />
+          <Gallery items={mdList} />
+        </Container>
       </AboutSection>
-
-      <div className="relative w-[1920px]">
+      <div className="relative">
         <img
           src={BanngerImg}
           className="h-auto w-full object-cover"
