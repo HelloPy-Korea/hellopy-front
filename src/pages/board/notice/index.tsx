@@ -45,9 +45,9 @@ export const Notice: React.FC = () => {
         {/* XXX: 폰트 사이즈도 안 맞는 걸로 추측 */}
         <HeaderBanner
           backgroundImage={faqBannerImg}
-          title={"자주 묻는 질문"}
+          title={"공지사항"}
           description={`
-            <div class="flex flex-col">
+            <div class="flex flex-col space-y-1 md:space-y-2">
               <p>HelloPY의 최신 소식과 중요한 안내 사항을 확인할 수 있는 공간입니다.</p>
               <p>원활한 서비스 이용을 위해 공지사항을 주기적으로 확인해 주세요!</p>
               <p>궁금한 점이 있다면 먼저 FAQ를 참고하시고, 추가 문의 사항이 있을 경우</p>
