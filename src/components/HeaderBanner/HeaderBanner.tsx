@@ -6,6 +6,7 @@ interface HeaderBannerProps extends React.ComponentProps<"div"> {
   subTitle?: string;
   description: string;
   children?: ReactNode;
+  mobileTitle?: string;
 }
 
 export const HeaderBanner: React.FC<HeaderBannerProps> = ({
@@ -13,6 +14,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
   title,
   subTitle,
   description,
+  mobileTitle,
   children,
   ...props
 }) => {
@@ -35,7 +37,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
         {/* 모바일에서만 보이는 타이틀 */}
         <div className="absolute left-4 top-4 z-10 md:hidden">
           <h1 className="text-2xl font-semibold leading-tight tracking-[-0.5px] dark:text-white">
-            {title}
+            {mobileTitle ?? title}
           </h1>
         </div>
 
@@ -43,11 +45,11 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
         <div className="absolute left-4 top-24 flex max-w-[90%] flex-col gap-3 overflow-hidden md:left-[16.56%] md:top-3/4 md:max-w-[60%] md:-translate-y-3/4 md:gap-[18px]">
           <div className="hidden md:block">
             <div>
-              <h1 className="truncate text-[64px] font-semibold leading-normal tracking-[-1.28px] dark:text-white">
+              <h1 className="text-[64px] font-semibold leading-normal tracking-[-1.28px] dark:text-white">
                 {title}
               </h1>
               {subTitle && (
-                <h1 className="truncate text-[64px] font-semibold text-hellopy-purple-200">
+                <h1 className="text-[64px] font-semibold text-hellopy-purple-200">
                   {subTitle}
                 </h1>
               )}

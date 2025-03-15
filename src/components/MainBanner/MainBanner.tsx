@@ -13,7 +13,7 @@ export const MainBanner: React.FC<MainBannerProps> = ({
   description,
 }) => {
   return (
-    <div className="relative flex flex-col justify-center">
+    <div className="relative flex flex-col justify-center overflow-hidden">
       {/* 배경 이미지 */}
       <img
         src={backgroundImage}
@@ -30,7 +30,7 @@ export const MainBanner: React.FC<MainBannerProps> = ({
             {title}
           </h1>
           <p
-            className="text-center text-xl text-white"
+            className="hidden overflow-hidden text-center text-xl text-white md:block"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
