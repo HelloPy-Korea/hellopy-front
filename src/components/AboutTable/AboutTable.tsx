@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Column {
   label: string;
   value: string;
@@ -8,10 +10,18 @@ interface AboutTableProps<T> {
   data: T[];
 }
 
-export const AboutTable = <T,>({ columns, data }: AboutTableProps<T>) => {
+export const AboutTable = <T extends { id: number }>({
+  columns,
+  data,
+}: AboutTableProps<T>) => {
+  const nav = useNavigate();
+  const moveToDetail = (row: T) => {
+    nav(`/board/notice/${row.id}`);
+  };
+
   return (
-    <div className="h-[610px] w-[1251px] overflow-x-auto">
-      <table className="w-full border-collapse border border-black/50">
+    <div className="w-full overflow-x-auto">
+      <table className="w-full border-collapse border-black/50">
         <thead className="bg-white text-lg font-medium text-[#343434]">
           <tr className="border-b border-black/50">
             {columns.map((column, index) => (
@@ -26,7 +36,11 @@ export const AboutTable = <T,>({ columns, data }: AboutTableProps<T>) => {
         </thead>
         <tbody className="bg-white">
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex} className="border-b border-black/20">
+            <tr
+              key={rowIndex}
+              className="border-b border-black/20"
+              onClick={() => moveToDetail(row)}
+            >
               {columns.map((column, index) => (
                 <td
                   key={index}

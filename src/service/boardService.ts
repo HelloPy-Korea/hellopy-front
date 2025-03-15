@@ -22,7 +22,7 @@ export const BoardService = {
   },
 
   getNotice: async (id: string) => {
-    const { data } = await instance.get(`${NOTICE_API_URL}/${id}`);
+    const { data } = await instance.get(`${NOTICE_API_URL}/${id}/`);
 
     return data;
   },

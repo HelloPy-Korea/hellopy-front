@@ -8,12 +8,13 @@ import * as React from "react";
 
 import { useNavigate } from "react-router-dom";
 import { useGetNotices } from "@/quries/useGetNotices.ts";
+import { Container } from "@/components/Container";
 
 const tableColumns = [
   { label: "번호", value: "id" },
-  { label: "태그", value: "tag" },
+  /* { label: "태그", value: "tag" },*/
   { label: "제목", value: "title" },
-  { label: "작성일", value: "date" },
+  /*{ label: "작성일", value: "date" },*/
 ];
 
 export const Notice: React.FC = () => {
@@ -59,21 +60,25 @@ export const Notice: React.FC = () => {
           />
         </HeaderBanner>
       </div>
-      <div className="flex w-[1920px] flex-col items-center justify-center py-32">
-        <Tab
-          tabs={tabMockData.tabs}
-          activeTab={tabMockData.activeTab}
-          onTabChange={tabMockData.onTabChange}
-        />
-        {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
-        <AboutTable columns={tableColumns} data={noticeList} />
-        {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
-        <Pagination
-          totalCount={pagination?.count ?? 0}
-          currentPage={1}
-          onPageChange={onPageChange}
-        />
-      </div>
+      <Container className={"min-h-[600px]"}>
+        <div className="flex w-full flex-col items-center justify-center px-40 py-10">
+          <Tab
+            tabs={tabMockData.tabs}
+            activeTab={tabMockData.activeTab}
+            onTabChange={tabMockData.onTabChange}
+          />
+          {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
+          <AboutTable columns={tableColumns} data={noticeList} />
+          {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
+          {noticeList && noticeList.length > 0 && (
+            <Pagination
+              totalCount={pagination?.count ?? 0}
+              currentPage={1}
+              onPageChange={onPageChange}
+            />
+          )}
+        </div>
+      </Container>
     </>
   );
 };

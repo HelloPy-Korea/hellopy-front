@@ -12,8 +12,8 @@ export const FAQTable = <T extends object>({
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   return (
-    <div className="h-[610px] w-[1251px] overflow-x-auto">
-      <table className="w-full border-collapse border border-black/50">
+    <div className="w-full overflow-x-auto">
+      <table className="w-full border-collapse border-black/50">
         <tbody className="bg-white">
           {data.map((faq, index) => (
             <React.Fragment key={index}>
