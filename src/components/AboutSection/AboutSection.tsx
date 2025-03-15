@@ -6,7 +6,7 @@ export const AboutSection: React.FC<React.PropsWithChildren> = ({
   ...props
 }) => {
   return (
-    <Container className="flex flex-col items-center px-16 py-16" {...props}>
+    <Container className="flex flex-col items-center px-40 py-10" {...props}>
       <div className="flex w-full flex-col gap-10">{children}</div>
     </Container>
   );

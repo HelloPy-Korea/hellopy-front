@@ -8,7 +8,7 @@ interface GalleryProps {
 
 export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   return (
-    <div className="grid grid-cols-4 gap-[31px]">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:gap-[31px]">
       {items.map((item) => (
         <GalleryItem key={item.id} {...item} />
       ))}
