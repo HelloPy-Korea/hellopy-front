@@ -9,8 +9,26 @@ export const LogoBannerLink: React.FC<LogoBannerLinkProps> = ({
   children,
   href,
 }) => {
+  const handleDownload = async () => {
+    const response = await fetch(href, { mode: "cors" });
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "downloaded_image.jpg"; // 저장될 파일명
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
-    <a className="self-start border-b border-black text-[#444]" href={href}>
+    <a
+      className="self-start border-b border-black text-[#444]"
+      href={href}
+      onClick={handleDownload}
+    >
       {children} →
     </a>
   );

@@ -162,12 +162,16 @@ const AboutIdentity = () => {
           <LogoBanner>
             <LogoBannerTitle>HelloPY Main Logo</LogoBannerTitle>
             <LogoBannerImage src="https://placehold.co/480x250" />
-            <LogoBannerLink href="#">메인로고 다운받기</LogoBannerLink>
+            <LogoBannerLink href="https://placehold.co/480x250">
+              메인로고 다운받기
+            </LogoBannerLink>
           </LogoBanner>
           <LogoBanner>
             <LogoBannerTitle>HelloPY 3D Logo</LogoBannerTitle>
             <LogoBannerImage src="https://placehold.co/480x250" />
-            <LogoBannerLink href="#">3D로고 다운받기</LogoBannerLink>
+            <LogoBannerLink href="https://placehold.co/480x250">
+              3D로고 다운받기
+            </LogoBannerLink>
           </LogoBanner>
         </div>
       </AboutSection>
