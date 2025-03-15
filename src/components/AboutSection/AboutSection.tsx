@@ -14,7 +14,7 @@ export const AboutSection: React.FC<
       </div>
     </Container>
   ) : (
-    <Container className="flex flex-col items-center px-40 py-10" {...props}>
+    <Container className="flex flex-col items-center px-16 py-16" {...props}>
       <div className="flex w-full flex-col gap-10">{children}</div>
     </Container>
   );
