@@ -4,32 +4,32 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - release  # release 브랜치에 push될 때 실행
+      - release
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # GitHub Actions 실행 환경
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # 코드 가져오기
+        uses: actions/checkout@v3
 
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22  # Node.js 버전 (필요에 따라 변경)
+          node-version: 22
 
       - name: Install Dependencies
-        run: npm install  # 패키지 설치
+        run: npm install
 
       - name: Build Project
-        run: npm run build  # 빌드 실행
+        run: npm run build
 
       - name: Upload Build to EC2
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: 43.201.73.223
           username: ubuntu
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          source: "dist/*"  # 빌드 파일을 업로드
-          target: "/mnt/nfs_folder/"  # EC2 서버의 배포 경로
+          source: "dist/*"
+          target: "/mnt/nfs_folder/"
