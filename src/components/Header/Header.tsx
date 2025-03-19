@@ -56,6 +56,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
         <img
           className="h-[78px] w-[145px] object-contain"
           src={textColor === "text-white" ? HellopyImg : HellopyImgPurple}
+          onClick={() => goToMenu("/")}
           alt="Logo"
         />
 

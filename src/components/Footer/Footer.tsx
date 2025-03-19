@@ -12,12 +12,19 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-start">
           <img className="h-[80px] w-[145px]" src={HellopyImg} alt="logo" />
           <div className="mt-4 flex gap-4">
-            <img className="h-[40px] w-[40px]" src={YoutubeImg} alt="youtube" />
-            <img className="h-[40px] w-[40px]" src={DiscordImg} alt="discord" />
+            <img className="h-[40px] w-[40px]" src={YoutubeImg} alt="youtube"  onClick={() => {
+                  window.open("https://www.youtube.com/@HelloPY-2024");
+                }} />
+            <img className="h-[40px] w-[40px]" src={DiscordImg} alt="discord" onClick={() => {
+                  window.open("https://discord.gg/EV62Xyyw");
+                }} />
             <img
               className="h-[40px] w-[40px]"
               src={InstagramImg}
               alt="instagram"
+              onClick={() => {
+                window.open("https://www.instagram.com/hello_py_/");
+              }}
             />
           </div>
           <div className="mt-6 text-sm text-[#FDFAFE]">

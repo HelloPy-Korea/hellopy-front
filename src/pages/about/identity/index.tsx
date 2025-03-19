@@ -32,49 +32,11 @@ const keywordList = [
   ["Growth", "성장"],
 ].map(([text, subText]) => (
   <React.Fragment key={text}>
-    <p className="text-lg font-light">{text}</p>
-    <p className="text-2xl">{subText}</p>
+    <p className="font-light">{text}</p>
+    <p>{subText}</p>
   </React.Fragment>
 ));
 
-const calendarData = [
-  {
-    year: 2025,
-    month: 1,
-    description: "2025년 1월 달력입니다",
-    link: "https://picsum.photos/301/201?random=1",
-  },
-  {
-    year: 2025,
-    month: 2,
-    description: "2025년 2월 달력입니다",
-    link: "https://picsum.photos/302/202?random=2",
-  },
-  {
-    year: 2025,
-    month: 1,
-    description: "2025년 1월 달력입니다",
-    link: "https://picsum.photos/301/201?random=1",
-  },
-  {
-    year: 2025,
-    month: 2,
-    description: "2025년 2월 달력입니다",
-    link: "https://picsum.photos/302/202?random=2",
-  },
-  {
-    year: 2025,
-    month: 1,
-    description: "2025년 1월 달력입니다",
-    link: "https://picsum.photos/301/201?random=1",
-  },
-  {
-    year: 2025,
-    month: 2,
-    description: "2025년 2월 달력입니다",
-    link: "https://picsum.photos/302/202?random=2",
-  },
-];
 
 const hellopyUiList = [
   { name: "HelloPY Purple", img: PurpleImg },
@@ -258,7 +220,7 @@ const AboutIdentity = () => {
             ]}
           />
           <SelectBox options={yearList} onSelect={onSelectYear} />
-          <PymonCalendar calendar={calendarData} selectedYear={selectedYear} />
+          <PymonCalendar selectedYear={selectedYear} />
         </AboutSection>
       </div>
     </div>

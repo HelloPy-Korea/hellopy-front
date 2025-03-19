@@ -53,27 +53,39 @@ export const TextCircleGroup: React.FC<TextCircleGroupProps> = ({
   size,
   overlap = 0,
 }) => {
-  const [isVertical, setIsVertical] = React.useState(false);
+  const [scale, setScale] = React.useState(1);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const checkWidth = () => {
+    const calculateScale = () => {
+      if (!containerRef.current) return;
+      
       const overlapPx = overlap * 4;
       const totalWidth = (size - overlapPx) * textList.length + overlapPx;
-      setIsVertical(totalWidth > window.innerWidth);
+      const parentWidth = containerRef.current.parentElement?.clientWidth || window.innerWidth;
+      const newScale = Math.min(1, parentWidth / totalWidth);
+      setScale(newScale);
     };
 
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
+    calculateScale();
+    window.addEventListener("resize", calculateScale);
 
-    return () => window.removeEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", calculateScale);
   }, [size, textList.length, overlap]);
+
+  const scaledOverlap = Math.max(0, Math.round(overlap * scale));
 
   return (
     <div
-      className={`flex ${isVertical ? "flex-col" : overlapClasses[overlap]} justify-center whitespace-pre text-center text-[20px] font-medium`}
+      ref={containerRef}
+      className={`flex ${overlapClasses[scaledOverlap as keyof typeof overlapClasses]} justify-center whitespace-pre text-center font-medium`}
+      style={{
+        minWidth: "100%",
+        fontSize: `${20 * scale}px`,
+      }}
     >
       {textList.map((text, index) => (
-        <TextCircle key={index} size={size}>
+        <TextCircle key={index} size={size * scale}>
           {text}
         </TextCircle>
       ))}
