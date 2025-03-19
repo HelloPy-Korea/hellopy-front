@@ -151,39 +151,6 @@ const About = () => {
               image={manager.photo}
             />
           ))}
-
-          <ProfileCard
-            name="홍길동"
-            position="Frontend"
-            links={{
-              email: "hong@example.com",
-              linkedin: "https://www.linkedin.com/in/hong",
-              github: "https://github.com/hong",
-            }}
-            image="https://example.com/path/to/profile-image.jpg"
-          />
-
-          <ProfileCard
-            name="홍길동"
-            position="Frontend"
-            links={{
-              email: "hong@example.com",
-              linkedin: "https://www.linkedin.com/in/hong",
-              github: "https://github.com/hong",
-            }}
-            image="https://example.com/path/to/profile-image.jpg"
-          />
-
-          <ProfileCard
-            name="홍길동"
-            position="Frontend"
-            links={{
-              email: "hong@example.com",
-              linkedin: "https://www.linkedin.com/in/hong",
-              github: "https://github.com/hong",
-            }}
-            image="https://example.com/path/to/profile-image.jpg"
-          />
         </div>
       </AboutSection>
     </div>
