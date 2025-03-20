@@ -18,7 +18,7 @@ export const FAQTable = <T extends object>({
           {data.map((faq, index) => (
             <React.Fragment key={index}>
               <tr
-                className="border-b border-black/20"
+                className="border-b border-black/20 hover:cursor-pointer"
                 onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
               >
                 <td className="p-[9px] text-left text-lg font-normal text-[#343434]">

@@ -38,7 +38,7 @@ export const AboutTable = <T extends { id: number }>({
           {data.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className="border-b border-black/20"
+              className="border-b border-black/20 hover:cursor-pointer"
               onClick={() => moveToDetail(row)}
             >
               {columns.map((column, index) => (
