@@ -1,0 +1,35 @@
+name: Deploy to AWS EC2
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Upload Build to EC2
+        uses: appleboy/scp-action@master
+        with:
+          host: 43.201.73.223
+          username: ubuntu
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          source: "dist/*"
+          target: "/mnt/nfs_folder/"

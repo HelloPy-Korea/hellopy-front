@@ -14,6 +14,13 @@ export type Manager = {
   role: string;
 };
 
+export type Calendar = {
+  calendar_photo: string;
+  description: string;
+  id: number;
+  year_month: string;
+};
+
 export type MD = {
   description: string;
   id: number;

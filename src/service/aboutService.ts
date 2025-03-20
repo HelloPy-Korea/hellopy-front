@@ -20,7 +20,7 @@ export const AboutService = {
   },
 
   getCalendars: async () => {
-    const { data } = await instance.get(`/pymoncalendar/`);
+    const { data } = await instance.get(`/calendar/`);
 
     return data;
   },

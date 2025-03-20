@@ -16,7 +16,8 @@ export const LogoBannerLink: React.FC<LogoBannerLinkProps> = ({
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = "downloaded_image.jpg"; // 저장될 파일명
+    a.download = "hellopy_logo.jpg"; 
+    a.style.display = "none";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -26,7 +27,6 @@ export const LogoBannerLink: React.FC<LogoBannerLinkProps> = ({
   return (
     <a
       className="self-start border-b border-black text-[#444]"
-      href={href}
       onClick={handleDownload}
     >
       {children} →
