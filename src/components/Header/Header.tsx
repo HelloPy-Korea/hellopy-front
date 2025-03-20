@@ -80,7 +80,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
                   {subItems?.map(({ label: subLabel, path }, index) => (
                     <div
                       key={subLabel}
-                      className={`flex h-[53px] w-[143px] items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] ${
+                      className={`flex h-[53px] w-[143px] items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] cursor-pointer ${
                         index === subItems.length - 1 ? "border-b-0" : ""
                       }`}
                       onClick={() => goToMenu(path)}
