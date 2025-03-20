@@ -44,6 +44,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
   const goToMenu = (path: string) => {
     if (path) {
       nav(path);
+      setIsMenuOpen(false)
     }
   };
 
