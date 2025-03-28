@@ -49,7 +49,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
   const goToMenu = (path: string) => {
     if (path) {
       nav(path);
-      setIsMenuOpen(false)
+      setIsMenuOpen(false);
     }
   };
 
@@ -76,7 +76,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
                 if (hasDropdown) {
                   setOpenDropdown(label);
                 } else {
-                  goToMenu(path)
+                  goToMenu(path);
                 }
               }}
             >
@@ -89,7 +89,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
                   {subItems?.map(({ label: subLabel, path }, index) => (
                     <div
                       key={subLabel}
-                      className={`flex h-[53px] w-[143px] items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] cursor-pointer ${
+                      className={`flex h-[53px] w-[143px] cursor-pointer items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] ${
                         index === subItems.length - 1 ? "border-b-0" : ""
                       }`}
                       onClick={() => goToMenu(path)}
@@ -122,12 +122,16 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
           }`}
         >
           <nav className="flex flex-col gap-4 p-4">
-            {menuItems.map(({ label, hasDropdown, subItems }) => (
+            {menuItems.map(({ label, hasDropdown, subItems, path }) => (
               <div key={label} className="relative">
                 <div
                   className="flex cursor-pointer items-center justify-between"
                   onClick={() => {
-                    setOpenDropdown(openDropdown === label ? null : label);
+                    if (hasDropdown) {
+                      setOpenDropdown(label);
+                    } else {
+                      goToMenu(path);
+                    }
                   }}
                 >
                   <span className="text-lg font-medium">{label}</span>
@@ -139,7 +143,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
                     {subItems?.map(({ label: subLabel, path }, index) => (
                       <div
                         key={subLabel}
-                        className={`flex h-[53px] items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] cursor-pointer ${
+                        className={`flex h-[53px] cursor-pointer items-center justify-center border-b border-[#ECECEC] hover:bg-[#908F8F1A] ${
                           index === subItems.length - 1 ? "border-b-0" : ""
                         }`}
                         onClick={() => goToMenu(path)}
