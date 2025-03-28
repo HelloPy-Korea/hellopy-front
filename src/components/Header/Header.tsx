@@ -26,6 +26,11 @@ const menuItems = [
       { label: "MD", path: "/about/md" },
     ],
   },
+  {
+    label: "COC",
+    hasDropdown: false,
+    path: "/coc",
+  },
   /*  { label: "NEWS", hasDropdown: false },
   { label: "SUPPORT", hasDropdown: false },
   { label: "COC", hasDropdown: false },*/
@@ -63,13 +68,17 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
 
         {/* 데스크탑 네비게이션 */}
         <nav className="relative z-[999] hidden gap-2 md:flex md:gap-10">
-          {menuItems.map(({ label, hasDropdown, subItems }) => (
+          {menuItems.map(({ label, hasDropdown, subItems, path }) => (
             <div
               key={label}
               className="relative flex cursor-pointer items-center gap-2"
-              onClick={() =>
-                setOpenDropdown(openDropdown === label ? null : label)
-              }
+              onClick={() => {
+                if (hasDropdown) {
+                  setOpenDropdown(label);
+                } else {
+                  goToMenu(path)
+                }
+              }}
             >
               <HeaderMenu label={label} textColor={textColor} />
               {hasDropdown && (
@@ -117,9 +126,9 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
               <div key={label} className="relative">
                 <div
                   className="flex cursor-pointer items-center justify-between"
-                  onClick={() =>
-                    setOpenDropdown(openDropdown === label ? null : label)
-                  }
+                  onClick={() => {
+                    setOpenDropdown(openDropdown === label ? null : label);
+                  }}
                 >
                   <span className="text-lg font-medium">{label}</span>
                   {hasDropdown && <FaChevronDown className="text-gray-600" />}
