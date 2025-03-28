@@ -12,9 +12,10 @@ import { Container } from "@/components/Container";
 import { useState } from "react";
 
 const tableColumns = [
-  { label: "번호", value: "id" },
+  { label: "번호", value: "id", size:"10%"},
   /* { label: "태그", value: "tag" },*/
-  { label: "제목", value: "title" },
+  { label: "제목", value: "title", size:"80%"},
+  { label: "고정", value: "pin", size:"10%"},
   /*{ label: "작성일", value: "date" },*/
 ];
 
@@ -40,6 +41,10 @@ export const Notice: React.FC = () => {
 
   const onPageChange = (val: number) => {
     setPage(val);
+  };
+
+  const moveToDetail = (row: any) => {
+    nav(`/board/notice/${row.id}`);
   };
 
   return (
@@ -71,7 +76,7 @@ export const Notice: React.FC = () => {
             onTabChange={tabMockData.onTabChange}
           />
           {/* REVIEW: "총 N개의 공지가 있습니다" 레이블 어떻게 표시할 건지? */}
-          <AboutTable columns={tableColumns} data={noticeList} />
+          <AboutTable columns={tableColumns} data={noticeList} moveToDetail={moveToDetail} />
           {/* XXX: AboutTable 테이블 높이가 고정되어 있어서 Pagination 위치가 부자연스러움 */}
           {noticeList && noticeList.length > 0 && (
             <Pagination

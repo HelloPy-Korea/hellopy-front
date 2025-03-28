@@ -8,6 +8,8 @@ import {
 import { QueryClient, QueryClientProvider } from "react-query";
 import Layout from "@/components/Layout/Layout.tsx";
 import { IRoute, Pages } from "@/types/route.ts";
+import NotFound from "@/pages/404";
+
 const pages: Pages = import.meta.glob("./pages/**/*.tsx", { eager: true });
 const routes: IRoute[] = [];
 
@@ -41,13 +43,19 @@ const router = createBrowserRouter([
   {
     path: "/", // Layout의 루트 경로
     element: <Layout />,
-    children: routes.map(({ Element, ErrorBoundary, ...rest }) => ({
-      ...rest,
-      element: <Element />,
-      ...(ErrorBoundary && {
-        errorElement: React.createElement(ErrorBoundary),
-      }),
-    })),
+    children: [
+      ...routes.map(({ Element, ErrorBoundary, ...rest }) => ({
+        ...rest,
+        element: <Element />,
+        ...(ErrorBoundary && {
+          errorElement: React.createElement(ErrorBoundary),
+        }),
+      })),
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ]);
 
