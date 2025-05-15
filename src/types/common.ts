@@ -27,3 +27,12 @@ export type MD = {
   image: string;
   name: string;
 };
+
+export type Gallery = {
+  id: number,
+  title: string,
+  content: string,
+  thumbnail: string,
+  tags: {id: number, name: string}[],
+  photos: string[]
+}

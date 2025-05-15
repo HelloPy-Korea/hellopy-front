@@ -8,7 +8,8 @@ const Layout = () => {
     return (
       location.pathname === "/about" ||
       location.pathname === "/about/md" ||
-      location.pathname === "/coc"
+      location.pathname === "/coc" ||
+      location.pathname === "/gallery"
     );
   };
   return (
