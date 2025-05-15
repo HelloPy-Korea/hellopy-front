@@ -8,3 +8,5 @@ export const useGetNotice = (id?: string) => {
     enabled: !!id,
   });
 };
+
+

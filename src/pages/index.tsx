@@ -66,7 +66,7 @@ export const Home = () => {
                     `}
         buttonText="전체 활동 보기 →"
         textPosition="right"
-        buttonUrl="none"
+        buttonUrl="/gallery"
       />
 
       <HomeCard
