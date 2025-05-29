@@ -31,6 +31,11 @@ const menuItems = [
     hasDropdown: false,
     path: "/coc",
   },
+  {
+    label: "GALLERY",
+    hasDropdown: false,
+    path: "/gallery",
+  }
   /*  { label: "NEWS", hasDropdown: false },
   { label: "SUPPORT", hasDropdown: false },
   { label: "COC", hasDropdown: false },*/

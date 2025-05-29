@@ -5,7 +5,12 @@ import Footer from "@/components/Footer/Footer.tsx";
 const Layout = () => {
   const location = useLocation();
   const isYellow = (): boolean => {
-    return location.pathname === "/about" || location.pathname === "/about/md";
+    return (
+      location.pathname === "/about" ||
+      location.pathname === "/about/md" ||
+      location.pathname === "/coc" ||
+      location.pathname === "/gallery"
+    );
   };
   return (
     <div>
