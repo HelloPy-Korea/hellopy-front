@@ -1,4 +1,3 @@
-
 import BgImg from "@/assets/img/gallery/banner_gallery.png";
 
 import { HeaderBanner } from "@/components/HeaderBanner";
@@ -10,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Gallery, SelectValue } from "@/types/common.ts";
 import { useGetGallery } from "@/quries/useGetGallery";
 import { Pagination } from "@/components/Pagination";
+import Timeline from '@/components/Timeline/Timeline';
 
 const selectedOptions = [
   { label: "2024년", value: "2024" },
@@ -84,7 +84,7 @@ const ActivityGallery = () => {
 
       <div className={"bg-[#FCF7FF]"}>
         <AboutSection>
-       
+          <Timeline />
         </AboutSection>
       </div>
 
