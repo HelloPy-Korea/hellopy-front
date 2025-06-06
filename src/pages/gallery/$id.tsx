@@ -1,37 +1,34 @@
 import * as React from "react";
 import { Container } from "@/components/Container";
-import { useGetNotice } from "@/quries/useGetNotice.ts";
 import { useNavigate, useParams } from "react-router-dom";
+import { useGetGalleryItem } from "@/quries/useGetGalleryItem";
 
 export const NoticeDetail: React.FC = () => {
   const { id } = useParams();
   const nav = useNavigate();
-  const { data } = useGetNotice(id);
+  const { data } = useGetGalleryItem(id ? Number(id) : undefined);
 
   const goToList = () => {
-    nav("/board/notice");
+    nav("/gallery");
   };
 
-  const notice = data?.data ?? undefined;
+  const galleryItem = data?.data ?? undefined;
 
   return (
-    notice && (
+    galleryItem && (
       <Container className={"px-5 py-10 md:px-40"}>
         <p className="px-4 py-2 text-lg font-medium text-[#2d003d]">공지사항</p>
         <section className="mb-8 border-y border-black px-4 py-8">
           <article>
             <header className="pb-12">
               <h1 className="text-4xl font-semibold text-[#2d003d]">
-                {notice.title}
+                {galleryItem.title}
               </h1>
-              <p className="py-4 text-base font-light text-[#2d003d]">
-                {new Date(notice.created_at).toLocaleDateString()}
-              </p>
               {/* REVIEW: 해시태그 컴포넌트는 없나?  todo: hashtag*/}
-              {/*<div>#컨퍼런스</div>*/}
+              {galleryItem?.tags?.map((tag:{id: number, name: string}) => <div>{tag.name}</div>)}
             </header>
             <section>
-              <p dangerouslySetInnerHTML={{ __html: notice.content }} />
+              <p dangerouslySetInnerHTML={{ __html: galleryItem.content }} />
             </section>
           </article>
         </section>
