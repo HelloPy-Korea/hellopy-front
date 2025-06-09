@@ -31,5 +31,5 @@ jobs:
           host: 43.201.73.223
           username: ubuntu
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          source: "dist/*"
+          source: "dist"
           target: "/mnt/nfs_folder/"
