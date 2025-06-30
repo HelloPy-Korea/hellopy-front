@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MD } from "@/types/common.ts";
 
-export const GalleryItem: React.FC<MD> = ({ id, name, image, description }) => {
+export const HistoryItem: React.FC<MD> = ({ id, name, image, description }) => {
   return (
     <div className="flex flex-col">
       <img

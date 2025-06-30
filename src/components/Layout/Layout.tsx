@@ -9,7 +9,7 @@ const Layout = () => {
       location.pathname === "/about" ||
       location.pathname === "/about/md" ||
       location.pathname === "/coc" ||
-      location.pathname === "/gallery"
+      location.pathname === "/history"
     );
   };
   return (

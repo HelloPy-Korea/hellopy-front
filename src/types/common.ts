@@ -28,7 +28,7 @@ export type MD = {
   name: string;
 };
 
-export type Gallery = {
+export type History = {
   id: number,
   title: string,
   content: string,

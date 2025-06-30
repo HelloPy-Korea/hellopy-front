@@ -32,9 +32,9 @@ const menuItems = [
     path: "/coc",
   },
   {
-    label: "GALLERY",
+    label: "HISTORY",
     hasDropdown: false,
-    path: "/gallery",
+    path: "/history",
   },
   { label: "SUPPORT", path: "/support", hasDropdown: false },
   /*  { label: "NEWS", hasDropdown: false },
