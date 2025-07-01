@@ -1,8 +1,8 @@
 import { useState } from "react";
 import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import HellopyImg from "@/assets/img/logo/img_hellopy.png";
-import HellopyImgPurple from "@/assets/img/logo/img_hellopy_purple.png";
+import HellopyImg from "@/assets/img/logo/img_hellopy_new_logo.svg";
+import HellopyImgPurple from "@/assets/img/logo/img_hellopy_new_logo_black.svg";
 import { Container } from "@/components/Container";
 import { useNavigate } from "react-router-dom";
 
