@@ -4,7 +4,7 @@ import BanngerImg from "@/assets/img/md/img_goods.png";
 import { HeaderBanner } from "@/components/HeaderBanner";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
-import { Gallery } from "@/components/Gallery";
+import { History } from "@/components/History";
 import { useGetMds } from "@/quries/useGetMds.ts";
 import { MD } from "@/types/common.ts";
 import { Container } from "@/components/Container";
@@ -32,7 +32,7 @@ const AboutMd = () => {
             subtitle={"MD Overview"}
             description={[]}
           />
-          <Gallery items={mdList} />
+          <History items={mdList} />
         </Container>
       </AboutSection>
       <div className="relative">
