@@ -3,6 +3,14 @@ import { Container } from "@/components/Container";
 import { useGetNotice } from "@/quries/useGetNotice.ts";
 import { useNavigate, useParams } from "react-router-dom";
 
+function sanitizeContent(html: string) {
+  return html
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<meta[\s\S]*?>/gi, "")
+    .replace(/<title[\s\S]*?<\/title>/gi, "")
+    .replace(/<\/?(html|body|head)[^>]*>/gi, "");
+}
+
 export const NoticeDetail: React.FC = () => {
   const { id } = useParams();
   const nav = useNavigate();
@@ -31,7 +39,9 @@ export const NoticeDetail: React.FC = () => {
               {/*<div>#컨퍼런스</div>*/}
             </header>
             <section>
-              <p dangerouslySetInnerHTML={{ __html: notice.content }} />
+              <div
+                dangerouslySetInnerHTML={{ __html: sanitizeContent(notice.content) }}
+              />
             </section>
           </article>
         </section>

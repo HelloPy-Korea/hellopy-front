@@ -1,5 +1,5 @@
 import * as React from "react";
-import HellopyImg from "@/assets/img/logo/img_hellopy.png";
+import HellopyImg from "@/assets/img/logo/img_hellopy_new_logo.svg";
 import DiscordImg from "@/assets/img/logo/img_discord.png";
 import YoutubeImg from "@/assets/img/logo/img_youtube.png";
 import InstagramImg from "@/assets/img/logo/img_instagram.png";
@@ -10,7 +10,11 @@ const Footer: React.FC = () => {
     <div className="relative flex items-center justify-center bg-footer">
       <Container className="flex w-full flex-col items-center justify-between gap-y-8 px-4 py-12 md:flex-row">
         <div className="order-2 flex flex-col items-center md:order-1 md:items-start">
-          <img className="h-[80px] w-[145px]" src={HellopyImg} alt="logo" />
+          <img 
+            className="h-[80px] w-[145px] object-contain" 
+            src={HellopyImg} 
+            alt="logo" 
+          />
           <div className="mt-4 flex gap-4">
             <img className="h-[40px] w-[40px]" src={YoutubeImg} alt="youtube"  onClick={() => {
                   window.open("https://www.youtube.com/@HelloPY-2024");
