@@ -8,13 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 const menuItems = [
   {
-    label: "HOME",
+    label: "공지사항",
     hasDropdown: true,
-    path: "/",
-    subItems: [
-      { label: "HOME", path: "/" },
-      { label: "공지사항", path: "/board/notice" },
-    ],
+    path: "/board/notice",
   },
   {
     label: "ABOUT",
@@ -63,21 +59,22 @@ const Header = ({ textColor }: HeaderProps) => {
   // 외부 클릭 감지하여 드롭다운 닫기
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpenDropdown(null);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <div
-      className={`relative bg-main-purple flex items-center justify-center`}
-    >
+    <div className={`relative flex items-center justify-center bg-main-purple`}>
       <Container className="flex h-[78px] w-full items-center justify-between px-4 md:px-10">
         {/* 로고 */}
         <img
@@ -88,7 +85,10 @@ const Header = ({ textColor }: HeaderProps) => {
         />
 
         {/* 데스크탑 네비게이션 */}
-        <nav ref={dropdownRef} className="relative z-[999] hidden gap-2 md:flex md:gap-10">
+        <nav
+          ref={dropdownRef}
+          className="relative z-[999] hidden gap-2 md:flex md:gap-10"
+        >
           {menuItems.map(({ label, hasDropdown, subItems, path }) => (
             <div
               key={label}
