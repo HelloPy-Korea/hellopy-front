@@ -1,8 +1,4 @@
-import BackImg from "@/assets/img/about/img_identity.png";
 import introShape from "@/assets/img/about/intro_shape.png";
-import TypoImg from "@/assets/img/about/typography.png";
-import PurpleImg from "@/assets/img/about/img_purple.png";
-import YellowImg from "@/assets/img/about/img_yellow.png";
 import PymonImg1 from "@/assets/img/about/img_type1.png";
 import PymonImg2 from "@/assets/img/about/img_type2.png";
 import PymonImg3 from "@/assets/img/about/img_type3.png";
@@ -11,7 +7,6 @@ import HellopyEnImg from "@/assets/img/logo/img_hellopy_en.jpeg";
 import HellopyEnDownloadImg from "@/assets/img/logo/img_hellopy_en_download.png";
 import HellopyKrDownloadImg from "@/assets/img/logo/img_hellopy_kr_download.png";
 
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 import { TextCircleGroup } from "@/components/TextCircle";
 import * as React from "react";
@@ -39,12 +34,6 @@ const keywordList = [
     <p>{subText}</p>
   </React.Fragment>
 ));
-
-
-const hellopyUiList = [
-  { name: "HelloPY Purple", img: PurpleImg },
-  { name: "HelloPY Yellow", img: YellowImg },
-];
 
 const selectedOptions = [
   { label: "2023년", value: "2023" },
@@ -112,48 +101,25 @@ const AboutIdentity = () => {
           <LogoBanner>
             <LogoBannerTitle>HELLOPY LOGO EN</LogoBannerTitle>
             <LogoBannerImage src={HellopyEnImg} />
-            <LogoBannerLink href={HellopyEnDownloadImg} downloadName="hellopy_logo_en.png">
+            <LogoBannerLink
+              href={HellopyEnDownloadImg}
+              downloadName="hellopy_logo_en.png"
+            >
               영어로고 다운받기
             </LogoBannerLink>
           </LogoBanner>
           <LogoBanner>
             <LogoBannerTitle>HELLOPY LOGO KR</LogoBannerTitle>
             <LogoBannerImage src={HellopyKrImg} />
-            <LogoBannerLink href={HellopyKrDownloadImg} downloadName="hellopy_logo_kr.png">
+            <LogoBannerLink
+              href={HellopyKrDownloadImg}
+              downloadName="hellopy_logo_kr.png"
+            >
               한국어로고 다운받기
             </LogoBannerLink>
           </LogoBanner>
         </div>
       </AboutSection>
-
-      <div className={"bg-[#FCF7FF]"}>
-        <AboutSection>
-          <AboutSectionTitle
-            title={"HelloPY 로고"}
-            subtitle={"LOGO"}
-            description={[
-              "HelloPY는 Hello, Python을 합친 것으로 파이썬 입문자 수준의 주니어 커뮤니티를 의미합니다.",
-              "가운데 파이썬 로고를 넣어 파이썬 커뮤니티임을 직관적으로 표현합니다.",
-            ]}
-          />
-          <div className="flex w-full justify-between gap-10">
-            <LogoBanner>
-              <LogoBannerTitle>HelloPY Main Logo</LogoBannerTitle>
-              <LogoBannerImage src="https://placehold.co/480x250" />
-              <LogoBannerLink href="https://placehold.co/480x250">
-                메인로고 다운받기
-              </LogoBannerLink>
-            </LogoBanner>
-            <LogoBanner>
-              <LogoBannerTitle>HelloPY 3D Logo</LogoBannerTitle>
-              <LogoBannerImage src="https://placehold.co/480x250" />
-              <LogoBannerLink href="https://placehold.co/480x250">
-                3D로고 다운받기
-              </LogoBannerLink>
-            </LogoBanner>
-          </div>
-        </AboutSection>
-      </div>
 
       <AboutSection>
         <AboutSectionTitle
