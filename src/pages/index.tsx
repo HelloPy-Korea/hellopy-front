@@ -5,15 +5,11 @@ import HomeImg from "@/assets/img/home/img_home.png";
 import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";
-
+const DISCORD_URL: string = import.meta.env.VITE_DISCORD_URL;
 export const Home = () => {
   return (
     <div className="align-center flex flex-col">
-      <MainBanner
-        backgroundImage={HomeImg}
-        title=""
-        description={``}
-      />
+      <MainBanner backgroundImage={HomeImg} title="" description={``} />
       <HomeCard
         backgroundImage={CalendarImg}
         title="이달의 달력"
@@ -50,7 +46,7 @@ export const Home = () => {
                     `}
         buttonText="Discord 바로가기 →"
         textPosition="left"
-        buttonUrl="https://discord.gg/EV62Xyyw"
+        buttonUrl={DISCORD_URL}
       />
     </div>
   );

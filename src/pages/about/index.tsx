@@ -1,6 +1,3 @@
-import AboutImg from "@/assets/img/about/img_about.png";
-
-
 import { ProgramInfo } from "@/components/ProgramInfo";
 import ProgramImg from "@/assets/img/about/img_program.png";
 import VisualSection from "@/components/VisualSection/VisualSection";
@@ -10,18 +7,12 @@ import InstagramBtn from "@/assets/img/about/btn_instagram.png";
 import LinkedinBtn from "@/assets/img/about/btn_linkedin.png";
 import YoutubeBtn from "@/assets/img/about/btn_youtube.png";
 import PymonMacImg from "@/assets/img/about/img_pymon_mac.png";
-import { ProfileCard } from "@/components/ProfileCard";
-import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
-import { useGetManagers } from "@/quries/useGetMangers.ts";
-import { Manager } from "@/types/common.ts";
+import { AboutSection } from "@/components/AboutSection";
+const DISCORD_URL: string = import.meta.env.VITE_DISCORD_URL;
 
 const About = () => {
-  const { data: managerData } = useGetManagers();
-  const managers: Manager[] = managerData?.data ?? [];
-
   return (
     <div className="align-center flex flex-col">
-      
       <div className="relative">
         <ProgramInfo
           backgroundImage={ProgramImg}
@@ -86,7 +77,7 @@ const About = () => {
                 alt="Discord"
                 className="h-auto w-full rounded-xl"
                 onClick={() => {
-                  window.open("https://discord.gg/EV62Xyyw");
+                  window.open(DISCORD_URL);
                 }}
               />
               <img

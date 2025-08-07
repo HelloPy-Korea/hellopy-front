@@ -1,4 +1,3 @@
-import introShape from "@/assets/img/about/intro_shape.png";
 import PymonImg1 from "@/assets/img/about/img_type1.png";
 import PymonImg2 from "@/assets/img/about/img_type2.png";
 import PymonImg3 from "@/assets/img/about/img_type3.png";
@@ -20,7 +19,6 @@ import { SelectBox } from "@/components/SelectBox";
 import { PymonCalendar } from "@/components/PymonCalendar/PymonCalendar.tsx";
 import { useEffect, useState } from "react";
 import { SelectValue } from "@/types/common.ts";
-import { Container } from "@/components/Container";
 
 const keywordList = [
   ["Neat", "깔끔"],
@@ -77,16 +75,6 @@ const AboutIdentity = () => {
         />
         <TextCircleGroup textList={keywordList} size={238} overlap={5} />
       </AboutSection>
-
-      <div className={"bg-[#FCF7FF]"}>
-        <Container>
-          <img
-            src={introShape}
-            className="h-auto w-full object-cover"
-            alt="Intro Shape"
-          />
-        </Container>
-      </div>
 
       <AboutSection>
         <AboutSectionTitle
