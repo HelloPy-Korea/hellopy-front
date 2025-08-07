@@ -31,8 +31,6 @@ const About = () => {
               title: "멘토링",
               description:
                 "HelloPY는 시니어 파이써니스타와 주니어 파이써니스타의 활발한 멘토링을 <br/> 지향합니다. HelloPY는 3년차 이하 파이썬 주니어 유저들을 위한 모임이에요. <br/> 경력 3년 이상이시라면, 멘토로 함께해주세요! ",
-              buttonText: "멘토로 참여하기 ->",
-              redirectUrl: "",
             },
           ]}
           textPosition="left"
@@ -101,9 +99,7 @@ const About = () => {
                 alt="LinkedIn"
                 className="h-auto w-full rounded-xl"
                 onClick={() => {
-                  window.open(
-                    "https://kr.linkedin.com/in/hellopy-community-5420b8342",
-                  );
+                  window.open("https://www.linkedin.com/company/hellopy/");
                 }}
               />
             </div>
