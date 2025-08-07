@@ -43,11 +43,10 @@ const menuItems = [
 ];
 
 interface HeaderProps {
-  backgroundColor?: string;
   textColor?: string;
 }
 
-const Header = ({ backgroundColor, textColor }: HeaderProps) => {
+const Header = ({ textColor }: HeaderProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -61,7 +60,7 @@ const Header = ({ backgroundColor, textColor }: HeaderProps) => {
 
   return (
     <div
-      className={`relative ${backgroundColor} flex items-center justify-center`}
+      className={`relative bg-main-purple flex items-center justify-center`}
     >
       <Container className="flex h-[78px] w-full items-center justify-between px-4 md:px-10">
         {/* 로고 */}

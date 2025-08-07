@@ -1,5 +1,4 @@
 import { Breadcrumb } from '@/components/Breadcrumb';
-import { HeaderBanner } from '@/components/HeaderBanner';
 import React, { useState } from 'react';
 import BanngrImg from "@/assets/img/md/img_banner.png";
 import { Container } from '@/components/Container';
@@ -700,15 +699,6 @@ const CoC: React.FC = () => {
 
   return (
     <div className="align-center flex flex-col">
-    <HeaderBanner
-      backgroundImage={BanngrImg}
-      title="COC"
-      description={""}
-    >
-      <Breadcrumb
-        children={[<a href="/">Home</a>, "COC"]}
-      />
-    </HeaderBanner>
 
     <Container className="px-16 py-16">
         <div className="flex flex-wrap gap-4 items-center justify-start">

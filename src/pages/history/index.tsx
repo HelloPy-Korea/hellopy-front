@@ -1,6 +1,5 @@
 import BgImg from "@/assets/img/history/banner_history.png";
 
-import { HeaderBanner } from "@/components/HeaderBanner";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 
@@ -54,33 +53,6 @@ const ActivityHistory = () => {
 
   return (
     <div className="align-center flex flex-col">
-      <HeaderBanner
-        backgroundImage={BgImg}
-        title={"Community Log"}
-        description={`HelloPY는 주니어 개발자들의 성장을 돕고 파이썬 교육 확산을 위한 커뮤니티입니다. <br/>온오프라인에서 학습하고 파이썬 기술과 트렌드를 공유하며, 다양한 외부 협업도 진행합니다. 헬로파이의 다양한 활동을 확인해보세요!`}
-      >
-        <Breadcrumb
-          children={[<a href="/">Home</a>, <a href="/history">HISTORY</a>]}
-        />
-      </HeaderBanner>
-
-      <AboutSection>
-        <div className="mb-[106px] mt-[180px] flex flex-col items-center justify-start gap-2">
-          <div className="self-stretch text-center text-[20px] font-bold text-hellopy-purple-200">
-            HelloPY COC(Code of Conduct)
-          </div>
-          <div className="self-stretch text-center text-[28px] font-bold text-black">
-            HelloPY 활동 가이드
-          </div>
-          <div className="self-stretch text-center text-[15px] text-black">
-            신규 멤버는 자기소개, 기사 공유, 모각작 참여 등 기본 활동을 수행해야
-            합니다. <br />각 게시판에 정보를 공유하고 질문하거나 성과를 기록할
-            수 있으며, 활동량에 따라 등급이 상승합니다. <br />
-            등급은 레몬파이부터 블루베리파이까지 나뉘며 오프라인 모임 또는
-            컨퍼런스 발표를 통해 추가 승급이 가능합니다.
-          </div>
-        </div>
-      </AboutSection>
 
       <div className={"bg-[#FCF7FF]"}>
         <AboutSection>

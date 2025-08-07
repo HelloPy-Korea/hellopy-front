@@ -5,44 +5,15 @@ import HomeImg from "@/assets/img/home/img_home.png";
 import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";
-import { TextCircleGroup } from "@/components/TextCircle";
-import { Container } from "@/components/Container";
 
 export const Home = () => {
   return (
     <div className="align-center flex flex-col">
       <MainBanner
         backgroundImage={HomeImg}
-        title="HelloPY"
-        description={`
-                        파이썬을 사용하는 모든 이들을 위한 <br/>
-                        따뜻하고 포용적인 커뮤니티, 헬로파이입니다
-                    `}
+        title=""
+        description={``}
       />
-      <Container>
-        <div className="mb-[106px] mt-[180px] flex flex-col items-center justify-start gap-2">
-          <div className="self-stretch text-center text-[20px] font-bold text-hellopy-purple-200">
-            HelloPY COC(Code of Conduct)
-          </div>
-          <div className="self-stretch text-center text-[28px] font-bold text-black">
-            어떤 행동이 행동 규범의 적용 범위에 속하는지 확실치 않은 경우,{" "}
-            <br /> COC 원칙 본문을 보고하실 것을 권장합니다.
-          </div>
-        </div>
-      </Container>
-
-      <Container className="align-center mb-[180px] flex justify-center">
-        <TextCircleGroup
-          textList={[
-            "누구나 편안하게 참여할 수 있는\n커뮤니티를 지향합니다",
-            "서로 다름을 인정하고 존중하는\n분위기를 지향합니다.",
-            "서로 환영하는 분위기를\n독려합니다",
-          ]}
-          size={355}
-          overlap={6}
-        />
-      </Container>
-
       <HomeCard
         backgroundImage={CalendarImg}
         title="이달의 달력"

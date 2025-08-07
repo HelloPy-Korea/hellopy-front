@@ -1,8 +1,7 @@
 import BackImg from "@/assets/img/md/img_banner.png";
 import BanngerImg from "@/assets/img/md/img_goods.png";
 
-import { HeaderBanner } from "@/components/HeaderBanner";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { Breadcrumb } from "@/components/Breadcrumb"
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 import { History } from "@/components/History";
 import { useGetMds } from "@/quries/useGetMds.ts";
@@ -15,15 +14,6 @@ const AboutMd = () => {
 
   return (
     <div className="align-center flex flex-col">
-      <HeaderBanner
-        backgroundImage={BackImg}
-        title="HelloPY MD"
-        description={`저희 대표 캐릭터 파이몬으로 만든 귀여운 스티커들과 키링들..<br/>앞으로 더 많아질 굿즈들을 기대해 주세요!!`}
-      >
-        <Breadcrumb
-          children={[<a href="/">Home</a>, <a href="/about">ABOUT</a>, "MD"]}
-        />
-      </HeaderBanner>
 
       <AboutSection>
         <Container>

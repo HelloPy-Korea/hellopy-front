@@ -24,6 +24,7 @@ export default {
           500: "#fef5d6",
           600: "#fef8e9",
         },
+        "main-purple": "#7E5FFF",
         "header-yellow": "#ffeea4",
         "header-purple": "#891fbd",
         footer: "#2d003d",
