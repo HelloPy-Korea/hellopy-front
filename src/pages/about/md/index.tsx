@@ -1,7 +1,5 @@
-import BackImg from "@/assets/img/md/img_banner.png";
 import BanngerImg from "@/assets/img/md/img_goods.png";
 
-import { Breadcrumb } from "@/components/Breadcrumb"
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 import { History } from "@/components/History";
 import { useGetMds } from "@/quries/useGetMds.ts";
@@ -14,7 +12,6 @@ const AboutMd = () => {
 
   return (
     <div className="align-center flex flex-col">
-
       <AboutSection>
         <Container>
           <AboutSectionTitle

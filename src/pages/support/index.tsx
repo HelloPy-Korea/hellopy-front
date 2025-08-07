@@ -1,15 +1,9 @@
-import BgImg from "@/assets/img/support/support_banner.png";
-
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
-import SupportCards from '../../components/SupportCards/SupportCards';
-
+import SupportCards from "../../components/SupportCards/SupportCards";
 
 const Support = () => {
-
   return (
     <div className="align-center flex flex-col">
-
       <AboutSection>
         <AboutSectionTitle
           title={"후원 신청 절차"}

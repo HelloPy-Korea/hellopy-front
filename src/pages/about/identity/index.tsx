@@ -76,38 +76,40 @@ const AboutIdentity = () => {
         <TextCircleGroup textList={keywordList} size={238} overlap={5} />
       </AboutSection>
 
-      <AboutSection>
-        <AboutSectionTitle
-          title={"HelloPY 로고"}
-          subtitle={"LOGO"}
-          description={[
-            "HelloPY는 Hello, Python을 합친 것으로 파이썬 입문자 수준의 주니어 커뮤니티를 의미합니다.",
-            "가운데 파이썬 로고를 넣어 파이썬 커뮤니티임을 직관적으로 표현합니다.",
-          ]}
-        />
-        <div className="flex w-full justify-between gap-10">
-          <LogoBanner>
-            <LogoBannerTitle>HELLOPY LOGO EN</LogoBannerTitle>
-            <LogoBannerImage src={HellopyEnImg} />
-            <LogoBannerLink
-              href={HellopyEnDownloadImg}
-              downloadName="hellopy_logo_en.png"
-            >
-              영어로고 다운받기
-            </LogoBannerLink>
-          </LogoBanner>
-          <LogoBanner>
-            <LogoBannerTitle>HELLOPY LOGO KR</LogoBannerTitle>
-            <LogoBannerImage src={HellopyKrImg} />
-            <LogoBannerLink
-              href={HellopyKrDownloadImg}
-              downloadName="hellopy_logo_kr.png"
-            >
-              한국어로고 다운받기
-            </LogoBannerLink>
-          </LogoBanner>
-        </div>
-      </AboutSection>
+      <div className={"bg-[#FCF7FF]"}>
+        <AboutSection>
+          <AboutSectionTitle
+            title={"HelloPY 로고"}
+            subtitle={"LOGO"}
+            description={[
+              "HelloPY는 Hello, Python을 합친 것으로 파이썬 입문자 수준의 주니어 커뮤니티를 의미합니다.",
+              "가운데 파이썬 로고를 넣어 파이썬 커뮤니티임을 직관적으로 표현합니다.",
+            ]}
+          />
+          <div className="flex w-full justify-between gap-10">
+            <LogoBanner>
+              <LogoBannerTitle>HELLOPY LOGO EN</LogoBannerTitle>
+              <LogoBannerImage src={HellopyEnImg} />
+              <LogoBannerLink
+                href={HellopyEnDownloadImg}
+                downloadName="hellopy_logo_en.png"
+              >
+                영어로고 다운받기
+              </LogoBannerLink>
+            </LogoBanner>
+            <LogoBanner>
+              <LogoBannerTitle>HELLOPY LOGO KR</LogoBannerTitle>
+              <LogoBannerImage src={HellopyKrImg} />
+              <LogoBannerLink
+                href={HellopyKrDownloadImg}
+                downloadName="hellopy_logo_kr.png"
+              >
+                한국어로고 다운받기
+              </LogoBannerLink>
+            </LogoBanner>
+          </div>
+        </AboutSection>
+      </div>
 
       <AboutSection>
         <AboutSectionTitle
