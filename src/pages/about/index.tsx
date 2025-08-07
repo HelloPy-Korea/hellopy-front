@@ -1,6 +1,5 @@
 import AboutImg from "@/assets/img/about/img_about.png";
 
-import { HeaderBanner } from "@/components/HeaderBanner";
 
 import { ProgramInfo } from "@/components/ProgramInfo";
 import ProgramImg from "@/assets/img/about/img_program.png";
@@ -22,17 +21,7 @@ const About = () => {
 
   return (
     <div className="align-center flex flex-col">
-      <HeaderBanner
-        mobileTitle={"따뜻하고 포용적인 커뮤니티"}
-        backgroundImage={AboutImg}
-        title="파이썬을 사랑하는 모든 이들을 위한"
-        subTitle="따뜻하고 포용적인 커뮤니티"
-        description={`
-                        명함이 없어도 좋습니다!! <br/>
-                        취업 준비생부터 3년차 이하 개발자까지, 파이썬에 관심 있는 주니어라면 누구나 환영합니다. <br/>
-                        자유롭게 의견을 나누고, 평가받지 않는 발표의 장을 지향합니다. 같이 공부하고, 함께 성장해요!
-                    `}
-      />
+      
       <div className="relative">
         <ProgramInfo
           backgroundImage={ProgramImg}
@@ -130,29 +119,6 @@ const About = () => {
           </div>
         </AboutSection>
       </div>
-
-      <AboutSection type={2}>
-        <AboutSectionTitle
-          title={"HelloPY 운영진"}
-          subtitle={"Organizing Committee"}
-          description={["print.hello.py@gmail.com"]}
-        />
-        <div className="flex flex-wrap justify-end gap-3">
-          {managers.map((manager, index) => (
-            <ProfileCard
-              key={manager.id + "_" + index}
-              name={manager.name}
-              position={manager.role}
-              links={{
-                email: manager.email,
-                linkedin: manager.linkedin,
-                github: manager.github,
-              }}
-              image={manager.photo}
-            />
-          ))}
-        </div>
-      </AboutSection>
     </div>
   );
 };

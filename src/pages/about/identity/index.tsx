@@ -11,7 +11,6 @@ import HellopyEnImg from "@/assets/img/logo/img_hellopy_en.jpeg";
 import HellopyEnDownloadImg from "@/assets/img/logo/img_hellopy_en_download.png";
 import HellopyKrDownloadImg from "@/assets/img/logo/img_hellopy_kr_download.png";
 
-import { HeaderBanner } from "@/components/HeaderBanner";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
 import { TextCircleGroup } from "@/components/TextCircle";
@@ -81,21 +80,6 @@ const AboutIdentity = () => {
 
   return (
     <div className="align-center flex flex-col">
-      <HeaderBanner
-        backgroundImage={BackImg}
-        title={"HelloPY IDENTITY"}
-        className={"dark"}
-        description={`HelloPY는 주니어 개발자들에게 더욱 따뜻한 공간이 되기 위해 성장하고 있습니다.<br/>우리는 발표와 나눔, 공유와 협력을 통해 함께 성장하는 커뮤니티를 만들어가고자 합니다.<br/>이제, HelloPY의 아이덴티티를 구성하는 요소들을 만나보세요!`}
-      >
-        <Breadcrumb
-          className={"dark"}
-          children={[
-            <a href="/">Home</a>,
-            <a href="/about">ABOUT</a>,
-            "Identity",
-          ]}
-        />
-      </HeaderBanner>
       <AboutSection>
         <AboutSectionTitle
           title={"HelloPY 키워드"}
@@ -145,47 +129,27 @@ const AboutIdentity = () => {
       <div className={"bg-[#FCF7FF]"}>
         <AboutSection>
           <AboutSectionTitle
-            title={"HelloPY UI"}
-            subtitle={"UI Elements"}
-            description={[]}
+            title={"HelloPY 로고"}
+            subtitle={"LOGO"}
+            description={[
+              "HelloPY는 Hello, Python을 합친 것으로 파이썬 입문자 수준의 주니어 커뮤니티를 의미합니다.",
+              "가운데 파이썬 로고를 넣어 파이썬 커뮤니티임을 직관적으로 표현합니다.",
+            ]}
           />
-          <div className="flex w-full flex-col gap-10">
+          <div className="flex w-full justify-between gap-10">
             <LogoBanner>
-              <div className="relative flex shrink-0 flex-col items-start justify-start gap-[59px] self-stretch">
-                <div className="relative flex w-full shrink-0 flex-col items-start justify-start gap-2">
-                  <div className="text-black-1 relative self-stretch text-left text-xl font-semibold leading-normal">
-                    Typography
-                  </div>
-                  <div
-                    className="border-gray-2 relative h-0 shrink-0 self-stretch border-b-[0] border-l-[0] border-r-[0] border-t border-solid"
-                    style={{ marginTop: "-1px" }}
-                  ></div>
-                </div>
-                <img
-                  className="relative w-full shrink-0 self-stretch"
-                  style={{ objectFit: "cover" }}
-                  src={TypoImg}
-                />
-              </div>
+              <LogoBannerTitle>HelloPY Main Logo</LogoBannerTitle>
+              <LogoBannerImage src="https://placehold.co/480x250" />
+              <LogoBannerLink href="https://placehold.co/480x250">
+                메인로고 다운받기
+              </LogoBannerLink>
             </LogoBanner>
             <LogoBanner>
-              <LogoBannerTitle>Color</LogoBannerTitle>
-              <div className="relative flex items-center justify-start gap-24 self-stretch md:flex-row">
-                {hellopyUiList.map((item: { name: string; img: string }) => (
-                  <div className="relative flex w-full flex-col items-start justify-start gap-7">
-                    <div className="relative flex w-full flex-col items-start justify-start gap-[9px]">
-                      <div className="text-black-1 relative self-stretch text-left text-xl font-normal leading-normal">
-                        {item.name}
-                      </div>
-                    </div>
-                    <img
-                      className="w-full self-stretch overflow-scroll"
-                      style={{ objectFit: "cover" }}
-                      src={item.img}
-                    />
-                  </div>
-                ))}
-              </div>
+              <LogoBannerTitle>HelloPY 3D Logo</LogoBannerTitle>
+              <LogoBannerImage src="https://placehold.co/480x250" />
+              <LogoBannerLink href="https://placehold.co/480x250">
+                3D로고 다운받기
+              </LogoBannerLink>
             </LogoBanner>
           </div>
         </AboutSection>

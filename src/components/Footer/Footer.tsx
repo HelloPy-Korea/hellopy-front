@@ -7,7 +7,7 @@ import { Container } from "@/components/Container";
 
 const Footer: React.FC = () => {
   return (
-    <div className="relative flex items-center justify-center bg-footer">
+    <div className="relative flex items-center justify-center bg-main-purple">
       <Container className="flex w-full flex-col items-center justify-between gap-y-8 px-4 py-12 md:flex-row">
         <div className="order-2 flex flex-col items-center md:order-1 md:items-start">
           <img 
