@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const menuItems = [
   {
     label: "공지사항",
-    hasDropdown: true,
+    hasDropdown: false,
     path: "/board/notice",
   },
   {
