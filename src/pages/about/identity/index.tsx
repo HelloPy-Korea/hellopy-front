@@ -6,6 +6,10 @@ import YellowImg from "@/assets/img/about/img_yellow.png";
 import PymonImg1 from "@/assets/img/about/img_type1.png";
 import PymonImg2 from "@/assets/img/about/img_type2.png";
 import PymonImg3 from "@/assets/img/about/img_type3.png";
+import HellopyKrImg from "@/assets/img/logo/img_hellopy_kr.jpeg";
+import HellopyEnImg from "@/assets/img/logo/img_hellopy_en.jpeg";
+import HellopyEnDownloadImg from "@/assets/img/logo/img_hellopy_en_download.png";
+import HellopyKrDownloadImg from "@/assets/img/logo/img_hellopy_kr_download.png";
 
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { AboutSection, AboutSectionTitle } from "@/components/AboutSection";
@@ -83,6 +87,43 @@ const AboutIdentity = () => {
           description={[]}
         />
         <TextCircleGroup textList={keywordList} size={238} overlap={5} />
+      </AboutSection>
+
+      <div className={"bg-[#FCF7FF]"}>
+        <Container>
+          <img
+            src={introShape}
+            className="h-auto w-full object-cover"
+            alt="Intro Shape"
+          />
+        </Container>
+      </div>
+
+      <AboutSection>
+        <AboutSectionTitle
+          title={"HelloPY 로고"}
+          subtitle={"LOGO"}
+          description={[
+            "HelloPY는 Hello, Python을 합친 것으로 파이썬 입문자 수준의 주니어 커뮤니티를 의미합니다.",
+            "가운데 파이썬 로고를 넣어 파이썬 커뮤니티임을 직관적으로 표현합니다.",
+          ]}
+        />
+        <div className="flex w-full justify-between gap-10">
+          <LogoBanner>
+            <LogoBannerTitle>HELLOPY LOGO EN</LogoBannerTitle>
+            <LogoBannerImage src={HellopyEnImg} />
+            <LogoBannerLink href={HellopyEnDownloadImg} downloadName="hellopy_logo_en.png">
+              영어로고 다운받기
+            </LogoBannerLink>
+          </LogoBanner>
+          <LogoBanner>
+            <LogoBannerTitle>HELLOPY LOGO KR</LogoBannerTitle>
+            <LogoBannerImage src={HellopyKrImg} />
+            <LogoBannerLink href={HellopyKrDownloadImg} downloadName="hellopy_logo_kr.png">
+              한국어로고 다운받기
+            </LogoBannerLink>
+          </LogoBanner>
+        </div>
       </AboutSection>
 
       <div className={"bg-[#FCF7FF]"}>

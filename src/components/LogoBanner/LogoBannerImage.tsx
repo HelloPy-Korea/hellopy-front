@@ -5,7 +5,15 @@ interface LogoBannerImageProps extends React.PropsWithChildren {
 }
 
 export const LogoBannerImage: React.FC<LogoBannerImageProps> = ({ src }) => {
-  return <img className="my-3" src={src} />;
+  return (
+    <div className="my-3 aspect-[480/250] w-full overflow-hidden rounded-lg">
+      <img 
+        className="h-full w-full object-contain" 
+        src={src} 
+        alt="Logo"
+      />
+    </div>
+  );
 };
 
 export default LogoBannerImage;
