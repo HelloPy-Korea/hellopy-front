@@ -10,7 +10,7 @@ export default {
       colors: {
         "hellopy-purple": {
           100: "#960cc4",
-          200: "#bc1df2",
+          200: "#7e5fff",
           300: "#c449fa",
           400: "#d58bfb",
           500: "#ebc6ff",
