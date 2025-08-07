@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import HeaderMenu from "@/components/Header/HeaderMenu.tsx";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import HellopyImg from "@/assets/img/logo/img_hellopy_new_logo.svg";
@@ -49,14 +49,30 @@ interface HeaderProps {
 const Header = ({ textColor }: HeaderProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const nav = useNavigate();
   const goToMenu = (path: string) => {
     if (path) {
       nav(path);
       setIsMenuOpen(false);
+      setOpenDropdown(null); // 드롭다운도 닫기
     }
   };
+
+  // 외부 클릭 감지하여 드롭다운 닫기
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div
@@ -72,14 +88,14 @@ const Header = ({ textColor }: HeaderProps) => {
         />
 
         {/* 데스크탑 네비게이션 */}
-        <nav className="relative z-[999] hidden gap-2 md:flex md:gap-10">
+        <nav ref={dropdownRef} className="relative z-[999] hidden gap-2 md:flex md:gap-10">
           {menuItems.map(({ label, hasDropdown, subItems, path }) => (
             <div
               key={label}
               className="relative flex cursor-pointer items-center gap-2"
               onClick={() => {
                 if (hasDropdown) {
-                  setOpenDropdown(label);
+                  setOpenDropdown(openDropdown === label ? null : label);
                 } else {
                   goToMenu(path);
                 }
@@ -133,7 +149,7 @@ const Header = ({ textColor }: HeaderProps) => {
                   className="flex cursor-pointer items-center justify-between"
                   onClick={() => {
                     if (hasDropdown) {
-                      setOpenDropdown(label);
+                      setOpenDropdown(openDropdown === label ? null : label);
                     } else {
                       goToMenu(path);
                     }
