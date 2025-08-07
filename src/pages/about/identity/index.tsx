@@ -6,6 +6,10 @@ import YellowImg from "@/assets/img/about/img_yellow.png";
 import PymonImg1 from "@/assets/img/about/img_type1.png";
 import PymonImg2 from "@/assets/img/about/img_type2.png";
 import PymonImg3 from "@/assets/img/about/img_type3.png";
+import HellopyKrImg from "@/assets/img/logo/img_hellopy_kr.jpeg";
+import HellopyEnImg from "@/assets/img/logo/img_hellopy_en.jpeg";
+import HellopyEnDownloadImg from "@/assets/img/logo/img_hellopy_en_download.png";
+import HellopyKrDownloadImg from "@/assets/img/logo/img_hellopy_kr_download.png";
 
 import { HeaderBanner } from "@/components/HeaderBanner";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -122,17 +126,17 @@ const AboutIdentity = () => {
         />
         <div className="flex w-full justify-between gap-10">
           <LogoBanner>
-            <LogoBannerTitle>HelloPY Main Logo</LogoBannerTitle>
-            <LogoBannerImage src="https://placehold.co/480x250" />
-            <LogoBannerLink href="https://placehold.co/480x250">
-              메인로고 다운받기
+            <LogoBannerTitle>HELLOPY LOGO EN</LogoBannerTitle>
+            <LogoBannerImage src={HellopyEnImg} />
+            <LogoBannerLink href={HellopyEnDownloadImg} downloadName="hellopy_logo_en.png">
+              영어로고 다운받기
             </LogoBannerLink>
           </LogoBanner>
           <LogoBanner>
-            <LogoBannerTitle>HelloPY 3D Logo</LogoBannerTitle>
-            <LogoBannerImage src="https://placehold.co/480x250" />
-            <LogoBannerLink href="https://placehold.co/480x250">
-              3D로고 다운받기
+            <LogoBannerTitle>HELLOPY LOGO KR</LogoBannerTitle>
+            <LogoBannerImage src={HellopyKrImg} />
+            <LogoBannerLink href={HellopyKrDownloadImg} downloadName="hellopy_logo_kr.png">
+              한국어로고 다운받기
             </LogoBannerLink>
           </LogoBanner>
         </div>
