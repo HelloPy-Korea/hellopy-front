@@ -1,7 +1,7 @@
 import MainBanner from "@/components/MainBanner/MainBanner.tsx";
 import { HomeCard } from "@/components/HomeCard";
 
-import HomeImg from "@/assets/img/home/img_home.png";
+import HomeImg from "@/assets/img/home/img_home.jpeg";
 import CalendarImg from "@/assets/img/home/img_this_calendar.png";
 import ActiveImg from "@/assets/img/home/img_active.png";
 import DiscordImg from "@/assets/img/home/img_discord.png";

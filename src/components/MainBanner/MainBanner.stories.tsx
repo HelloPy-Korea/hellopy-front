@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Breadcrumb } from "@/components/Breadcrumb";
-import HomeImg from "@/assets/img/home/img_home.png";
+import HomeImg from "@/assets/img/home/img_home.jpeg";
 import MainBanner from "./MainBanner";
 
 const meta = {
